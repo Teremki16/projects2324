@@ -1,0 +1,154 @@
+@font-face {
+    font-family: china;
+    src: url("assets/fonts/NinjaStrike.otf")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(126, 23, 23);
+    font-family: china;
+
+}
+
+header {
+    text-align: center;
+    color: rgb(120, 116, 1);
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.lant {
+    position: fixed;
+    width: 25vw;
+    animation: float 8s ease-in-out infinite;
+}
+
+.Left {
+    top: 20px;
+    left: 15px;
+}
+
+.Right {
+    top: 20px;
+    right: 15px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main {
+    display: flex;
+}
+
+.house {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.roof {
+    width: 100%;
+    display: block;
+}
+
+.block {
+    flex: 1;
+    border: 5px solid black;
+    background-color: rgba(rgba(0, 0, 0, 0.5));
+    padding: 3rem;
+    margin: 0 3rem;
+}
+
+.window {
+    border: inherit;
+    background-color: rgb(126, 23, 23);
+    height: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.chef {
+    width: 50%;
+    border-radius: 1rem;
+}
+
+.window h2 {
+    font-size: 2rem;
+}
+
+.window ul {
+    list-style: none;
+}
+
+@media (max-width: 1020px) {
+    main {
+        flex-direction: column;
+    }
+
+    .block {
+        padding: 1rem;
+        border: 3px solid black;
+        margin-bottom: 3rem;
+    }
+
+}
+
+.order h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#order-form {
+    margin: 0 auto;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0 2rem;
+    font-size: 1.5rem;
+}
+
+#order-form label {
+    font-family: inherit;
+    font-weight: bold;
+}
+
+#order-form input {
+    border: none;
+    background-color: navajowhite;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    margin: 0.5rem -0.2rem;
+    font-family: inherit;
+    text-shadow: inherit;
+    color: inherit;
+}
+
+#submit {
+    align-self: center;
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 1.5rem;
+    font-weight: bold;
+}
+
+#submit:hover {
+    box-shadow: 0 0 1rem red;
+}
