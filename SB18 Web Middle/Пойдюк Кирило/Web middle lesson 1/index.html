@@ -43,18 +43,31 @@
     </main>
     <section class="order">
         <h2>Order</h2>
-        <form id="order-formS">
+        <form id="order-form">
             <label for="dish">Dish:</label>
             <input type="text" id="dish" placeholder="Остатки богдана">
             <label for="time">Time:</label>
             <input type="time" id="time">
-            <label for="addres">Adres:</label>
+            <label for="address">Adres:</label>
             <input type="text" id="address" placeholder="djjd">
             <label for="tel">Telephone:</label>
             <input type="tel" id="tel" placeholder="097 773 41 32">
-            <input type="submit" value="Order">
+            <input type="submit" value="Order" id="submit">
 
         </form>
     </section>
+    <section class="">
+        <table id="order-table">
+            <tr>
+                <th>Dish</th>
+                <th>Time</th>
+                <th>Address:</th>
+                <th>Telephone</th>
+                <th>Link</th>
+            </tr>
+        </table>
+
+    </section>
+    <script src="script.js" defer></script>
 </body>
 </html>
