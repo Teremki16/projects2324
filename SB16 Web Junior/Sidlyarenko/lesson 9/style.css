@@ -1,0 +1,15 @@
+.mainMenu > li {
+    position: relative;
+    width: 150px;
+}
+
+.subMenu {
+    position: absolute;
+    top: 0;
+    left: 151px;
+    display: none;
+}
+
+.mainMenu li:hover ul{
+    display: block;
+}

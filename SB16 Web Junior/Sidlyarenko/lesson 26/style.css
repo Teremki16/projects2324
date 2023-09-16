@@ -1,0 +1,50 @@
+.container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    border: 2px solid black;
+    justify-content: center;
+    
+}
+
+.item {
+    height: 30px;
+    width: 30px;
+}
+
+.item1, .item11{
+    justify-self: start;
+    align-self: flex-start;
+}
+.item6, .item16{
+    justify-self: end;
+    align-self: flex-end;
+}
+.item7, .item13{
+    justify-self: start;
+    align-self: flex-end;
+}
+.item10, .item4{
+    justify-self: end;
+    align-self: flex-start;
+}
+
+.item5, .item9{
+    justify-self: start;
+    align-self: flex-end;
+}
+
+.item13, .item4{
+    justify-self: start;
+    align-self: flex-end;
+}
+
+.item2, .item15{
+    justify-self: start;
+    align-self: flex-end;
+}
+.item3, .item14{
+    justify-self: start;
+    align-self: flex-end;
+}

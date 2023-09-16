@@ -1,0 +1,27 @@
+table, td{
+    border: 1px solid black;
+    font-size: 80px;
+    font-family: sans-serif;
+}
+td{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: all 0.5s;
+}
+td:hover{
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+}
+img {
+    width: 150px;
+    transition: all 1s;
+}
+img:hover{
+    transform: scale(1.2);
+}
+input:focus{
+    background-color: darkturquoise;
+    outline: 3px dotted orange;
+}
