@@ -46,15 +46,27 @@
         <h2>order</h2>
         <form id="order-form">
            <label for="dish">Dish:</label>
-           <input type="text" id="dish" placeholder="остаткі дані">
+           <input type="dish" id="dish" placeholder="остаткі дані">
            <label for="">Time: </label>
-           <input type="text" id="text">
-           <label for="addres">Addres: </label>
-           <input type="text" id="addres" placeholder="Akademika Vilyamsa 72">
+           <input type="time" id="time">
+           <label for="address">Addres: </label>
+           <input type="address" id="address" placeholder="Akademika Vilyamsa 72">
            <label for="tel">Telephone: </label>
            <input type="tel" id="tel" placeholder="0977734132">
            <input type="submit" value="order">
         </form>
     </section>
+    <section class="">
+        <table id="order-table">
+           <tr>
+            <th>Dish</th>
+            <th>Time</th>
+            <th>Address</th>
+            <th>Telephone</th>
+            <th>link</th>
+           </tr>
+        </table>
+    </section>
+    <script src="script.js" defer></script>
 </body>
 </html>

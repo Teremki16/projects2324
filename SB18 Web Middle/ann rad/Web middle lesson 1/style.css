@@ -149,3 +149,30 @@ main {
 #submit:hover {
     box-shadow: 0 0 1rem red;
 }
+
+#order-table {
+    margin-bottom: 1rem;
+    margin: 0 auto;
+}
+
+#order-table th:first-child{
+    border-top-left-radius: 1rem;
+}
+
+#order-table th:last-child{
+    border-top-left-radius: 1rem;
+}
+
+#order-table th{
+    background-color: #068b76;
+    font-weight: bold;
+    padding: 0.5rem;
+    box-shadow: 0 0 20px rgb(0 0 0 / 0.5);
+    font-size: 1.5rem;
+}
+
+#order-table td {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 3px solid #068b76;
+}
