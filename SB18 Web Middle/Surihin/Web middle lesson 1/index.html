@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lesson 1</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -50,26 +51,39 @@
         </div>
     </main>
     <div class="section order">
-        
+
         <h2>Order</h2>
         <form id="order-form">
-            <label for="dish">Dish:</label>
+            <label for="dish">dish:</label>
             <input type="text" id="dish" placeholder="cock">
-        </form>
 
-        <label for="time">
-            <input type="time">
-        </label>
 
-        <label for="address">
+            <label for="time">time:</label>
+            <input type="time" id="time">
+
+
+            <label for="address">address:</label>
             <input type="address" id="address" placeholder="gnizdo 228">
-        </label>
 
-        <label for="tel">
+
+            <label for="tel">tel:</label>
             <input type="tel" id="tel" placeholder="380123456789">
-        </label>
 
-        <input type="submit">
+
+            <input type="submit">
+        </form>
+        </section>
+        <section class="gigi">
+            <table id="order-table">
+                <tr>
+                    <th>Dish</th>
+                    <th>Time</th>
+                    <th>Address</th>
+                    <th>Telephone</th>
+                    <th>Link</th>
+                </tr>
+            </table>
+        </section>
     </div>
 </body>
 
