@@ -36,7 +36,7 @@ function drawOrders() {
         <td>${order.time}</td>
         <td>${order.address}</td>
         <td>${order.tel}</td>
-        <td>${createDownloadLinkXML(order).outerHTML}</td>
+        <td>${createDownloadLinkXML(order)</td>
         `;
         orderTable.appendChild(tr);
     });
