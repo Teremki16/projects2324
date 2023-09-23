@@ -11,7 +11,15 @@ console.log("7 * " + number + " = " + 7 * number)
 console.log("8 * " + number + " = " + 8 * number)
 console.log("9 * " + number + " = " + 9 * number)
 */ 
+
+/*
 let a=Math.floor((Math.random()*100))
+let b=Math.floor((Math.random()*100))
 console.log (`сторона прямокутнику дорівнбє ${a} см`)
-let S =
-console.log ("пеример прямокутнику = " + (a + a) * 2)
+console.log (`сторона прямокутнику дорівнбє ${b} см`)
+let p = 2*(a + b)
+
+
+
+let name = prompt( "як тебе звати")
+alert( привіт ${name}, як у тебе справи?)
