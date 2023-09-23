@@ -73,4 +73,4 @@ function createDownLoadLinkXML(order){
     download.setAttribute("download", "order.xml")
     download.innerHTML = "link"
     return download
-}
+} 
