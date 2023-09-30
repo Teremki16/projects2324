@@ -16,5 +16,5 @@ xhr.onload = () => {
             <img src="${i.img}"></img>
             <p>${i.description}</p>
         </article>`
-    })
+    })  
 }
