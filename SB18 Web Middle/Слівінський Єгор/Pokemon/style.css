@@ -1,0 +1,64 @@
+body {
+    background-image: url("image/bg.png");
+    background-size: 10vw;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid black;
+    margin: 0 auto; 
+}
+
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 2rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    width: 2rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    transition: text-shadow 0.5s;
+    color: lightgrey;
+}
+
+button:hover {
+    text-shadow: 2px 2px 5px black;
+
+}
+
+
+button:active {
+    color: black;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    align-items: center;
+}
+
+
+.pokemon {
+    background-color: white;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 20rem;
+    border: 2px solid black;
+    border-radius: 2rems;
+}
+
