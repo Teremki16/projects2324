@@ -34,13 +34,13 @@
 // i++;
 // }
 
-let number;
-let number_max=0
-do{
- number=+prompt("gg broooooooooooooooooooooooo")
- if( number > number_max) {
-    number_max=number
- }
+// let number;
+// let number_max=0
+// do{
+//  number=+prompt("gg broooooooooooooooooooooooo")
+//  if( number > number_max) {
+    // number_max=number
+//  }
 
 
-}
+// }
