@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/);
+    background-size: 10vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-list {
+    list-style: none;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pokemon-list li {
+    background-color: white;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid black;
+    font-family: serif;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
