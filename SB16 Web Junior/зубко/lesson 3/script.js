@@ -46,10 +46,11 @@
 //     alert("число непарне")
 // }
 
-let password = prompt("Введіть пароль:")
-let password2 = prompt("Підтвердіть імя:")
-if(password == password2){
-    alert("qwertyu")
-}else{
-    alert("dfghjk")
-}
+// let password = prompt("Введіть пароль:")
+// let password2 = prompt("Підтвердіть імя:")
+// if(password == password2){
+//     alert("qwertyu")
+// }else{
+//     alert("dfghjk")
+// }
+
