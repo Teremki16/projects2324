@@ -55,15 +55,14 @@
 //     alert("rik figna")
 // }
 
-let num1 = +prompt ("put first number")
-let num2 = +prompt ("put second number")
-let num3 = +prompt ("put third number")
+// let num1 = +prompt ("put first number")
+// let num2 = +prompt ("put second number")
+// let num3 = +prompt ("put third number")
 
-let num4 = (num1 + num2 + num3) / 3
+// let num4 = (num1 + num2 + num3) / 3
 
-alert(`your number is ${num4}`)
+// alert(`your number is ${num4}`)
 
-console.log("first number is ${num1}")
-console.log("second number is ${num2}")
-console.log("third number is ${num3}")
-
+// console.log("first number is ${num1}")
+// console.log("second number is ${num2}")
+// console.log("third number is ${num3}")
