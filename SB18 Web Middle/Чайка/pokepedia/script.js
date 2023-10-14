@@ -26,7 +26,7 @@ pokemonListRequest(startUrl);
 const drawList = () => {
     let pokemonElement = document.createElement("ul")
     pokemonElement.classList.add("pokemon-list")
-    state.results.forEach((pokemon)=>{
+    state.results.forEach((pokemon) => {
         pokemonElement.innerHTML += `<li onclick="searching('${pokemon.url}')">${pokemon.name}</li>`
     })
     resultElement.innerHTML = null
@@ -36,16 +36,16 @@ const drawList = () => {
 
 
 
-function searching(pokemonName){
+function searching(pokemonName) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", pokemonName)
     xhr.responseType = "json"
     xhr.send()
     xhr.onload = () => {
-        if(xhr.status > 200){
-           resultElement.innerHTML = "<div class='pokemon'>Такого покемона не існує<div>"
-        }else{
-           drawPokemon(xhr.response)
+        if (xhr.status > 200) {
+            resultElement.innerHTML = "<div class='pokemon'>Такого покемона не існує<div>"
+        } else {
+            drawPokemon(xhr.response)
         }
         console.log(xhr.response)
     }
@@ -57,7 +57,7 @@ function searching(pokemonName){
 
 
 
-function drawPokemon(obj){
+function drawPokemon(obj) {
     hideBtns()
     resultElement.innerHTML = ""
     let pokeElement = document.createElement("div")
@@ -70,7 +70,7 @@ function drawPokemon(obj){
     <img src="${obj.sprites.front_default}">
     `
     let ul = document.createElement("ul")
-    obj.types.forEach((el)=>{
+    obj.types.forEach((el) => {
         let li = document.createElement("li")
         li.textContent = el.type.name
         ul.appendChild(li)
@@ -78,7 +78,7 @@ function drawPokemon(obj){
     pokeElement.appendChild(ul)
 
     let itemsElem = document.createElement("div")
-    obj.held_items.forEach((el)=>{
+    obj.held_items.forEach((el) => {
         let x = new XMLHttpRequest()
         x.open("GET", el.item.url)
         x.responseType = "json"
@@ -97,11 +97,11 @@ function drawPokemon(obj){
     })
 
     resultElement.appendChild(pokeElement)
-} 
+}
 
 
 
- 
+
 
 
 
@@ -109,7 +109,7 @@ function drawPokemon(obj){
 const next = () => pokemonListRequest(state.next)
 const prev = () => pokemonListRequest(state.previous)
 
-document.getElementById("limit").addEventListener("change", (event)=>{
+document.getElementById("limit").addEventListener("change", (event) => {
     limit = event.target.value
     pokemonListRequest(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`)
 })
