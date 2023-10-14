@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeSort</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="pokeapi.png" type="image/x-icon" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="pokeapi.png" alt="logo">
+        </div>
+    </header>
+    <main>
+        <nav>
+            <form id="sort-from">
+                <h4>Sort by:</h4>
+                <label for="id"> id</label>
+                <input type="radio" name="sort" value="id" id="id" checked>
+                <label for="name"> name</label>
+                <input type="radio" name="sort" value="name" id="id" checked>
+                <label for="attack"> attack</label>
+                <input type="radio" name="sort" value="attack" id="id">
+                <label for="defense"> defense</label>
+                <input type="radio" name="sort" value="defense" id="id">
+                <h4>Order:</h4>
+                <label for="upsc">From smaller to biggest </label>
+                <input type="radio" name="order" value="upsc" id="upsc" checked>
+                <label for="desc">From biggest to smaller </label>
+                <input type="radio" name="order" value="sesc" id="desc">
+            </form>
+        </nav>
+        <div id="result"></div>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>
