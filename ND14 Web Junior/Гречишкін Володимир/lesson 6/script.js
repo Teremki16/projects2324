@@ -1,0 +1,104 @@
+//let side = +prompt("input box size");
+
+function draw_box() {
+    for (let i = 0; i < side; i++) {
+        let str = ""
+        for (let j = 0; j < side; j++) {
+            str += "  *";
+        }
+        console.log(str)
+    }
+}
+
+
+function draw_triangle() {
+    for (let i = 0; i < side + 1; i++) {
+        let str = ""
+        for (let j = 0; j < i; j++) {
+            str += "  *";
+        }
+        console.log(str)
+    }
+}
+
+//draw_triangle()
+
+
+let km = +prompt("Введіть км")
+function km_to_miles(kill) {
+    return kill * 0.6214
+}
+//alert(km_to_miles(km)+"miles moralis")
+
+function get_month_day(month) {
+    if (month > 0 && month < 13) {
+        if (month == 2) {
+            return 28
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            return 30
+        }
+        else {
+            return 31
+        }
+    }
+    else {
+        alert("Користувая Ту тууууууууууууууууууууууууууууу ")
+    }
+}
+let m = +prompt("What is month")
+alert(`В ${m}  місяці${get_month_day(m)}  днів`)
+
+
+//let width =+prompt("Ширина")
+//let height=+prompt("Висота")
+//let depth=+prompt("Глибина")
+//function v(w,h,d){
+//return w*h*d
+//}
+//alert(`кімната з шириною ${width}м, з висото ${height}м,та глибиною ${depth}м,має об'єм $v{width, height, depth)} м^3`)
+
+
+let a = +prompt("Number 1")
+let operator = prompt("Operator")
+let b = +prompt("Number 2")
+function plus(a, b) {
+    return a + b
+}
+function minus(a, b) {
+    return a - b
+}
+function multiplay(a, b) {
+    return a * b
+}
+function devide(a, b) {
+    if (b != 0) {
+        return a / b
+    } else {
+        return 0
+    }
+}
+
+switch (operator) {
+    case "+":
+        alert(`${a} ${operator} ${b} = ${plus(a, b)}`)
+        break;
+
+
+    case "-":
+        alert(`${a} ${operator} ${b} = ${minus(a, b)}`)
+        break;
+
+
+    case "*":
+        alert(`${a} ${operator} ${b} = ${multiplay(a, b)}`)
+        break;
+
+
+    case "/":
+        alert(`${a} ${operator} ${b} = ${devide(a, b)}`)
+        break;
+
+    default:
+        alert("Такого оператора я не знаю!!!")
+}
