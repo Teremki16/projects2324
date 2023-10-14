@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PokeSort</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="pokeapi.png" type="image/x-icon" />
+    </head>
+    <body>
+        <header>
+            <div class="page">
+                <img src="pokeapi.png" alt="logo">
+            </div>
+        </header>
+        <main>
+            <nav>
+                <form id="fort-from">
+                    <h4>Sort by:</h4>
+                    <label for="id">id:</label>
+                    <input type="radio" name="sort" value="id" id="id" checked>
+
+                    <label for="name">name:</label>
+                    <input type="radio" name="sort" value="name" id="name">
+
+                    <label for="defence">defence:</label>
+                    <input type="radio" name="sort" value="defence" id="defence">
+
+                    <label for="attack">attack:</label>
+                    <input type="radio" name="sort" value="atack" id="attack">
+                    <h4>Order:</h4>
+
+                    <label for="id">from smaller to biggest: </label>
+                    <input type="radio" name="order" value="upsc" id="upsc" checked>
+
+                    <label for="id">from bigger to smallest :</label>
+                    <input type="radio" name="order" value="desc" id="desc" checked>
+                </form>
+            </nav>
+            <div id="result"></div>
+        </main>
+
+    </body>
+    <script src="script.js"></script>
+</html>
