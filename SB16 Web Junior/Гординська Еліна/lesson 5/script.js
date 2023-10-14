@@ -29,4 +29,13 @@
 // }
 
 // alert(`sum: ${sum}`)
-true && false
+
+let a = +prompt('Put a number')
+let b = +prompt('Put b number')
+let summ = 0;
+for(let i = a; a < b; i++){
+    let t = (i ** 3) % 10
+    if(t == 4 || t == 9) summ++
+}alert('summ ${summ}');
+
+

@@ -15,7 +15,7 @@ let n = (i**3)% 10
 if( n ==4 || n==9)count++
 
 }
-alert("count" + count)*/
+alert("count" + count)*\
 
 
 let m = prompt("Початкова кількість")
