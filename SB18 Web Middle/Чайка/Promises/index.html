@@ -15,7 +15,7 @@
     </header>
     <main>
             <nav>
-                 <form id="font-form">
+                 <form id="sort-form">
                    <h4>Sort by: </h4>
                    <label for="id">id: </label>
                    <input type="radio" name="sort" value="id" id="id" checked>
@@ -30,6 +30,40 @@
                    <input type="radio" name="order" value="upsc" id="upsc" checked>
                    <label for="desc">from smallest to biggest: </label>
                    <input type="radio" name="order" value="desc" id="desc">
+                </form>
+                <form id="filter-form">
+                    <h4>Filter by: </h4>
+                    <div class="search">
+                        <label for="name-filter">Name</label>
+                        <input type="text" id="name-filter" name="name-filter">
+                    </div>
+                    <div class="ranges">
+                        <div class="hp-ranges">
+                            <label for="hp-filter-form">Hp from: </label>
+                            <input type="range" id="hp-filter-form" name="hp-filter-form" 
+                                   min="10" max="250" value="10">
+                            <label for="hp-filter-to">Hp from: </label>
+                            <input type="range" id="hp-filter-to" name="hp-filter-to" 
+                                   min="10" max="250" value="250">
+                        </div>
+                        <div class="attack-ranges">
+                            <label for="attack-filter-form">Attack from: </label>
+                            <input type="range" id="attack-filter-form" name="attack-filter-form" 
+                                   min="5" max="130" value="5">
+                            <label for="attack-filter-to">Attack from: </label>
+                            <input type="range" id="attack-filter-to" name="attack-filter-to" 
+                                   min="5" max="130" value="130">
+                        </div>
+                        <div class="defence">
+                            <label for="defence-filter-form">Defence from: </label>
+                            <input type="range" id="defence-filter-form" name="defence-filter-form" 
+                                   min="5" max="180" value="5">
+                            <label for="defence-filter-to">Defence from: </label>
+                            <input type="range" id="defence-filter-to" name="defence-filter-to" 
+                                   min="5" max="180" value="180">
+                        </div>
+                    </div>
+                    <input type="submit" value="Apply filters" class="btn">
                 </form>
             </nav>
             <div id="result">
