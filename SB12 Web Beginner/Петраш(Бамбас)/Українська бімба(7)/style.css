@@ -1,0 +1,22 @@
+table, td{
+    border: 1px solid rgb(0, 0, 0);
+}
+
+table td{
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: darkgoldenrod;
+    color: whitesmoke;
+    transform: scale(-1.5);
+}
+
+form input:focus{
+    background-color: red;
+}
