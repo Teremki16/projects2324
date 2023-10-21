@@ -1,0 +1,24 @@
+table,td{
+    border: 2px solid;
+    font-size: 80px;
+}
+
+td{
+    font-family: sans-serif;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: darkcyan;
+    color: white;
+    transform: scale(1.5);
+}
+form input{
+    background-color: lawngreen;
+}
+form input:focus{
+    background-color: coral;
+}
