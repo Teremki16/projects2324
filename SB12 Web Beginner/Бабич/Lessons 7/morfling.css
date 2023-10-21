@@ -1,0 +1,23 @@
+ /* margin ставиться пробіли за годиниковою стрілкою - верх,право,низ,ліво. padding заштовхує в середину текст */
+table, td {
+    border: 1px solid black;
+}
+
+table td{
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: darkmagenta;
+    color: white;
+    transform: scale(1.2);
+}
+
+form input:focus {
+background-color: aquamarine;
+}
