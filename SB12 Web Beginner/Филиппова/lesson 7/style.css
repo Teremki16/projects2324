@@ -1,0 +1,52 @@
+/* #b {
+    color: red;
+
+}
+
+.a {
+    color: blue;
+}
+
+p{
+    color: rgb(115, 202, 115);
+}
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+p{
+    background-color: rgba(242, 255, 0, 0.5);
+    width: 50%;
+    margin-top: 47%;
+    margin-bottom: 25%;
+    margin-right: 64%;
+    margin-left: 38%;
+    padding: 20% 18% 79%;
+} */
+
+table,
+td {
+    border: 1px solid black;
+}
+
+table td {
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: black;
+    color: rgb(255, 196, 196);
+    transform: scale(-1.2);
+}
+form input{
+    background-color: rgb(217, 255, 0);
+}
+
+form input:focus{
+    background-color: blue;
+}
