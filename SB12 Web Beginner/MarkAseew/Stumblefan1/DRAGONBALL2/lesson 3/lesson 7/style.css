@@ -1,0 +1,26 @@
+table, td   {
+    border: 1px solid rgb(18, 127, 29)
+}
+
+table td{
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: aqua;
+    color: rgb(255, 0, 0);
+    transform: scale(1.1)
+}
+
+form input{
+     background-color: rgb(255, 0, 0);
+}
+
+form input:focus{
+    background-color: blueviolet;
+}

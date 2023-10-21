@@ -32,9 +32,10 @@ kantoXHR.onload = () => {
     })
     Promise.all(promises).then((result) => {
         pokemons = result
+        sortedPokemons = pokemons.sort()
         console.log(pokemons)
         resultElement.innerHTML = ""
-        pokemons.forEach(pokemon => drawPokemon(pokemon))
+        sortedPokemons.forEach(pokemon => drawPokemon(pokemon))
     })
 }
 
@@ -64,15 +65,132 @@ const drawPokemon = (pokemon) => {
 
 let sortForm = document.getElementById("sort-form")
 
-sortForm.addEventListener("change", () => {
-    if (event.target.name == order) {
+sortForm.addEventListener("change", (event) => {
+    if (event.target.name == "order") {
         switch (event.target.value) {
             case "upsc":
                 order = 1
                 break
-                case "desc":
+            case "desc":
                 order = -1
                 break
         }
     }
+    switch (sortForm["sort"].value) {
+        case "id":
+            sortedPokemons = sortedPokemons.sort((first, second) => {
+                if (first.id > second.id) {
+                    return order
+                }
+                if (first.id < second.id) {
+                    return -order
+                }
+                return 0
+            })
+            break
+
+        case "name":
+            sortedPokemons = sortedPokemons.sort((first, second) => {
+                if (first.name > second.name) {
+                    return order
+                }
+                if (first.name < second.name) {
+                    return -order
+                }
+                return 0
+            })
+            break
+
+        case "hp":
+            sortedPokemons = sortedPokemons.sort((first, second) => {
+                if (first.stats[0].base_stat > second.stats[0].base_stat) {
+                    return order
+                }
+                if (first.stats[0].base_stat < second.stats[0].base_stat) {
+                    return -order
+                }
+                return 0
+            })
+            break
+
+        case "attack":
+            sortedPokemons = sortedPokemons.sort((first, second) => {
+                if (first.stats[1].base_stat > second.stats[1].base_stat) {
+                    return order
+                }
+                if (first.stats[1].base_stat < second.stats[1].base_stat) {
+                    return -order
+                }
+                return 0
+            })
+            break
+
+        case "defence":
+            sortedPokemons = sortedPokemons.sort((first, second) => {
+                if (first.stats[2].base_stat > second.stats[2].base_stat) {
+                    return order
+                }
+                if (first.stats[2].base_stat < second.stats[2].base_stat) {
+                    return -order
+                }
+                return 0
+            })
+            break
+
+
+    }
+    redrawSortPokemons()
+})
+
+function redrawSortPokemons() {
+    resultElement.innerHTML = ""
+    sortedPokemons.forEach(pokemon => drawPokemon(pokemon))
+}
+
+document.getElementById("filter-form").addEventListener("submit", function (event) {
+    event.preventDefault()
+    sortedPokemons = pokemons
+    if(event.target["name-filter"].value){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.name.indexOf(event.target["name-filter"].value.toLowerCase()) != -1
+        })
+    }
+    if(event.target["hp-filter-form"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["hp-filter-form"].value
+        })
+    }
+
+    if(event.target["hp-filter-to"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["hp-filter-to"].value
+        })
+    }
+
+    if(event.target["attack-filter-form"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["attack-filter-form"].value
+        })
+    }
+
+    if(event.target["attack-filter-to"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["attack-filter-to"].value
+        })
+    }
+
+    if(event.target["defence-filter-form"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["defence-filter-form"].value
+        })
+    }
+
+    if(event.target["defence-filter-to"].value > 10){
+        sortedPokemons = sortedPokemons.filter((pokemon)=>{
+            return pokemon.stats[0].base_stat >= event.target["defence-filter-to"].value
+        })
+    }
+
+    
+    redrawSortPokemons()
 })

@@ -1,46 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PokeSort</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="shortcut icon" href="pokeapi.png" type="image/x-icon" />
-    </head>
-    <body>
-        <header>
-            <div class="page">
-                <img src="pokeapi.png" alt="logo">
-            </div>
-        </header>
-        <main>
-            <nav>
-                <form id="fort-from">
-                    <h4>Sort by:</h4>
-                    <label for="id">id:</label>
-                    <input type="radio" name="sort" value="id" id="id" checked>
 
-                    <label for="name">name:</label>
-                    <input type="radio" name="sort" value="name" id="name">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeSort</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="pokeapi.png" type="image/x-icon" />
+</head>
 
-                    <label for="defence">defence:</label>
-                    <input type="radio" name="sort" value="defence" id="defence">
+<body>
+    <header>
+        <div class="page">
+            <img src="pokeapi.png" alt="logo">
+        </div>
+    </header>
+    <main>
+        <nav>
+            <form id="sort-form">
+                <h4>Sort by:</h4>
+                <label for="id">id:</label>
+                <input type="radio" name="sort" value="id" id="id" checked>
 
-                    <label for="attack">attack:</label>
-                    <input type="radio" name="sort" value="atack" id="attack">
-                    <h4>Order:</h4>
+                <label for="name">name:</label>
+                <input type="radio" name="sort" value="name" id="name">
 
-                    <label for="id">from smaller to biggest: </label>
-                    <input type="radio" name="order" value="upsc" id="upsc" checked>
+                <label for="defence">defence:</label>
+                <input type="radio" name="sort" value="defence" id="defence">
 
-                    <label for="id">from bigger to smallest :</label>
-                    <input type="radio" name="order" value="desc" id="desc" checked>
-                </form>
-            </nav>
-            <div id="result"></div>
-        </main>
+                <label for="attack">attack:</label>
+                <input type="radio" name="sort" value="atack" id="attack">
+                <h4>Order:</h4>
 
-    </body>
-    <script src="script.js"></script>
+                <label for="id">from smaller to biggest: </label>
+                <input type="radio" name="order" value="upsc" id="upsc" checked>
+
+                <label for="id">from bigger to smallest :</label>
+                <input type="radio" name="order" value="desc" id="desc" checked>
+            </form>
+
+            <form id="filter-form">
+                <h4>Filter by:</h4>
+                <div class="search">
+                    <label for="name-filter">Name</label>
+                    <input type="text" id="name-filter" name="name-filter">
+                </div>
+
+                <div class="ranges">
+                    <div class="hp-ranges">
+                        <label for="hp-filter-form">hp from:</label>
+                        <input type="range" min="10" max="250" value="125" name="hp-filter-form" id="hp-filter-form">
+                    </div>
+                    <div class="hp-ranges">
+                        <label for="hp-filter-to">hp to:</label>
+                        <input type="range" min="10" max="250" value="125" name="hp-filter-to" id="hp-filter-to">
+                    </div>
+
+                    <div class="attack-ranges">
+                        <label for="attack-filter-form">attack from:</label>
+                        <input type="range" min="5" max="130" value="130" name="attack-filter-form" id="attack-filter-form">
+                    </div>
+                    <div class="attack-ranges">
+                        <label for="attack-filter-to">attack to:</label>
+                        <input type="range" min="5" max="130" value="130" name="attack-filter-to" id="attack-filter-to">
+                    </div>
+
+                    <div class="defence-ranges">
+                        <label for="defence-filter-form">defence from:</label>
+                        <input type="range" min="5" max="130" value="130" name="defence-filter-form" id="defence-filter-form">
+                    </div>
+                    <div class="defence-ranges">
+                        <label for="defence-filter-to">defence to:</label>
+                        <input type="range" min="5" max="180" value="180" name="defence-filter-to" id="defence-filter-to">
+                    </div>
+                </div>
+
+                <input type="submit" value="Apply filters" class="btn">
+
+            </form>
+        </nav>
+        <div id="result"></div>
+    </main>
+
+</body>
+<script src="script.js"></script>
+
 </html>
