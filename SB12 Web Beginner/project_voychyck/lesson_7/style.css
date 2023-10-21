@@ -1,0 +1,18 @@
+table, td {
+    border: 1px solid black;
+}
+
+table td{
+    width:100px ;
+    height:100px ;
+    font-size:80px ;
+    font-family: sans-serif;
+    text-align: center;
+    transition: all 1s;
+}
+
+table td:hover{
+    background-color: rgb(25, 3, 59);
+    color: white;
+    transform:scale(1.3) ;
+}
