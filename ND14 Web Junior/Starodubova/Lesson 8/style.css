@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   background-image: linear-gradient(to right, rgb(127, 214, 200), rgb(247, 180, 225));
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.wrapper > div{
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 10px;
+    max-width: 300px;
+}

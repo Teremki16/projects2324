@@ -56,8 +56,8 @@ const drawPokemon = (pokemon) => {
     <img src="${pokemon.sprites.front_default}"
     <div class="status">
     <p class="hp"></p>&#10084; ${pokemon.stats[0].base_stat}</p>
-    <p class="attack"></p>&#10084; ${pokemon.stats[1].base_stat}</p>
-    <p class="defence"></p>&#10084; ${pokemon.stats[2].base_stat}</p>
+    <p class="attack"></p>&#9876; ${pokemon.stats[1].base_stat}</p>
+    <p class="defence"></p>&#128737; ${pokemon.stats[2].base_stat}</p>
     </div>`
 
     let typeList = document.createElement("ul")
@@ -190,5 +190,15 @@ document.getElementById("filter-form").addEventListener("submit", function(event
             return pokemon.stats[2].base_stat <= event.target["defence-filter-to"].value
         })
     }
+    event.target['types'].forEach(function(filterType){
+        if(!filterType.checked){
+            sortedPokemons = sortedPokemons.filter(function(pokemon){
+               for(let i in pokemon.types){
+                    if(pokemon.types[i].type.name == filterType.value) return false
+               }
+               return true
+            })
+        }
+    })
     redDrawSortPokemons();
 })
