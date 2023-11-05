@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: orange;
+}
+.gusts{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.guest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gusts img{
+    border-radius: 30px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 3rem;
+}

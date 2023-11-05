@@ -180,6 +180,16 @@ document.getElementById("filter-form").addEventListener("submit", function(event
             return pokemon.stats[2].base_stat <= event.target["defence-filter-to"].value
         })
     }
+    event.target['types'].forEach(function(filterType){
+        if(!filterType.checked){
+            sortedPokemons = sortedPokemons.filter(function(pokemon){
+                for(let i in pokemon.types){
+                    if(pokemon.types[i].type.name == filterType.value) return false
+                }
+                return true
+            })
+        }
+    })
     redddrawSortPokemons();
 })
 
