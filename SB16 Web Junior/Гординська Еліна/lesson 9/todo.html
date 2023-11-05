@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: darkgoldenrod;
+            color: rgb(69, 35, 11);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+
+        .tasks {
+            height: 50vh;
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            
+        }
+    </style>
+    <script>
+        let count = 1;
+
+        function addToDo(){
+            let val = document.querySelector("input").value
+            document.querySelector(".tasks").innerHTML += `
+               ${count}. ${val} <br>
+            `
+            document.querySelector("input").value = ''
+            count++
+        }
+
+        function clear1(){
+            document.querySelector(".tasks").innerHTML = ""
+            count = 1
+        }
+    </script>
+</head>
+<body>
+
+</body>
+   <div class="wrapper">
+    <h1>Todo list</h1>
+    <div class="tasks"></div>
+    <div class="addBar">
+        <input type="text">
+        <button onclick="addToDo()">Add to do</button>
+        <button onclick="clear1()">Clear list</button>
+    </div>
+   </div>
+</html>
