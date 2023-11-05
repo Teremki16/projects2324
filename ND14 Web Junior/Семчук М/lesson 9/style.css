@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(45deg, rgb(152, 84, 55)), rgb(142, 95, 56) ;
+    height: 100vh;
+    color: rgb(202, 161, 161)
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result {
+    height: 50vh;
+    background-color: rgba(110, 56, 56, 0.3);
+}
