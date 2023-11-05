@@ -35,6 +35,8 @@ let arr = []
 do {
     elem = +prompt("input your number")
     if(arr.includes(elem)){
+
+        continue
         
     }else {
         arr.push(elem)
