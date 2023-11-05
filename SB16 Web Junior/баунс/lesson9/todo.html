@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .tasks {
+            height: 50vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>To do list</h1>
+        <div class="tasks"></div>
+        <div class="addBar">
+        <input type="text">
+        <button onclick="addToDo()">Add to do</button>
+        <button>Clear list</button>
+    </div>
+    </div>
+</body>
+<script>
+    let count = 1;
+
+    function addToDo(){
+        let val = document.querySelector("input").value
+        document.querySelector(".tasks").innerHTML += `
+        ${count}. ${val} <br>
+        `
+        document.querySelector("input").value = ''
+        count++
+    }
+</script>
+</html>
