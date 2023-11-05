@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{ background: linear-gradient(to right,red, blue );
+color: antiquewhite;
+font-size: 20px;
+padding: 50px;
+}
+ 
+.mainmenu > li{ position: relative; background-color: aqua; padding: 5px 0; text-align: center; width: 70px; } 
+.submenu{ position: absolute; left: 70px; width: 100px; top: -1px; display: none; } 
+.mainmenu > li:hover ul{ display: block; }
+.submenu> li{
+    background-color: blue;
+    padding: ;
+}
+
