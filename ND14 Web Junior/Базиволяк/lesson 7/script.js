@@ -27,3 +27,16 @@ function showArray (array){
 }
 
 showArray(arr)
+
+let array =[]
+let elem;
+do {
+    elem = +prompt("input random number")
+    if(elem == 0) break
+    if(array.includes(elem)){
+    }continue{
+       array.push(elem)
+    }
+} while(elem)
+
+console.log(`Arry without dublicats ,arry`)
