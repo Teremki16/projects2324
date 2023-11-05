@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-image: linear-gradient(270deg, purple, blue);
+            height: 100vh;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 500px;
+            gap: 20px;
+            display: flex;
+            gap: 20px;
+        }
+    
+        .wrapper > div{
+            max-width: 300px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: bisque;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="wrapper">
+     <div class="block1" onclick="block1()">
+        натисніть на мене щоб змінии колір тексту на випадковий
+     </div>
+    
+     <div class="block2" onclick="block2()">
+        натисніть на мене щоб змінии моє заокруглення
+     </div>
+     <div class="block3" onclick="block3()">
+        натисніть на мене щоб змінии  фщн сторінки
+     </div>
+     <div class="block4" onclick="block4()">
+        натисніть на мене щоб змінии  мій фон на випадковий
+     </div>
+     <div class="block5" onclick="block5()">
+        натисніть на мене щоб змінии шрифти на торінці
+     </div>
+    </div>
+   
+    <script src="script.js" defer></script>
+</body>
+</html>
