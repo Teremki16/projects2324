@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to right, green, blue);
+}
+
+.wrapper{
+    border: 2px dashed black;
+    width: 500px;
+    height: 500px;
+}
+
+.black1, .black2, .black3{
+    background-color: black;
+}
+
+.red1, .red2{
+    background-color: red;
+}
+
+.black1{
+    width: 500px;
+    height: 500px;
+}
+
+.red1{
+    width: 400px;
+    height: 400px;
+    margin: 50px;
+}
+.black2{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+}
+.red2{
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+}
+.black3{
+    width: 100;
+    height: 100px;
+    margin: 50px;
+}
+
+div{
+    border: 1px solid black;
+    border-radius: 50%
+}
