@@ -24,13 +24,7 @@
             margin-bottom: 40px;
         }
     </style>
-    <script>
-        let count = 1;
-
-        function addToDo(){
-            let val = document.querySelector("input").value
-        }
-    </script>
+    
 </head>
 <body>
     <div class="wrapper">
@@ -38,9 +32,24 @@
         <div class="tasks"></div>
         <div class="addBar">
             <input type="text">
-            <button>Add to do</button>
-            <button>Clear list</button>
+            <button onclick="addToDo()">Add to do</button>
+            <button onclick="clear1()">Clear list</button>
         </div>
     </div>
 </body>
+<script>
+    let count = 1;
+
+    function addToDo(){
+        let val = document.querySelector("input").value
+        document.querySelector(".tasks").innerHTML += `${count}. ${val} <br>`
+        document.querySelector("input").value = ''
+        count++
+    }
+    function clear1(){
+        document.querySelector(".tasks").innerHTML = ""
+        count = 1
+        console.log("first")
+    }
+</script>
 </html>
