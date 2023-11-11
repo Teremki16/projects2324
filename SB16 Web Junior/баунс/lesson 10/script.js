@@ -7,7 +7,7 @@ function addNote() {
         let item = document.createElement("li")
         item.innerText = val
         item.id = `Item${count}`
-        item.("onclick", `removeNote(${count})`)
+        item.setAttribute("onclick", `removeNote(${count})`)
         count++;
         ul.append(item)
         document.querySelector("#text").value = ""
@@ -16,8 +16,8 @@ function addNote() {
 
 function removeNote(number){
     let element = document.querySelector(`#Item${number}`)
-    element.style.textDecoration = "line-throught"
+    element.style.textDecoration = "line-through"
     setTimeout(function(){
         element.remove()
     }, 1000)
-}ssssssss
+}
