@@ -3,6 +3,7 @@ SoftwareSerial bt(2,3);
 int carSpeed = 150;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
@@ -14,9 +15,9 @@ void setup() {
 }
 
 void loop() {
-//forward(carSpeed);
-Backward(carSpeed);
-
+  Serial.print("left: " + String(digitalRead(12)));
+  Serial.println(", Right: " + String(digitalRead(11)));
+  delay(500);
 }
 void forward(int sped) {
   analogWrite(5,sped);
@@ -59,4 +60,8 @@ void Backward(int sped){
   digitalWrite(9,LOW);
   analogWrite(10, 0);
     }
+    void forwardLeft(){
+      
+      
+      }
    
