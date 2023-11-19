@@ -4,9 +4,9 @@
 }
 
 body {
-    background: linear-gradient(to right, red 0%, blue)
+    background: linear-gradient(to right, red 0%, blue);
     color: white;
-    font-family: serif;
+    font-family: sans-serif;
 }
 
 .title{
@@ -14,13 +14,80 @@ body {
     padding: 20px;
     width: fit-content;
     border: 1px solid black;
-    background-color: rgda(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.3);
 }
 .menu{
     margin: 20px auto;
     width: fit-content;
     border: 1px solid black;
-    background-color: rgda(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.3);
+    list-style: none;
+}
+
+.menu li {
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+.menu li:hover {
+    background: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+table{
+    margin: 50px auto;
+}
+
+table, td {
+border: 1px solid black;
+}
+
+td{
+    padding: 2px 8px;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.battery{
+    width: 150px;
+    height: 50px;
+    border: 4px solid black;
+    margin: 0 auto 10px;
+     border-radius: 5px;
+     position: relative;
 }
 
 
+.battery::after{
+    content: "";
+    width: 10px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    left: 150px;
+    bottom: 15px;
+}
+
+.battery1 {
+    background: linear-gradient(to right, red 50px, white 50px);
+}
+
+
+.battery2 {
+    background: linear-gradient(to right, orange 100px, white 20px);
+}
+
+
+.battery3 {
+    background: green;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+    

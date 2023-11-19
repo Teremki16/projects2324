@@ -1,3 +1,5 @@
+#include <SoftwareSerial.h>
+SoftwareSerial bt(2, 3) // DRX - 2, DTX - 3
 void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
@@ -77,4 +79,11 @@ void checkLineSensors(int left, int right) {
   Serial.print("left: " + (String)digitalRead(left) + " ");
   Serial.println("right: " + (String)digitalRead(right));
   delay(500);
+}
+
+void checkBlueTooth(){
+  if (bt.available()){
+   value = bt.read();
+   Serial.println("Message from phone");
+  }
 }

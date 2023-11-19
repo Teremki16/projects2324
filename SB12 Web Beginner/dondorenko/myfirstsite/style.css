@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 100px;
+}
+
+header {
+    background-color: rgb(213, 227, 223);
+}
+
+.container{
+    background-color: lightsteelblue;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav {
+    height: 100px;
+    background-color: lightblue;
+    float:right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    color: white;
+    padding: 0 15px;
+    line-height: 100px;
+    font-size: 1rem;
+    font-family: 'Pacifico', cursive;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s;
+}
+
+nav a: :visited{
+    color:black
+}
+
+
+nav a:hover{
+    text-shadow: 0 0 5px white;
+}
