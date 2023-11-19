@@ -1,5 +1,7 @@
 #include <SoftwareSerial.h>
-SoftwareSerial bt(2, 3) // DRX - 2, DRX - 3
+SoftwareSerial bt(2, 3); // DRX - 2, DRX - 3
+
+char value;
 void setup() {
   pinMode(5, OUTPUT);
   pinMode(9, OUTPUT);
@@ -79,7 +81,79 @@ void checkLineSensors(int left, int right) {
 
 void checkBluTooht() {
   if (bt.available()) {
-  value = bt.read();
-  Serial.println("Message from phone: " + (String)value);
+    value = bt.read();
+    Serial.println("Message from phone: " + (String)value);
+  }
+}
+
+void forwardLeft(int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, speed);
+  analogWrite(9, 0);
+  analogWrite(10, 0);
+}
+
+void forwardRight(int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, 0);
+  analogWrite(9, speed);
+  analogWrite(10, 0);
+}
+
+void backwardRight(int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, 0);
+  analogWrite(9, 0);
+  analogWrite(10, speed);
+}
+
+void backwardLeft(int speed) {
+  analogWrite(5, speed);
+  analogWrite(6, 0);
+  analogWrite(9, 0);
+  analogWrite(10, 0);
+}
+
+void Move() {
+  switch (value) {
+    case 'F':
+      forward(255);
+      break;
+
+    case 'B':
+      backward(255);
+      break;
+
+    case 'R':
+      right(255);
+      break;
+
+    case 'L':
+      left(255);
+      break;
+
+    case 'G':
+      forwardLeft(255);
+      break;
+
+
+    case 'I':
+      forwardRight(255);
+      break;
+
+
+    case 'J':
+      backwardRight(255);
+      break;
+
+    case 'H':
+      backwardLeft(255);
+      break;
+
+    case 'S':
+      stp();
+      break;
+
+
   }
 }
