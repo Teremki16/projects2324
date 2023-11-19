@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 100px;
+}
+
+header {
+    background-color: rgb(42, 5, 250);
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav {
+    height: 100px;
+    background-color: black;
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0 10px;
+    line-height: 100px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: gray;
+}
+
+nav a:hover {
+    text-shadow: 2px 1px 0px rgb(255, 255, 255);
+}
