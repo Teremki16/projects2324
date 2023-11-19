@@ -23,9 +23,16 @@ function add(){
     if(value){
         let elem = document.createElement("li")
         elem.innerText=value
-        eloem.id = `Item${count}`
+        elem.id = `Item${count}`
+        elem.setAttribute("onclick",`delNote("Item${count}")`)
         count++;
         ul.append(elem)
         document.querySelector("#text").value=""
     }
+}
+
+function delNote(arg){
+    let elem=document.getElementById(arg)
+    elem.style.textDecoration = "line-through"
+    setTimeout(()=>elem.remove(),1000)
 }

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img{
+    height: 200 px;
+
+}
+
+header{
+    background-color: darkorange;
+}
+ 
+.conteiner{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav{
+    height: 100px;
+    min-width: 300px;
+    background-color: black;
+}
+ 
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    color: bisque;
+    padding: 0 15px;
+    line-height: 100px;
+    font-size: 1.5rem;
+
+}
+ nav a:visited{
+    color: darkorange;
+ } 
+
+ nav a:hover{
+    text-shadow: 0 0 5px darkorange;
+ }
