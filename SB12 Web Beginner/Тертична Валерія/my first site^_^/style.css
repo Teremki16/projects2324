@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img{
+    height: 200px;
+    float: left;
+    
+}
+
+header{
+    background-color:indigo;
+}
+
+.container{
+    max-width: 1240px;
+    margin:0 auto ;
+    padding: 10px;
+}
+
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav{
+    height: 100px;
+    float: right;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    color: white;
+    display: inline-block;
+    padding: 0 15px;
+    line-height: 100px;
+    font-size: 1.2rem;
+    font-family: 'Marck Script', cursive;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s;
+}
+
+nav a:visited{
+    color:dimgrey;
+}
+
+nav a:hover{
+    text-shadow: 3px 1px 10px rgb(232, 232, 137);
+}
