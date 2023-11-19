@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 100px;
+    float: left;    
+}
+
+header {
+    background-color: yellow;
+}
+
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+nav {
+    height: 100px;
+    float: right;
+}
+
+nav ul { 
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    color: black
+    padding: 0 15px;
+    line-height: 100px;
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s;
+}
+
+nav a :visited {
+    color: black;
+}
+
+nav a:hover {
+    text-overflow: 3px 1px 0px black
+}
