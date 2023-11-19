@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+header img {
+    height: 200px;
+    float: left;
+}
+
+header {
+    background-color: red;
+}
+
+.container {
+   max-width: 720px;
+   margin: 0 auto;
+   padding: 10px;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav {
+    height: 100px;
+    width: 300px;
+    background-color: aqua ;
+    float: right;
+
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+     display: inline-block;
+     color: black;
+     padding:0 5px;
+     line-height: 50px;
+     font-size: 1.5rem;
+     font-family: 'Wix Madefor Text', sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s;
+}
+
+nav a:visited {
+    color:gray
+}
+
+nav a:hover {
+    text-shadow: 3px 1px 5px purple;
+}
