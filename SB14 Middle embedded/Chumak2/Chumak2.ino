@@ -53,6 +53,58 @@ switch (value) {
   case'J'
   backwardRight(carSpeed);
   break;
+
+
+  case'1':
+        carSpeed = 70;
+        break;
+
+          case'2':
+        carSpeed = 90;
+        break;
+
+          case'3':
+        carSpeed = 110;
+        break;
+
+
+          case'4':
+        carSpeed = 130;
+        break;
+
+          case'5':
+        carSpeed = 150;
+        break;
+
+          case'6':
+        carSpeed = 170;
+        break;
+
+          case'7':
+        carSpeed = 190;
+        break;
+
+          case'8':
+        carSpeed = 210;
+        break;
+
+          case'9':
+        carSpeed = 230;
+        break;
+
+          case'Q':
+        carSpeed = 255;
+        break;
+
+
+
+
+
+
+
+
+
+
 }
 }
 void forward(int sped) {
