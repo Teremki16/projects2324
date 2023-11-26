@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    z-index: 3;
+}
+
+.colorBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 40%;
+}
+
+.rangeBar {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 20%;
+}
+
+.colorBar i {
+    background-color: rgba(red, green, blue, alpha);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: aliceblue;
+    transform: all 0.5;
+}
+
+.colorBar i:hover {
+    transform: scale(1.1);
+}
+
+#range {
+    accent-color: black;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: aliceblue;
+    margin: auto;
+    z-index: -1;
+}
+
+.author {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+
+}

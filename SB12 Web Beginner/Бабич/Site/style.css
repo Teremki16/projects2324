@@ -59,3 +59,67 @@ nav a:visited {
 nav a:hover {
     text-shadow: 3px 1px 5px purple;
 }
+
+nav li:last-child {
+background-color: white;
+color: aqua;
+border-radius: 10px;
+transition: all 0.5s;
+}
+
+nav li:last-child:hover {
+    transform: rotate(360deg);
+}
+
+.addHeader {
+    background-color: aqua;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.slogan {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    padding: 50px;
+}
+
+a.button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+main {
+    background-color: aqua;
+    border-top: 1px solid black;
+}
+
+.sidebar {
+width: 30%;
+float: right;
+border: 1px solid black;
+}
+
+.articles {
+    width: 65%;
+    float: left;
+    border: 1px solid black;
+    }
+
+    .articles::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .article {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+    }
