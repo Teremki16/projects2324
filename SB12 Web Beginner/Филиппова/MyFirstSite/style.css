@@ -36,7 +36,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    color: black
+    color: black;
     padding: 0 15px;
     line-height: 100px;
     font-size: 1.2rem;
@@ -55,4 +55,66 @@ nav a :visited {
 
 nav a:hover {
     text-overflow: 3px 1px 0px black
+}
+nav li:last-child {
+    background-color: rgba(0, 0, 0, 0.266);
+    color:white ;
+    border-radius: 10px;
+    transition: all 0.5s ;
+}
+
+nav li:last-child:hover {
+    transform: rotate(15deg);
+}
+
+.addHeader {
+    background-color: blueviolet;
+    border-bottom: 1px salmon;
+    text-align: center;
+}
+
+.slogan { 
+    font-size:30px ;
+    font-family: cursive;
+    font-style: 50px;
+    padding: 50px;
+}
+
+a.button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: azure;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: chocolate;
+    border-top: 1px solid salmon ;
+}
+
+.sidebar {
+    width: 30%;
+    float: right;
+    border: 1px solid black;
+}
+.arcticles {
+    width: 65%;
+    float: left;
+    border: 1px solid black;
+}
+
+.arcticles::after {
+    contain: "";
+    clear: both;
+    display: table;
+}
+
+.article {
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 10px;
 }
