@@ -52,3 +52,70 @@ nav a:visited {
 nav a:hover {
     text-shadow: 2px 1px 0px rgb(255, 255, 255);
 }
+
+nav li:last-child{
+    background-color: rgb(81, 42, 165);
+    color: white;
+    border-radius: 13px;
+    transition: all 0.5s;
+}
+
+
+nav li:last-child:hover {
+    transform: rotate(7deg);
+}
+
+.addheader {
+    background-color: aqua;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.slogan {
+    font-size: 30px;
+    font-family: cursive;
+    font-style: italic;
+    padding: 50px;
+}
+
+a.button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: blue;
+    border-top: 1px solid black;
+}
+
+.sidebar {
+width: 30%;
+float: right;
+border: 1px solid black;
+}
+
+
+.articles {
+width: 65%;
+float: left;
+border: 1px solid black;
+}
+
+
+.articles::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.article {
+    border: 1px solid black;
+    margin: 80px;
+    padding: 10px;
+}
