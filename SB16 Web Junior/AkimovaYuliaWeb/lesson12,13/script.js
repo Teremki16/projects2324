@@ -13,10 +13,51 @@ canvas.width=window.innerWidth
 canvas.height=window.innerHeight
 
 function fiilin(){
-    ctx.fillStyle="turquoise"
+    ctx.fillStyle=color//"turquoise"
     ctx.fillRect(0,0,canvas.width, canvas.height)
 }
 
 function clearAll(){
     ctx.clearRect(0,0,canvas.width, canvas.height)
 }
+
+colorPicker.addEventListener("change",(event)=>{
+    color= event.target.value
+})
+
+canvas.addEventListener("mousedown", ()=>{
+    isMouseDown = true
+    ctx.beginPath()
+})
+canvas.addEventListener("mouseup", ()=>{
+    isMouseDown = false
+})
+
+canvas.addEventListener("mousemove",(event)=>{
+    if(isMouseDown){
+        ctx.fillStyle=color
+        ctx.strokeStyle=color
+        ctx.lineWidth=lw
+
+        ctx.lineTo(event.clientX, event.clientY)
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.arc(event.clientX, event.clientY, lw/2,0,2*Math.PI)
+        ctx.fill()
+
+        ctx.beginPath()
+        ctx.moveTo(event.clientX, event.clientY)
+    }
+})
+
+range.addEventListener("input",(event)=>{
+    lw=event.target.value
+    rangeText.innerText=lw
+})
+
+document.querySelectorAll("a").addEventListener("click",(event)=>{
+    let url=canvas.toDataURL().replace("image/png","image/octet-stream")
+    event.target.href=url
+    document.querySelectorAll("a").href=url
+})

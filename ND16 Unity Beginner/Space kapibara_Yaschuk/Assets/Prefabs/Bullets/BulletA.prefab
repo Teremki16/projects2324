@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6815025248466916379}
   - component: {fileID: 6815025248466916358}
   - component: {fileID: 6815025248466916377}
+  - component: {fileID: 6509337352411215037}
   m_Layer: 0
   m_Name: BulletA
   m_TagString: Untagged
@@ -119,3 +120,24 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 98dd6505fb4dfdf49b4f141d5f555f3c, type: 2}
+--- !u!50 &6509337352411215037
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815025248466916378}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
