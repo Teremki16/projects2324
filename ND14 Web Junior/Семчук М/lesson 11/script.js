@@ -21,3 +21,16 @@ ctx[1].lineWidth = 5
 ctx[1].closePath()
 ctx[1].fill()
 ctx[1].stroke()
+
+ctx[1].beginPath();
+ctx{1}.fillStyle = "black";
+ctx[1].arc(350, 200, 15, 0, 2 * Math.PI);
+ctx[1].closePath()
+ctx[1].fill();
+
+ctx[2].strokeRect(215, 115, 266, 266);
+ctx[2].strokeRect(218, 118, 260, 266);
+ctx[2].fillStyle = "orange";
+ctx[2].fillRect(220, 120, 256, 256);
+
+
