@@ -43,4 +43,15 @@ ctx[2].stroke()
 ctx[2].fill()
 
 
+ctx[3].strokeRect(215, 115, 266, 266)
+ctx[3].strokeRect(218, 118, 260, 260)
+ctx[3].fillStyle = "brown"
+ctx[3].fillRect(220, 120, 256, 256)
+ctx[3].fillStyle = "orange"
 
+for(let i = 0; i<8; i+=2){
+    for(let j = 0; j<8; j+=2){
+        ctx[3].fillRect(220+ i*32,120+j*32, 32, 32)
+        ctx[3].fillRect(252+ i*32,152+j*32, 32, 32)
+    }
+}
