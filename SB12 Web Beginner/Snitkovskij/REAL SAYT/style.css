@@ -6,6 +6,7 @@
 
 header img{
     height: 200 px;
+    float: left;
 
 }
 
@@ -14,12 +15,20 @@ header{
 }
  
 .conteiner{
-    background-color: rgba(0, 0, 0, 0.3);
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 nav{
     height: 100px;
-    min-width: 300px;
+    
     background-color: black;
 }
  
@@ -28,16 +37,72 @@ nav ul{
 }
 nav ul li{
     display: inline-block;
-    color: bisque;
+    color: rgba(0, 0, 0, 0.3);
     padding: 0 15px;
     line-height: 100px;
     font-size: 1.5rem;
-
 }
+
+
+nav a{
+    text-decoration: line-through;
+    color: darkorange;
+    transition: all 0.5s;
+}
+
  nav a:visited{
     color: darkorange;
  } 
 
  nav a:hover{
-    text-shadow: 0 0 5px darkorange;
+text-shadow: 3px 1px 0px greenyellow;
+ }
+
+ nav li:last-child{
+    background-color: darkorange;
+    color: black;
+    border-radius: 10px;
+    transition:all 0.5s
+ }
+
+ .addHeader{
+    background-color: black;
+    border-bottom: 1px solid black;
+    text-align: center;
+ }
+
+ .slogan{
+    font-size: 30px;
+    font-family: cursive;
+    font-style: italic;
+    padding: 50px;
+ }
+
+ a.button{
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: darkorange;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+    border-radius: 5px;
+ }
+ main{
+    background-color: darkorange;
+    border-top: 1px solid black;
+ }
+ .sidebar{
+    width: 30%;
+    float: right;
+    border: 1px solid black;
+    
+ }
+ .arcticles{
+    width: 65%;
+    float: left;
+    border: 1px solid black;
+
+ }
+ .acrltikles
  }
