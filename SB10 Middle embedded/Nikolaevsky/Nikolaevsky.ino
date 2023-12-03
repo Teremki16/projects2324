@@ -1,5 +1,7 @@
 #include <SoftwareSerial.h>
 SoftwareSerial bt(2, 3)
+
+chat value
 void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
@@ -11,7 +13,8 @@ void setup() {
 }
 
 void loop(){
-  checkLineSensors(11, 12);
+  Move;
+  checkBluetooth
   
 /*forward(225);
   delay(1000)
@@ -102,3 +105,67 @@ if(bt.available()){
   }
 }
 }
+
+void forwardleft (int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, speed);
+  analogWrite(9, 0);
+  analogWrite(10, 0);
+
+  void forwardRigt (int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, 0);
+  analogWrite(9, speed);
+  analogWrite(10, 0);
+
+  void backwardleft (int speed) {
+  analogWrite(5, speed);
+  analogWrite(6, 0);
+  analogWrite(9, 0);
+  analogWrite(10, 0);
+
+  void backwardRigt (int speed) {
+  analogWrite(5, 0);
+  analogWrite(6, 0);
+  analogWrite(9, 0);
+  analogWrite(10, speed);
+
+  void Move () {
+    stwich(value){
+      case 'F'
+      forward(255);
+      break;
+    
+      case 'B'
+      backward(255);
+      break;
+
+      case 'R'
+      Right(255);
+      break;
+
+       case 'L'
+      left(255);
+      break;
+
+       case 'I'
+      forwardRight(255);
+      break;
+
+         case 'G'
+      forwardleft(255);
+      break;
+
+       case 'J'
+      backwardRight(255);
+      break;
+
+         case 'H'
+      backwardleft(255);
+      break;
+
+         case 'S'
+      stp();
+      break;
+
+      

@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {
-  getBluetoothMassege();
+   getBluetoothMassege();
   switch(value) {
     case 'F':
     forward(carSpeed);
@@ -139,37 +139,37 @@ void stp() {
 }
 
 void forwardLeft(int sped) {
-  analogWrite(sped);
+  analogWrite(5, sped);
   digitalWrite(6, LOW);
   digitalWrite(7, HIGH);
   digitalWrite(8, LOW);
   digitalWrite(9, LOW);
-  analogWrite(sped);
+  analogWrite(10, sped);
 }
 void forwardRight(int sped) {
-  analogWrite(sped);
+  analogWrite(5, sped);
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
   digitalWrite(8, HIGH);
   digitalWrite(9, LOW);
-  analogWrite(sped);
+  analogWrite(10, sped);
 }
 void backwardlLeft(int sped) {
-  analogWrite(sped);
+  analogWrite(5, sped);
   digitalWrite(6, HIGH);
   digitalWrite(7, LOW);
   digitalWrite(8, LOW);
   digitalWrite(9, LOW);
-  analogWrite(sped);
+  analogWrite(10, sped);
 }
 
 void backwardRight(int sped) {
-  analogWrite(sped);
+  analogWrite(5, sped);
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
   digitalWrite(8, LOW);
   digitalWrite(9, HIGH);
-  analogWrite(sped);
+  analogWrite(10, sped);
 }
 
 void getBluetoothMassege() {
