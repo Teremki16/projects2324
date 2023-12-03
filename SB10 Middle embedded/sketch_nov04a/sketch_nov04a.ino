@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  checkLineSencors(11, 12);
+  Move();
   /*forward(255);
     delay(1000);
     stp();
