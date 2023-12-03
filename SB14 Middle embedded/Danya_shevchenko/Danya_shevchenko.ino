@@ -50,45 +50,42 @@ void loop() {
       backwardRight(carSpeed);
       break;
 
-      case '1':
+    case '1':
       carSpeed = 70;
       break;
 
-      case '2':
+    case '2':
       carSpeed = 90;
       break;
 
-      case '3':
+    case '3':
       carSpeed = 110;
       break;
 
-      case '4':
+    case '4':
       carSpeed = 130;
       break;
 
-      case '5':
+    case '5':
       carSpeed = 150;
       break;
 
-      case '6':
+    case '6':
       carSpeed = 170;
       break;
 
-      case '7':
+    case '7':
       carSpeed = 190;
       break;
 
-      case '8':
+    case '8':
       carSpeed = 210;
       break;
 
-      case 'q':
+    case 'q':
       carSpeed = 255;
       break;
 
-      case '1':
-      carSpeed = ;
-      break;
   }
 
 
