@@ -115,9 +115,55 @@ main{
    content: '''';
    clear: both;
    display: table;
+}
 
 .article{
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
+}
+
+.article img {
+    width: 30%;
+    float: right;
+}
+
+.content {
+   width: 65%;
+   float: left;
+}
+
+.article::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.sidebar {
+    padding: 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    margin: 20px 0;
+}  
+
+form textarea {
+    width: 100%;
 }
