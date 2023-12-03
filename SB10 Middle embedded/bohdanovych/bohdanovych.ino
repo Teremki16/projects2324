@@ -14,7 +14,8 @@ void setup(){
 }
 
 void loop() {
-forward(255);
+ checkBluetooth();
+ Move();
 
 }
 void forward(int speed){
