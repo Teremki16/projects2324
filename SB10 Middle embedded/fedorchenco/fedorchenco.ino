@@ -15,7 +15,9 @@ void setup() {
 }
 
 void loop() {
-  checkLineSensors(11, 12);
+ checkBluetooth();
+  Move();
+  
 }
 void forward(int speed) {
   analogWrite(5, 0);
