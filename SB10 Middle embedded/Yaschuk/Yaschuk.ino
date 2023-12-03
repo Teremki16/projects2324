@@ -14,7 +14,8 @@ void setup() {
 
 
 void loop() {
-  checkLineSensors(11, 12);
+  checkBluetooth();
+ Move();
   /*forward(255);
     delay(1000);
     stp();
