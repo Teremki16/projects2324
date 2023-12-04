@@ -14,27 +14,8 @@ void setup() {
 }
 
 void loop() {
-  checkLineSensors(11, 12);
-
-  /*forward(255);
-    delay(1000);
-    Stop();
-    delay(1000);
-
-    backward(255);
-    delay(1000);
-    Stop();
-    delay(1000);
-
-    left(255);
-    delay(1000);
-    Stop();
-    delay(1000);
-
-    right(255);
-    delay(1000);
-    Stop();
-    delay(1000);*/
+  checkBluetooth();
+  Move();
 }
 void forward(int speed) {
   analogWrite(5, 0);
