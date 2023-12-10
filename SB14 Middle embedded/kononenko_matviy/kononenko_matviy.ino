@@ -18,26 +18,39 @@ void setup() {
   pinMode(12, INPUT);
   Serial.begin(9600);
 }
-
 void loop() {
+  checkLineSensors();
+
+}
+
+
+void checkLineSensors() {
+  Serial.println(" Left: " + (String)digitalRead(11));
+  Serial.println(" Right: " + (String)digitalRead(11));
+delay(500);
+}
+
+
+/*
+void Move() {
   getBluetoothMessage();
   switch (value) {
-    case 'F'; :
+    case 'F' :
       forward(carSpeed);
       break
 
 
-    case 'B'; :
+    case 'B' :
       backward(carSpeed);
       break
 
 
-    case 'L'; :
+    case 'L' :
       Left(carSpeed);
       break
 
 
-    case 'R'; :
+    case 'R' :
       Righ(carSpeed);
       break
 
@@ -52,38 +65,38 @@ void loop() {
       break
 
 
-    case 'I'; :
+    case 'I' :
       forwardRight(carSpeed);
       break
 
 
-    case 'H'; :
+    case 'H' :
       backwardLeft(carSpeed);
       break
 
 
-    case 'J'; :
+    case 'J' :
       backwardRight(carSpeed);
       break
 
 
-    case '1'; :
+    case '1' :
       carSpeed = 70;
       break
 
 
-    case '2'; :
+    case '2' :
       carSpeed = 90;
       break
 
 
-    case '3'; :
+    case '3' :
       carSpeed = 110;
       break
 
 
 
-    case '4'; :
+    case '4' :
       carSpeed = 130;
       break
 
@@ -115,19 +128,19 @@ void loop() {
 
 
 
-    case '8'; :
+    case '8' :
       carSpeed = 210;
       break
 
 
 
-    case '9'; :
+    case '9' :
       carSpeed = 230;
       break
 
 
 
-    case 'q'; :
+    case 'q' :
       carSpeed = 255;
       break
 
@@ -224,16 +237,10 @@ void backwardRight(int sped) {
 
 }
 
-void getBluetoothMessage) {
+void getBluetoothMessage() {
   if (bt.available()) {
     value = bt.read();
     Serial.println("Message from phone: " + (String)value);
   }
 
-
-
-
-
-
-
-}
+*/
