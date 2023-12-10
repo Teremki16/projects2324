@@ -16,6 +16,15 @@ void setup() {
 }
 
 void loop() {
+  checkLineSensors();
+}
+void checkLineSensors(){
+Serial.println("Left: " + (String)digitalRead(11)); 
+Serial.println("Right: " + (String)digitalRead(12)); 
+delay(500);
+}
+
+void Move() {
    getBluetoothMassege();
   switch(value) {
     case 'F':
