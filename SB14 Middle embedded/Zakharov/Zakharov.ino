@@ -14,8 +14,18 @@ void setup() {
   pinMode(12, OUTPUT);
   Serial.begin(9600);
 }
-
 void loop() {
+  checkLineSensors();
+}
+
+
+void checkLineSensors() {
+  Serial.println("Left: " + (String)digitalRead(11));
+  Serial.println("Right: " + (String)digitalRead(12));
+  delay(500);
+}
+/*
+void Move() {
   getBluetoothMessage();
   switch (value) {
     case'F':
@@ -77,81 +87,81 @@ void loop() {
       break;
   }
 }
-  void forward (int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
+void forward (int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void backward (int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, HIGH);
+  analogWrite(10, sped);
+}
+void right (int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void left (int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, HIGH);
+  analogWrite(10, sped);
+}
+void stp () {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void forwardLeft(int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void forwardRight(int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void backwardLeft(int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  analogWrite(10, sped);
+}
+void backwardRight(int sped) {
+  analogWrite(5, sped);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, HIGH);
+  analogWrite(10, sped);
+}
+void getBluetoothMessage() {
+  if (bt.avalibe)) {
+    value = bt.read();
+    Serial.println("Message from phone: " + (String)value);
   }
-  void backward (int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, HIGH);
-    analogWrite(10, sped);
-  }
-  void right (int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, LOW);
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
-  }
-  void left (int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, LOW);
-    digitalWrite(9, HIGH);
-    analogWrite(10, sped);
-  }
-  void stp () {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
-  }
-  void forwardLeft(int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
-  }
-  void forwardRight(int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
-  }
-  void backwardLeft(int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    analogWrite(10, sped);
-  }
-  void backwardRight(int sped) {
-    analogWrite(5, sped);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, HIGH);
-    analogWrite(10, sped);
-  }
-  void getBluetoothMessage() {
-    if (bt.avalibe)) {
-      value = bt.read();
-      Serial.println("Message from phone: " + (String)value);
-    }
-  }
+}*/
