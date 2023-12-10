@@ -1,4 +1,4 @@
-#include<SoftwareSerial.h>
+ #include<SoftwareSerial.h>
 SoftwareSerial bt(2,3); //DRX-2, DTX-3
 
 char value;
