@@ -15,9 +15,9 @@ void setup() {
 }
 
 void loop() {
- checkBluetooth();
+  checkBlueTooth();
   Move();
-  
+
 }
 void forward(int speed) {
   analogWrite(5, 0);
@@ -61,7 +61,7 @@ void checkLineSensors(int left, int right) {
   delay(500);
 }
 
-void checkLineSensors() {
+void checkBlueTooth() {
   if (bt.available()) {
     value = bt.read();
     Serial.println("Message");
