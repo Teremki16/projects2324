@@ -20,7 +20,7 @@ let canvas = document.querySelector("canvas")
 let ctx = canvas.getContext("2d")
 
 let Xpos = 10;
-let Ypos = 150;
+let Ypos = 150;1
 
 let g = 0.2;
 let velY = 0;

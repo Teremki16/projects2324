@@ -13,6 +13,7 @@ void setup() {
 }
 
 void loop() {
+  checkBlueTooth();
   Move();
   /*forward(255);
     delay(1000);
