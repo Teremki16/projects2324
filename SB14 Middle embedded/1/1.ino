@@ -13,9 +13,17 @@ void setup() {
   pinMode(11, INPUT);
   pinMode(12, INPUT);
   Serial.begin(9600);
+
+}
+  
+void checkLineSensors(){
+  Serial.println("Left: " + (String) digitalRead(11)); 
+  Serial.println("Right: " + (String) digitalRead(12));
+  delay(500);
+
 }
 
-void loop() {
+void Move() {
   getBluetoothMessage();
   switch (value) {
     case 'F': 
