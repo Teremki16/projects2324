@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 SoftwareSerial bt(2, 3); //RX = 2, TX = 3
-int carSpeed = 150;
+int carSpeed = 255;
 char value;
 void setup() {
   bt.begin(9600);
@@ -15,84 +15,94 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
+void loop(){
+    checkLineSensors();
+}
+
+void checkLineSensors(){
+  Serial.println("Left: " + (String)digitalRead(11));
+  Serial.println("Right: " + (String)digitalRead(12));
+  delay(500);
+}
+
+void Move() {
   getBluetoothMessage();
   switch (value) {
-    case 'F': 
-    forward(carSpeed);
-    break;
+    case 'F':
+      forward(carSpeed);
+      break;
 
-    case 'B': 
-    backward(carSpeed);
-    break;
+    case 'B':
+      backward(carSpeed);
+      break;
 
-    case 'L': 
-    left(carSpeed);
-    break;
+    case 'L':
+      left(carSpeed);
+      break;
 
-    case 'R': 
-    right(carSpeed);
-    break;
+    case 'R':
+      right(carSpeed);
+      break;
 
     case 'S':
-    stp();
-    break;
+      stp();
+      break;
 
-    case 'G': 
-    forwardLeft(carSpeed);
-    break;
+    case 'G':
+      forwardLeft(carSpeed);
+      break;
 
-    case 'I': 
-    forwardRight(carSpeed);
-    break;
+    case 'I':
+      forwardRight(carSpeed);
+      break;
 
-    case 'H': 
-    backwardLeft(carSpeed);
-    break;
+    case 'H':
+      backwardLeft(carSpeed);
+      break;
 
-    case 'J': 
-    backwardRight(carSpeed);
-    break;
+    case 'J':
+      backwardRight(carSpeed);
+      break;
 
-    case '1': 
-    carSpeed = 70;
-    break;
-    
-    case '2': 
-    carSpeed = 90;
-    break;
+    case '1':
+      carSpeed = 70;
+      break;
 
-    case '3': 
-    carSpeed = 110;
-    break;
+    case '2':
+      carSpeed = 90;
+      break;
 
-    case '4': 
-    carSpeed = 130;
-    break;
-    
-    case '5': 
-    carSpeed = 150;
-    break;
-    
-    case '6': 
-    carSpeed = 170;
-    break;
+    case '3':
+      carSpeed = 110;
+      break;
 
-    case '7': 
-    carSpeed = 190;
-    break;
+    case '4':
+      carSpeed = 130;
+      break;
 
-    case '8': 
-    carSpeed = 210;
-    break;
+    case '5':
+      carSpeed = 150;
+      break;
 
-    case '9': 
-    carSpeed = 230;
-    break;
+    case '6':
+      carSpeed = 170;
+      break;
 
-    case 'q': 
-    carSpeed = 255;
-    break;
+    case '7':
+      carSpeed = 190;
+      break;
+
+    case '8':
+      carSpeed = 210;
+      break;
+
+    case '9':
+      carSpeed = 230;
+      break;
+
+    case 'q':
+      carSpeed = 255;
+      break;
   }
 
 }
