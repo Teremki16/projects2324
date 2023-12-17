@@ -19,6 +19,14 @@ pipeBottom.src = "img/pipeBottom.png"
 fly_audio.src= "audio/fly.mp3"
 score_audio.src= "audio/score.mp3"
 
+let scoreText = document.querySelector(".score")
+let bestScoreText = document.querySelector(".bestScore")
+
+let score = 0;
+let bestScore = 0;
+
+let gamePause = false
+
 let Xpos = 10;
 let Ypos = 150;
 let g= 0.2;
@@ -33,6 +41,9 @@ pipe[0]={
 }
 
 function draw(){
+    if(!gamePause){
+
+    
     ctx.drawImage(back, 0, 0)
     ctx.drawImage(bird, Xpos, Ypos)
 
@@ -40,7 +51,7 @@ function draw(){
     Ypos += velY
 
     if(Ypos + bird.height > canvas.height - road.height){
-        location.reload()
+        reload()
     }
 
     for(let i=0; i<pipe.length; i++){
@@ -65,11 +76,17 @@ function draw(){
                 Ypos <= pipe[i].y + pipeUp.height ||
                 Ypos + bird.height >= pipe[i].y +pipeUp.height + gap
             )){
-                location.reload()
+                reload()
+            }
+            if(pipe[i].x + pipeUp.width <0){
+                score_audio.play()
+                score++;
             }
     }
-
+    scoreText.innerHTML = "Score: " + score
+    bestScoreText.innerHTML = "Best Score: " + bestScore
     ctx.drawImage(road, 0, canvas.height - road.height)
+}
 }
 setInterval(draw, 20)
 
@@ -79,3 +96,27 @@ function moveUp(){
 }
 
 canvas.addEventListener("click", moveUp)
+
+function reload() {
+    if(score > bestScore) {
+        bestScore = score
+    }
+    Xpos = 10;
+    Ypos = 150;
+    velY = 0;
+    score = 0;
+    pipe = []
+    pipe[0] = {
+        x: canvas.width,
+        y: 0,
+    }
+
+}
+
+function pause(){
+    gamePause = !gamePause
+}
+
+document.addEventListener("keydown", (e)=>{
+    if(e.code =="ArrowUp") moveUp()
+})
