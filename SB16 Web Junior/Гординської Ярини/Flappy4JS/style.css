@@ -1,26 +1,40 @@
-canvas {
-    box-shadow: 0 0 5px black;
-
+*{
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background: lightgrey;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+min-height: 100wh;
+display: flex;
+flex-direction: column;
+align-items: center;
+background: linear-gradient(45deg, purple, blue);
+gap: 1rem;
 }
 
 .wrapper{
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
-    font-size: 1.4rem;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    color: aliceblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5rem;
+
+}
+canvas {
+    box-shadow: 0 0 15px black;
 }
 
-.pause {
-    box-shadow: inset 0 0 9999999999px grey
+button{ 
+background-color: rgb(28, 40, 40);
+color: aliceblue;
+padding: 0.3rem 3rem;
+border-radius: 555555555555px;
+margin-bottom: 2rem;
+border: none;
 }
+
+
+
+
