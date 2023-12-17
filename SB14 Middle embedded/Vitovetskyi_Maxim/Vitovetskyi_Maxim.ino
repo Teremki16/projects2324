@@ -14,8 +14,16 @@ void setup() {
   pinMode(12, INPUT);
   Serial.begin(9600);
 }
-
-void loop() {
+void loop(){
+  checkLineSensors();
+}
+void checkLineSensors() {
+  Serial.print("Left: " + (String)digitalRead(11) + " ");
+  Serial.println("Right: " + (String)digitalRead(12));
+  delay(500);
+}
+/*
+void Move() {
   getBluetoothMessage();
   switch(value) {
     case 'F':
@@ -125,4 +133,4 @@ void left(int sped){
       value = bt.read();
       Serial.println("Message from phone: " + (String)value;
     }
-  }
+  }*/

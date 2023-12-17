@@ -13,10 +13,26 @@ void setup() {
   bt.begin(9600);
 }
 
-void loop() {-- -----bn    
-n       - 
-  checkBluetooth();
-  Move();
+
+void loop() {
+  checkLineSensor();
+}
+
+
+void checkLineSensors(){
+  Serial.print("Left:" + (String)digitalRead(11));
+  Serial.print("Right:" + (String)digitalRead(12));
+  delay(500);
+}
+
+
+void Move() {    
+  getBluetoothMessage();
+  swich (value) {
+    case 'F'; :
+    forward(carSpeed);
+    break
+  }
 }
 void forward(int speed) {
   analogWrite(5, 0);
