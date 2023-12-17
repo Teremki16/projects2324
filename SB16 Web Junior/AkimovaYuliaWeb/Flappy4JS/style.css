@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,rgb(247, 0, 247),rgb(0, 255, 98));
+    gap: 0.5rem;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1,5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1rem;
+}
+canvas{
+    box-shadow: 0 0 15px black;
+}
+button{
+    color: rgb(226, 226, 253);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 3rem;
+    border-radius: 55555px;
+    margin-bottom: 2rem;
+    border: none;
+}
