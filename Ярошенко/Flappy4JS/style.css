@@ -1,0 +1,35 @@
+* {
+    margin: 0 ;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgb(222, 149, 130), rgb(130, 242, 182));
+    gap: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    color:  white;
+}
+
+canvas {
+    box-shadow: 0 0 15px black;
+}
+
+button {
+    background-color: rgba(0,0,0,5);
+    color: white;
+    padding: 0.3rem 3rem;
+    border-radius: 5555555555555px;
+    margin-bottom: 2rem;
+    border: none;
+}
