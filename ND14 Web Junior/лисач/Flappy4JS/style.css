@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgb(19, 17, 19) , rgb(59, 59, 85));
+    gap: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5rem;
+}
+canvas {
+    box-shadow: 0 0 15px black;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.3rem 3rem;
+    border-radius: 999999999999999px;
+    margin-bottom: 2rem;
+    border: none;
+}
