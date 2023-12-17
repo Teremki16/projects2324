@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 100px;
+    float: left;
+}
+
+header {
+    background-color: yellow;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav {
+    height: 100px;
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    color: white;
+    padding: 0 15px;
+    line-height: 100px;
+    font-size: 1.5rem;
+    font-family: 'Pacifico', cursive;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s;
+}
+
+nav a:visited {
+    color: gray;
+}
+
+nav a:hover {
+    text-shadow: 3px 1px 0px white;
+}
+
+nav li:last-child {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+nav li:last-child:hover {
+    transform: rotate(10deg);
+}
+
+
+.addHeader {
+    background-color: yellow;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.slogan {
+    font-size: 30px;
+    font-family: cursive;
+    font-style: italic;
+    padding: 50px;
+}
+
+a.button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: yellow;
+    border-top: 1px solid black;
+}
+
+
+.sidebar {
+    width: 30%;
+    float: right;
+    border: 1px solid black;
+}
+
+.arcticles {
+    width: 65%;
+    float: left;
+    border: 1px solid black;
+}
+
+.arcticles::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.article {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.article img {
+    width: 30%;
+    float: right;
+}
+
+.content {
+    width: 65%;
+    float: left;
+}
+
+.article::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.sidebar {
+    padding: 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    margin: 20px 0;
+}
+
+form textarea {
+    width: 100%;
+}
