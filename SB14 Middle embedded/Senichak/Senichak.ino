@@ -16,7 +16,9 @@ void setup() {
 }
 
 void loop(){
-    checkLineSensors();
+    //checkLineSensors();
+    //Move();
+    forward(255);
 }
 
 void checkLineSensors(){
