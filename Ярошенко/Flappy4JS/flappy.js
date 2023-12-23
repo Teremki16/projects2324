@@ -77,7 +77,7 @@ function draw() {
             Xpos <= pipe[i].x + pipeUp.width &&
             (
                 Ypos <= pipe[i].y + pipeUp.height ||
-                Ypos + bird.height >= pipe[i].y + pipe.height + gap
+                Ypos + bird.height >= pipe[i].y + pipeUp.height + gap
             )) {
             reload()
         }
