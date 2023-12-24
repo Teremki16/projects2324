@@ -6,7 +6,7 @@ let renge = document.getElementById("range")
 let rangeText = document.getElementById("rangeValue")
 
 let lw = 10
-let color = "red"
+let color = "black"
 let isMouseDown = false
 
 canvas.width = window.innerWidth
