@@ -31,7 +31,7 @@ delay(500);
 }
 
 
-/*
+
 void Move() {
   getBluetoothMessage();
   switch (value) {
@@ -242,5 +242,3 @@ void getBluetoothMessage() {
     value = bt.read();
     Serial.println("Message from phone: " + (String)value);
   }
-
-*/
