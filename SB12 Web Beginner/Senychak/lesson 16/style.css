@@ -19,7 +19,8 @@
 }
 .item1{
     background-color: red;
-    align-self: stretch;
+    align-self: center;
+    order: 1;
 }
 .item2{
     background-color: rgb(1, 255, 60);
@@ -29,5 +30,6 @@
 }
 .item4{
     background-color: rgb(196, 245, 0);
-    align-self: stretch;
+    /* align-self: stretch; */
+    order: 2;
 }

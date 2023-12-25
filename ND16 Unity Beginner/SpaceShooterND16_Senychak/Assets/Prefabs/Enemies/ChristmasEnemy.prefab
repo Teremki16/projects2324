@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2934994952261710277}
   - component: {fileID: 2934994952261710276}
   m_Layer: 0
-  m_Name: Enemy_Santa
+  m_Name: ChristmasEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4228239488560731349}
+  - {fileID: 4669500857473502960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -175,7 +175,7 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 5843095ab852c5242a5772c3965c221d, type: 2}
---- !u!1 &7086970021883179145
+--- !u!1 &4468818262097487879
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,8 +183,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4228239488560731349}
-  - component: {fileID: 704836866465044717}
+  - component: {fileID: 4669500857473502960}
+  - component: {fileID: 3277026600607963820}
   m_Layer: 0
   m_Name: hat
   m_TagString: Untagged
@@ -192,28 +192,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4228239488560731349
+--- !u!4 &4669500857473502960
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086970021883179145}
-  m_LocalRotation: {x: -0, y: -0, z: 0.87964547, w: 0.47563}
-  m_LocalPosition: {x: -0.326, y: -0.431, z: 0}
-  m_LocalScale: {x: 0.018090172, y: 0.023048447, z: 1}
+  m_GameObject: {fileID: 4468818262097487879}
+  m_LocalRotation: {x: 0.012096918, y: -0.008007582, z: -0.83377254, w: -0.55191755}
+  m_LocalPosition: {x: -0.39, y: -0.424, z: -0.006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2934994952261710273}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.199}
---- !u!212 &704836866465044717
+  m_LocalEulerAnglesHint: {x: -1.53, y: -0.65, z: 113.003}
+--- !u!212 &3277026600607963820
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086970021883179145}
+  m_GameObject: {fileID: 4468818262097487879}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -247,13 +247,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e8acca51769f8ac48a88f879c4e93264, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 23, y: 25.28125}
+  m_Size: {x: 0.46, y: 0.505625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
