@@ -11,4 +11,14 @@ function triangle(x, y, width, height) {
     ctx.closePath()
 }
 
-triangle(200, 50);
+triangle(200, 50, 150, 100);
+
+function circle(x, y, radius, color){
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.arc(x, y, radius, 0, 2* Math.PI)
+    ctx.fill()
+    ctx.closePath()
+}
+
+circle(200, 50, 20, "orange")
