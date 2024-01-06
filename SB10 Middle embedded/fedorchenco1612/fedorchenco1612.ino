@@ -1,132 +1,44 @@
-#include<SoftwareSerial.h>
-SoftwareSerial bt(2, 3);  //DRX-2, DTX-3
+#include <FastLED.h>
+#include <IRremote.hpp>
 
-char value; 
-void setup() {
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, INPUT);
-  pinMode(12, INPUT);
-  Serial.begin(9600);
-  bt.begin(9600);
-}
-
-void loop() {
-  checkBluetooth();
-  Move();
-}
-void forward(int speed) {
-  analogWrite(5, 0);
-  analogWrite(6, speed);
-  analogWrite(9, speed);
-  analogWrite(10, 0);
-}
-
-
-void backward(int speed) {
-  analogWrite(5, speed);
-  analogWrite(6, 0);
-  analogWrite(9, 0);
-  analogWrite(10, speed);
-}
-
-void left(int speed) {
-  analogWrite(5, 0);
-  analogWrite(6, speed);
-  analogWrite(9, 0);
-  analogWrite(10, speed);
-}
-void right(int speed) {
-  analogWrite(5, speed);
-  analogWrite(6, 0);
-  analogWrite(9, speed);
-  analogWrite(10, 0);
-}
-void stp() {
-  analogWrite(5, 0);
-  analogWrite(6, 0);
-  analogWrite(9, 0);
-  analogWrite(10, 0);
-}
-
-void checkLineSensors(int left, int right) {
-  Serial.print("Left: " + (String)digitalRead(left) + " ");
-  Serial.println("Right: " + (String)digitalRead(right));
-  delay(500);
-}
-
-
-void checkBluetooth() {
-  if (bt.available()) {
-    value = bt.read();
-    Serial.println("message from phone:" + (String)value);
+#define NUM_LEDS 30
+CRGB leds[NUM_LEDS];
+double speed = 0.0;
+#define IR_RECEIVE_PIN 2
+void getIrCommand(String &res)
+{
+  if (IrReceiver.decode()) {
+    res = String(IrReceiver.decodedIRData.decodedRawData, HEX).substring(0,4);
+    res.toUpperCase();
+    IrReceiver.resume();
+  }
+  else{
+    res = "";
   }
 }
 
-void forwardLeft(int speed) {
-  analogWrite(5, 0);
-  analogWrite(6, speed);
-  analogWrite(9, 0);
-  analogWrite(10, 0);
-}
-void forwardRight(int speed) {
-  analogWrite(5, 0);
-  analogWrite(6, 0);
-  analogWrite(9, speed);
-  analogWrite(10, 0);
-}
+String ircode = "";
 
-void backwardLeft(int speed) {
-  analogWrite(5, speed);
-  analogWrite(6, 0);
-  analogWrite(9, 0);
-  analogWrite(10, 0);
-}
-void backwardRight(int speed) {
-  analogWrite(5, 0);
-  analogWrite(6, 0);
-  analogWrite(9, 0);
-  analogWrite(10, speed);
+void setup()
+{
+  FastLED.addLeds<WS2812, 6, GRB>(leds, NUM_LEDS);
+  pinMode(7, OUTPUT);
+  IrReceiver.begin(IR_RECEIVE_PIN);
+  Serial.begin(9600);
+
+  speed = 0.1;
+
 }
 
-void Move(){
-  switch(value){
-    case 'F':
-    forward(255);
-    break;
-
-    case 'B':
-    backward(255);
-    break;
-    
-    case 'R':
-    right(255);
-    break;
-
-    case 'L':
-    left(255);
-    break;
-
-    case 'G':
-    forwardLeft(255);
-    break;
-
-    case 'I':
-    forwardRight(255);
-    break;
-
-    case 'H':
-    backwardLeft(255);
-    break;
-
-    case 'J':
-    backwardRight(255);
-    break;
-    
-    case 'S':
-    stp();
-    break;
+void loop()
+{
+  digitalWrite(7, LOW);
+  getIrCommand(ircode);
+  if (!( ircode.length() == 0 ))
+  {
+    ircode = ircode;
+    Serial.print("Code:");
+    Serial.print(ircode);
+    Serial.println();
   }
 }
