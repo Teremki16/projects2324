@@ -23,7 +23,7 @@ $(document).ready(function () {
     let isVisible = true
     $(".header").click(function(){
         isVisible = !isVisible
-        isVisible ? $("textBar").hide() : $(".textBar").show();
+        isVisible ? $(".textBar").hide() : $(".textBar").show();
         
     })
 })

@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5286066717108067375}
   - component: {fileID: 7258250980271368442}
   - component: {fileID: 2266558428700874116}
-  - component: {fileID: -4128084853707493549}
-  - component: {fileID: 5011507412657434158}
+  - component: {fileID: -2420986640109553413}
+  - component: {fileID: 1737576142897622792}
   m_Layer: 0
   m_Name: BulletA
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Speed","value":{"$content":10.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Damage","value":{"$content":1,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Speed","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Damage","value":{"$content":5,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &2266558428700874116
@@ -121,7 +121,7 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 84b7ba5ed7e7abd45a5ecf18e33949d2, type: 2}
---- !u!50 &-4128084853707493549
+--- !u!50 &-2420986640109553413
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &5011507412657434158
+--- !u!70 &1737576142897622792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00074794877, y: -3.2487932e-18}
-  m_Size: {x: 0.37649602, y: 0.18659991}
+  m_Offset: {x: 0.008481919, y: -0.0000008344649}
+  m_Size: {x: 0.39196098, y: 0.18840608}
   m_Direction: 1
