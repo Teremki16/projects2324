@@ -1,167 +1,44 @@
-#include <SoftwareSerial.h>
-SoftwareSerial bt(2, 3);
-int carSpeed = 150;
-char value;
-void setup() {
-  bt.begin(9600);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
+#include <FastLED.h>
+#include <IRremote.hpp>
+
+double speed = 0.0;
+#define NUM_LEDS 30
+CRGB leds[NUM_LEDS];
+#define IR_RECEIVE_PIN 2
+void getIrCommand(String &res)
+{
+  if (IrReceiver.decode()) {
+    res = String(IrReceiver.decodedIRData.decodedRawData, HEX).substring(0,4);
+    res.toUpperCase();
+    IrReceiver.resume();
+  }
+  else{
+    res = "";
+  }
+}
+
+String ircode = "";
+
+void setup()
+{
+  FastLED.addLeds<WS2812, 6, GRB>(leds, NUM_LEDS);
   pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, INPUT);
-  pinMode(12, OUTPUT);
+  IrReceiver.begin(IR_RECEIVE_PIN);
   Serial.begin(9600);
-}
-void loop() {
-  checkLineSensors();
-}
+  speed = 0.1;
 
 
-void checkLineSensors() {
-  Serial.println("Left: " + (String)digitalRead(11));
-  Serial.println("Right: " + (String)digitalRead(12));
-  delay(500);
 }
-/*
-void Move() {
-  getBluetoothMessage();
-  switch (value) {
-    case'F':
-      forward (carSpeed);
-      break;
-    case'B':
-      backward (carSpeed);
-      break;
-    case'L':
-      left (carSpeed);
-      break;
-    case'R':
-      right (carSpeed);
-      break;
-    case'S':
-      stp ();
-      break;
-    case'G':
-      forwardLeft();
-      break;
-    case'I':
-      forwardRight();
-      break;
-    case'J':
-      backwardRight();
-      break;
-    case'H':
-      backwardLeft();
-      break;
-    case'1':
-      carSpeed = 70;
-      break;
-    case'2':
-      carSpeed = 90;
-      break;
-    case'3':
-      carSpeed = 110;
-      break;
-    case'4':
-      carSpeed = 130;
-      break;
-    case'5':
-      carSpeed = 150;
-      break;
-    case'6':
-      carSpeed = 170;
-      break;
-    case'7':
-      carSpeed = 190;
-      break;
-    case'8':
-      carSpeed = 210;
-      break;
-    case'9':
-      carSpeed = 230;
-      break;
-    case'q':
-      carSpeed = 255;
-      break;
+
+void loop()
+{
+  digitalWrite(7, LOW);
+  getIrCommand(ircode);
+  if (!( ircode.length() == 0 ))
+  {
+    ircode = ircode;
+    Serial.print("Code:");
+    Serial.print("ircode");
+    Serial.println();
   }
 }
-void forward (int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void backward (int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, HIGH);
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, HIGH);
-  analogWrite(10, sped);
-}
-void right (int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, HIGH);
-  digitalWrite(7, LOW);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void left (int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, HIGH);
-  digitalWrite(8, LOW);
-  digitalWrite(9, HIGH);
-  analogWrite(10, sped);
-}
-void stp () {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void forwardLeft(int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, HIGH);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void forwardRight(int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void backwardLeft(int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, HIGH);
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  analogWrite(10, sped);
-}
-void backwardRight(int sped) {
-  analogWrite(5, sped);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, HIGH);
-  analogWrite(10, sped);
-}
-void getBluetoothMessage() {
-  if (bt.avalibe)) {
-    value = bt.read();
-    Serial.println("Message from phone: " + (String)value);
-  }
-}*/
