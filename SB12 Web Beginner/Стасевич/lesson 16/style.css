@@ -7,7 +7,7 @@
     /* border: 1px solid black; */
     /* gap: 5px; */
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-start;
 }
 .a {
@@ -18,18 +18,23 @@
     align-items: center;
 }
 .item1{
-    background-color: rgb(52, 134, 130);
-    align-self: flex-start;
+    background-color: rgb(253, 0, 0);
+    align-self: center;
+    order: 3;
 }
 .item2{
-    background-color: rgb(76, 164, 170);
-    align-self: center;
+    background-color: rgb(255, 149, 0);
+    order: 4;
 }
 .item3{
-    background-color: rgb(80, 222, 217);
-    align-self: center;
+    background-color: rgb(255, 234, 0);
+    order: 1;
+    align-self: flex-end;
+
 }
 .item4{
-    background-color: rgb(74, 255, 255);
-    align-self: flex-end;
+    background-color: rgb(0, 255, 68);
+    /* align-self: flex-end; */
+    order: 2;
+    align-self: center;
 }
