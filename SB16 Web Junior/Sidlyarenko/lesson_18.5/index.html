@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <script src="../jquery.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <form>
+            <h1>Register</h1>
+            <ul>
+                <li>
+                    <label for="login">Login</label>
+                    <input type="text" id="login">
+                </li>
+                    <li>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                    <p class="mistake" id="letter" >одну букву</p>
+                    <p class="mistake" id="bigLetter" >одна велика буква</p>
+                    <p class="mistake" id="number" >одну цифру</p>
+                    <p class="mistake" id="length" >8 символів</p>
+                    </li>
+                    <li>
+                        <button>Log In</button>
+                    </li>
+                    
+            </ul>
+        </form>
+    </div>
+
+</body>
+</html>
