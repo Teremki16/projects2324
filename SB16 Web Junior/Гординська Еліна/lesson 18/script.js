@@ -1,30 +1,32 @@
-$(document).ready(function(){
-    $(".hideslow").click(function(){
+$(document).ready(function () {
+    $(".hideslow").click(function () {
         $(this).hide("slow")
     })
-    $(".hidefast").click(function(){
+    $(".hidefast").click(function () {
         $(this).hide("fast")
     })
-    $(".hide3s").click(function(){
+    $(".hide3s").click(function () {
         $(this).hide(3000)
     })
-    $(".hide1s").click(function(){
-        $(this).hide(1000, function(){
+    $(".hide1s").click(function () {
+        $(this).hide(1000, function () {
             alert("ACHTUNG")
         })
     })
-    $(".show").click(function(){
+    $(".show").click(function () {
         $(".b").show("slow")
     })
-})
 
-let isVisible = true
-$(".header").click(function(){
-    isVisible = !isVisible;
-    isVisible ? $(".textBar").show() : $(".textBar").hide();
-    // if(isVisible){
-    //     $(".textBar").show()
-    // }else{
-    //     $(".textBar").hide()
-    // }
+
+    let isVisible = true
+    $(".header").click(function () {
+        $(".textBar").fadeToggle(400)
+    })
+
+    let opacity = 1
+    $(".fade").click(function (){
+        opacity -= 0.1
+        if(opacity <= 0) opacity = 1;
+        $(this).fadeTo(500, opacity);
+    })
 })
