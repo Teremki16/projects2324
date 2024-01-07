@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100hv;
+    align-items: center;
+}
+
+h1 {
+    background-color: rgb(255, 255, 152);
+    text-align: center;
+    color: rgb(53, 41, 1);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+}
+
+.mistake {
+    margin: 0;
+    color: red;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px;
+}
+
+button {
+    padding: 5px;
+    background-color: lightblue;
+    border: none;
+    /* width: 50%;
+    align-self: center; */
+    border-radius: 10px;
+}
