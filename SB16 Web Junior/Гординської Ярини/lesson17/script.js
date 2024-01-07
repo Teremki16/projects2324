@@ -23,10 +23,18 @@ $(document).ready(()=>{
         $("p").hide()
     })
 
-    $(".a").click(function(){
-        $(this).hide()
+    $(".header").click(function(){
+        $(".textBar").toggle()
 
 
     })
     
 });
+
+
+let opacity = 1
+$(".fade").click(function(){
+    opacity -= 0.1
+    if(opacity <= 0) opacity = 1;
+    $(this).fadeTo(1, opacity)
+})

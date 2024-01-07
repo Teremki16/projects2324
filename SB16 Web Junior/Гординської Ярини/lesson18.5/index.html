@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Avtorizaciya</h1>
+            <ul>
+                <li>
+                    <label for="login">Login</label>
+                    <input type="text" id="login">
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="text" id="password">
+                    <p class="mistake" id="letter">Parol mae mati hochab odnu bukvu</p>
+                    <p class="mistake" id="bigLetter">Parol mae mati hochab odnu veliku bukvu</p>
+                    <p class="mistake" id="length">Parol mae buti bilshim za 8  simvoliv</p>
+                    <p class="mistake" id="number">Parol mae mati number</p>
+                </li>
+                <li>
+                    <button>Log In</button>
+                </li>
+            </ul>
+            </form>
+    </div>
+</body>
+</html>
