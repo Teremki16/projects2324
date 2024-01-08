@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+h1 {
+    background-color: yellowgreen;
+    text-align: center;
+    color: white;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    min-width: 300px;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+}
+
+.mistake {
+    margin: 0;
+    color: red;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+button {
+    padding: 5px;
+    background-color: lightgreen;
+    border: none;
+    /* width: 50%; */
+    /* align-self: center; */
+    border-radius: 10px;
+}
