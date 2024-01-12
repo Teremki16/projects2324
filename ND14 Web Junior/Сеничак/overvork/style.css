@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+    text-align: center;
+}
+
+.fade {
+    width: 400px;
+    height: 400px;
+    background-color: blueviolet;
+}

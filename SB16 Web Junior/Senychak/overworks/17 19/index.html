@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="../../jquery.js" defer></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css"
+            integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=="
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <header>
+            <div>LOGO</div>
+            <div class="authBtn"><i class="fa-solid fa-user"></i></div>
+        </header>
+        <div class="overlay">
+            <form>
+                <span>X</span>
+                <h1>Авторизація</h1>
+                <div class="input">
+                    <label for="login">Login</label>
+                    <input type="text" id="login" />
+                </div>
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" />
+                </div>
+                <div class="mistakes">
+                    <p class="mistake" id="letter">
+                        Пароль має мати хочаб одну букву
+                    </p>
+                    <p class="mistake" id="bigLetter">
+                        Пароль має мати хочаб одну велику букву
+                    </p>
+                    <p class="mistake" id="number">
+                        Пароль має мати хочаб одну цифру
+                    </p>
+                    <p class="mistake" id="length">
+                        Довжина паролю має бути більшим за 8 символів
+                    </p>
+                </div>
+                <button>Log In</button>
+            </form>
+        </div>
+    </body>
+</html>
