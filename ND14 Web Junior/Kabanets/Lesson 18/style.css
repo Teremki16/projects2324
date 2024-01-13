@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    gap: 15px;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    background-color: mediumpurple;
+    display: grid;
+    place-items: center;
+    text-emphasis: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+.menu {
+    width: 400px;
+    margin: 15px auto;
+}
+
+.header {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.text {
+    background-color:violet;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}
+
+.fade {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    border-radius: 50px;
+    box-shadow: 0 0 15px black;
+}
