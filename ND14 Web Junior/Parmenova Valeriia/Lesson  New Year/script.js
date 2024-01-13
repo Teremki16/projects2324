@@ -11,7 +11,9 @@ function triangle (x, y, width, height){
     ctx.closePath()
 }
 
-triangle(200,50,150,100);
+triangle(200,50,120,100);
+triangle(200,100,120,100);
+triangle(200,150,120,100);
 
 function circle(x,y, radius, color){
     ctx.beginPath()
@@ -21,4 +23,17 @@ function circle(x,y, radius, color){
     ctx.closePath()
 }
 
-circle(200,50,20,"orange")
+circle(160,120,20,"orange")
+circle(160,180,20,"orange")
+circle(160,230,20,"orange")
+
+circle(240,120,20,"orange")
+circle(240,180,20,"orange")
+circle(240,230,20,"orange")
+
+function rect (x,y,width, height){
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.fillRect 
+    ctx.beginPath()
+}
