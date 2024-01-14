@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    background-color: white;
+    margin: 15px auto;
+}
+
+img {
+    width: 150px;
+    float: left;
+    margin: 10px;
+}
+
+.text::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    background-color: lightcyan;
+}
+
+h1 {
+    text-align: center;
+}
+
+.head {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.text {
+    background-color: lightslategray;
+    padding: 10px;
+}
+
+article {
+    margin: 15px 0;
+}
+
+.wrapper {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+}
+
+.box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+}

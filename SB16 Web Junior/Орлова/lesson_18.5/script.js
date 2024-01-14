@@ -1,17 +1,17 @@
 $(".mistake").hide()
-$("#password").change(function(){
+$("#password").change(function () {
     let pass = $(this).val()
     $(".mistake").hide()
-    if(pass.length < 8){
-        $(".mistake:nth-child(4)").show()
+    if (pass.length < 8) {
+        $("#length").show()
     }
-    if(!pass.match(/[0-9]/)){
-        $("mistake:nth-child(3)").show()
+    if (!pass.match(/[0-9]/)) {
+        $("#letter").show()
     }
-    if(!pass.match(/[A-Z]/)){
-        $("mistake:nth-child(2)").show()
+    if (!pass.match(/[A-Z]/)) {
+        $("#bigLetter").show()
     }
-    if(!pass.match(/[A-z]/)){
-        $("mistake:nth-child(1)").show()
+    if (!pass.match(/[A-z]/)) {
+        $("#letter").show()
     }
 })
