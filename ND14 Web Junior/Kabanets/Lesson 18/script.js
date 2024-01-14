@@ -24,7 +24,7 @@ $(document).ready(function(){
     $(".fade").click(function(){
         opacity -= 0.1
         $(this).fadeTo(100, opacity);
-        $(this).fadeIn(100, opacity)
+        if(opacity <= 0) opacity = 1  
     })
 
 
