@@ -13,4 +13,19 @@ function RC (){
         link.style.color = "black"
     }
     }
-    
+
+let count = 1;
+let ul = document.querySelector(".todolist")
+
+function add(){
+    let value = document.querySelector("#text").value{
+        if (value) {
+            let elem = document.createElement("li")
+            elem.innerText = value;
+            elem.id = `Item${count}`;
+            count++;
+            ul.append(elem)
+            document.querySelector("#text").value = ""
+        }
+    }
+}
