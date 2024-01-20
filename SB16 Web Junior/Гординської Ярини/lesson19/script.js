@@ -9,8 +9,17 @@ $(".a3 > .head").click(function(){
 })
 
 $("button").click(function(){
-    $(".box").animate({left: "500px"})
-    $(".box").animate({top: "500px"})
-    $(".box").animate({left: "0px"})
-    $(".box").animate({top: "0px"})
+    // $(".box").animate({left: "500px"})
+    // $(".box").animate({top: "500px"})
+    // $(".box").animate({left: "0px"})
+    // $(".box").animate({top: "0px"})
+    // $(".box").animate({
+    //     width: "300px",
+    //     height: "300px",
+    //     opacity: "0.1"
+    // })
+    $("button").animate({
+        width: "100px"
+        opacity: "0.5"
+    })
 })
