@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">password</div>
+        <div class="content">
+        <form>
+            <label for="login">login</label>
+            <input type="text" placeholder="login..." id="login" name="login">
+            <label for="password">password</label>
+            <input type="password" id="password" name="password">
+            <div class="mistakes">
+                <div class="mistake">password has no letters</div>
+                <div class="mistake">password has no capital letter</div>
+                <div class="mistake">password has no digits</div>
+                <div class="mistake">password less than 8 letter</div>
+                <input type="submit" value="Sumbit">
+
+            </div>
+        </form>
+        <div class="rules">
+            <h3>the password must match the criterias</h3>
+            <ul>
+                <li>at least one letter</li>
+                <li>at least one capital letter</li>
+                <li>at least one digit</li>
+                <li>be more than 8 characters</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
