@@ -46,6 +46,14 @@ a:hover {
     flex-grow: 2;
 }
 
+.button {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: none;
+}
+
 @media (max-width: 1000px){
     .flex-nav ul {
         flex-wrap: wrap;
@@ -62,4 +70,56 @@ a:hover {
     .flex-nav li {
         flex: 1 1 100%S;
     }
+    .flex-nav {
+        display: none;
+    }
+    .buttom {
+        display: block;
+    }
+}
+
+header img {
+    height: 450px;
+    filter: drop-shadow(0 0 5px black);
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.575);
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner img {
+    width: 100%;
+    padding: 10px;
+}
+
+section , footer{
+    background-color: rgb(23, 63, 23);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.content , footer{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup input, .signup textarea {
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 555555px;
+}
+
+.signup label {
+    color: white;
+    margin-left: 10px;
 }
