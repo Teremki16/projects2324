@@ -1,25 +1,43 @@
-$(".mistake").hide()
-
-
-$("#password").change(function(){
-    let pass = $(this).val()
-    $(".mistake").hide()
-    if(pass.length < 8){
-        $(".mistake:nth-child(4)").show()
-    }
-    if(!pass.match(/[A-z]/)){
-        $(".mistake:nth-child(1)").show()
-    }
-    if(!pass.match(/[A-Z]/)){
-        $(".mistake:nth-child(2)").show()
-    }
-    if(!pass.match(/[0-9]/)){
-        $(".mistake:nth-child(3)").show()
-    }
-    
+$(".text").click(function(){
+    alert($("h1").text())
 })
 
-
-$(".header").click(function(){
-    $(".content").slideToggle("fast")
+$(".HTML").click(function(){
+    alert($("h1").html())
 })
+
+$("#setlink").click(function(){
+   let v = $("#text").val()
+   $("a").attr("href", v)
+   $("#text").val("")
+})
+
+let color ={
+    r: 0,
+    g: 0,
+    b: 0
+}
+
+
+function updateColor(){
+    $("body").css({background:`rgb(${color.r}, ${color.g}, ${color.b})`})
+}
+
+$(".range.r").on("change", function(){
+    color.r = $(this).val()
+    $(".t.r").val(color.r)
+    updateColor()
+})
+
+$(".range.g").on("change", function(){
+    color.g= $(this).val()
+    $(".t.g").val(color.g)
+    updateColor()
+})
+
+$(".range.b").on("change", function(){
+    color.b = $(this).val()
+    $(".t.b").val(color.b)
+    updateColor()
+})
+

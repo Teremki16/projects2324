@@ -9,32 +9,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="container">
-    <div class="header">Form</div>
-    <div class="content">
-    <form>
-        <label for="login">Login</label>
-        <input type="text" placeholder="Login..." id="login" name="login">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password">
-        <div class="mistakes">
-            <div class="mistake">Password has no letters</div>
-            <div class="mistake">Password has no capital letter</div>
-            <div class="mistake">Password has no digits</div>
-            <div class="mistake">Password less than 8 letters</div>
+        <h1>London is a <b>capital</b> of Great Britain</h1>
+        <button class="text">Show text</button>
+        <button class="HTML">Show HTML</button>
+
+        <div class="container">
+            <a href="" >Universal link</a>
+            <div class="">
+                <input type="text" id="text">
+                <input type="button" value="set link" id="setlink">
+            </div>
         </div>
-        <input type="submit" value="Submit">
-    </form>
-    <div class="rules">
-        <h3>The password must match the criterias</h3>
-        <ul>
-            <li>At least 1 letter</li>
-            <li>At least 1 capatal letter</li>
-            <li>At least one digit</li>
-            <li>At least 8 characters</li>
-        </ul>
-    </div>
-    </div>
-   </div> 
+        <div class="wrapper">
+            <input type="range" min="0" max="255" class="range r">
+            <input type="text" class="t r">
+            <br>
+            <input type="range" min="0" max="255" class="range g">
+            <input type="text" class="t g">
+            <br>
+            <input type="range" min="0" max="255" class="range b">
+            <input type="text" class="t b">
+        </div>
 </body>
 </html>
