@@ -8,7 +8,7 @@ $(".html").click(function(){
 $("#setlink").click(function(){
     let value = $("#text").val()
     $("a").attr("href,http:// + value")
-    $("#text").val("")
+    $("#text").val("") //якщо щось написано то воно встановлює а якщо ні то поверає
 })
 
 let color = {

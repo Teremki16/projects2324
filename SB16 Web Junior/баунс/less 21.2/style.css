@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, lightblue, lrgb(243, 150, 243));
+}
+
+.wrapper {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.form {
+    display: flex;
+}
+
+button {
+    width: 20px;
+}
+
+li {
+    background-color: rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 5px;
+}
+
+li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
