@@ -71,8 +71,11 @@ a:hover {
     .flex-nav li {
         flex:1 1 100%
     }
-    .flex-nav {
+    nav {
         display: none;
+    }
+    .button {
+        display: block;
     }
 }
 
@@ -119,4 +122,8 @@ section, footer {
 .signup label {
     color: white;
     margin-left: 10px;
+}
+
+.open {
+    display: flex;
 }
