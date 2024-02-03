@@ -66,14 +66,14 @@ a:hover {
     }
 }
 
-@media (max-widht: 500px){
+@media (max-width: 500px){
     .flex-nav li {
-        flex: 1 1 100%S;
+        flex: 1 1 100%;
     }
     .flex-nav {
         display: none;
     }
-    .buttom {
+    .button {
         display: block;
     }
 }
@@ -122,4 +122,8 @@ section , footer{
 .signup label {
     color: white;
     margin-left: 10px;
+}
+
+.open {
+    display: flex;
 }
