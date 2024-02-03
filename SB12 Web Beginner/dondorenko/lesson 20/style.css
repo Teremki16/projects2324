@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(45deg, pink 20%, rgb(236, 159, 236));
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 20px 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.flex-nav ul {
+    list-style: none;
+    border: 1px solid rgb(249, 244, 244);
+    display: flex;
+}
+
+.flex-nav li {
+    flex-grow: 3;
+}
+
+.flex-nav .social {
+    flex-grow: 1;
+}
+.button{
+    background-color: rgba(255, 253, 253, 0.3);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: none;
+}
+@media (max-width: 1000px){
+    .flex-nav ul {
+        flex-wrap: wrap;
+    }
+    .flex-nav li {
+        flex: 1 1 50%;
+    }
+    .flex-nav .social {
+        flex: 1 1 25%;
+    }
+}
+
+@media (max-width: 500px){
+    .flex-nav li {
+        flex: 1 1 100%;
+
+    }
+    .flex-nav{
+        display: none;
+    
+}
+  .button{
+    display: block;
+  }  
+}header img{height: 50px;
+    filter: drop-shadow(0 0 5px white);
+
+}header {
+    background-color: rgb(242, 173, 227);
+
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+.banner img{
+    width: 100%;
+    padding: 10px;
+}
+section, footer{
+    background-color: rgba(250, 250, 250, 0.438);
+    padding: 10px;
+    margin: 10px 0;
+    
+}
+.content, footer{
+    text-align: center;
+    color: rgb(250, 247, 246);
+}
+.singup{
+    display: flex;
+    flex-direction: column;
+}
+
+.singup input, .singup textarea{
+    background-color:transparent;
+    padding:  5px;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+    border-radius: 555555px;
+
+}
+.singup label{
+    color: white;
+    margin-left: 10px;
+}
+
+.open{
+    display: flex;
+}
