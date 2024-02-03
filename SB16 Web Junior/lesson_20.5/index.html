@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="C:\Users\User\Documents\projects2324\SB16 Web Junior\Sidlyarenko\jquery.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-image: linear-gradient(to right, rgb(167, 233, 255), rgb(255, 143, 255));
+        }
+
+        .wrapper{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            gap: 10px;
+        }
+
+        .form{
+            display: flex;
+        }
+
+        button {
+            width: 20px;
+        }
+
+        li{
+            background-color: rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 5px;
+        }
+        li:hover{
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wraper">
+        <h1>To do list</h1>
+        <ul class="todolist">
+
+        </ul>
+        <div class="form">
+            <input type="text">
+            <button>+</button>
+        </div>
+    </div>
+
+</body>
+</html>
