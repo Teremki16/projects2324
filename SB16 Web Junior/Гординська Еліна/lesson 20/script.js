@@ -26,7 +26,7 @@ $(".r input[type='range']").on("input", function(event){
 $(".g input[type='range']").on("input", function(event){
     color.green = $(this).val()
     $(".g input[type='text']").val(color.green)
-    $("input[type='range']").css({accentColor: `rgb(${color.red}, ${color.green}, ${color.blue})`})
+    $("input[type='range']").css({accentColorS: `rgb(${color.red}, ${color.green}, ${color.blue})`})
 })
 $(".b input[type='range']").on("input", function(event){
     color.blue = $(this).val()
