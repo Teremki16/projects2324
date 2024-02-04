@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>team 1</h3>
+        <ol>
+            <li class="t1">Vasya</li>
+        </ol>
+        <h3>team 2</h3>
+        <ol>
+            <li class="t2">Petya</li>
+        </ol>
+        <input type="text">
+        <button class="t1btn">To team 1</button>
+        <button class="t2btn">To team 2</button>
+
+        <h1>remove elements by name</h1>
+        <input type="text" class="remove">
+        <input type="button" value="remove" class="removebtn">
+    </body>
+    <script src="../jquery.js"></script>
+    <script>
+        $(".t1btn").on("click", function(){
+            let data = $("input").val()
+            $(".t1:last-child").after(`<li class="t1">${data}</li>`)
+            $("input").val("")
+        })
+        $(".t2btn").on("click", function(){
+            let data = $("input").val()
+            $(".t2:last-child").after(`<li class="t2">${data}</li>`)
+            $("input").val("")
+        })
+
+        $(".removebtn").on("click", function(){
+            let elem = $(".remove").val()
+            $(".remove").val("")
+            $(elem).remove()
+        })
+    </script>
+</html>

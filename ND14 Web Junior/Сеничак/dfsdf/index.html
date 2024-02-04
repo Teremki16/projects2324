@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <h1>dklfjskldjf <b>one more text</b> sdfjhsdkjfhjksdhfjksd</h1>
+    <button class="text">Show text</button>
+    <button class="html">Show html</button>
+</body>
+<script src="../jquery.js"></script>
+<script>
+    $(".text").on("click", function(){
+        alert("Text content of heading: " + $("h1").text())
+    })
+    $(".html").on("click", function(){
+        alert("HTML content of heading: " + $("h1").html())
+    })
+</script>
+</html>
