@@ -1,0 +1,25 @@
+.eye{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+    gap: 10px;
+    align-self: flex-start;
+}
+
+.black{
+    background-color: black;
+}
+
+.smile{
+    display: grid;
+    grid-template-columns: repeat(9,50px);
+    grid-template-rows: 50px;
+    gap: 10px;
+}
+
+.face{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 400px;
+}
