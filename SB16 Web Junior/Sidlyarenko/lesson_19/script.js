@@ -1,35 +1,21 @@
-$(".text").click(function(){
-    confirm("text:" + $("h1").text())
+$(".a1 > .head").click(function(){
+    $(".a1 > .text").slideToggle("fast")
 })
-$(".html").click(function(){
-    confirm("html:" + $("h1").html())
+$(".a2 > .head").click(function(){
+    $(".a2 > .text").slideToggle("fast")
 })
-
-$(".setlink").click(function(){
-    let value = $("input").val()
-    $("a").attr("href", "http://" + value)
-    $("input").val("")
+$(".a3 > .head").click(function(){
+    $(".a3 > .text").slideToggle("fast")
 })
 
-
-let color = {
-    red: 0, 
-    blue: 0,
-    green: 0,
-}
-
-$(".r input[type='range']").on("input", function(e){
-    color.red = $(this).val()
-    $(".r input[type= 'text']").val(color.red)
-    $("body").css({backgroundColor: `rgb(${color.red}, ${color.green}, ${color.blue})`})
-})
-$(".g input[type='range']").on("input", function(e){
-    color.green = $(this).val()
-    $(".g input[type= 'text']").val(color.green)
-    $("body").css({backgroundColor: `rgb(${color.red}, ${color.green}, ${color.blue})`})
-})
-$(".b input[type='range']").on("input", function(e){
-    color.blue = $(this).val()
-    $(".b input[type= 'text']").val(color.blue)
-    $("body").css({backgroundColor: `rgb(${color.red}, ${color.green}, ${color.blue})`})
+$("button").click(function(){
+    // $(".box").animate({left: "500px"})
+    // $(".box").animate({top: "500px"})
+    // $(".box").animate({left: "0px"})
+    // $(".box").animate({top: "0px"})
+    $(".box").animate({
+        width: "300px",
+        height: "300px",
+        opacity: "0.1"
+    })
 })

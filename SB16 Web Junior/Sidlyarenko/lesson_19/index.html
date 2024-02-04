@@ -1,63 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery.js" defer></script>
     <script src="script.js" defer></script>
     <title>Document</title>
-    <style>
 
-        body{
+
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 15px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            float: left;
+            margin: 10px;
+            display: block;
+        }
+
+        .text::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+
+        h1 {
             text-align: center;
         }
 
-        h1{
-            font-weight: 100;
+        .head {
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px;
         }
 
-        .container{
-            border: 2px solid yellowgreen;
-            background-color: red;
-            display: flex;
-            width: 400px;
-            flex-direction: column;
-            padding: 10px 0 40px;
+        .text {
+            background-color: lightgray;
+            padding: 10px;
         }
 
-        a{
-            text-decoration: none;
-            font-size: 2.5rem;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        article {
+            margin: 15px 0;
         }
 
+        .wrapper{
+            width: 600px;
+            height: 600px;
+            background-color: #333333;
+        }
+
+        .box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #c41212;
+        }
     </style>
-</head>
-<body>
-    
-    <h1>London is a <b>capital</b> of Great Britan</h1>
-    <button class="text">Show text</button>
-    <button class="html"> Show HTML</button>
-
-        <div class="container">
-            <a href="">Universal link</a>
-            <div>
-                <input type="text">
-                <button class="setlink">Set link</button>
+    <div class="container">
+        <h1>Slide toggle</h1>
+        <article class="a1">
+            <div class="head">sdfw</div>
+            <div class="text">
+                <img src="https://i.pinimg.com/564x/a2/51/8f/a2518f7500a353ba1bf9c44144781aa9.jpg" alt="">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur? Aspernatur et omnis
+                vitae consequatur corrupti exercitationem quisquam officiis. Hic tenetur iste soluta saepe quis at
+                aliquam quaerat commodi voluptate.bhvjvhghkvhmcgvhmcghgcghcghcfgfcgnfxcgn
             </div>
-        </div>
-
-        <div class="wrapper">
-            <div class="row r" >
-                <input type="range" min="0" max="255">
-                <input type="text" value="0">
-            <div class="row g" >
-                <input type="range" min="0" max="255">
-                <input type="text" value="0">
-            <div class="row b" >
-                <input type="range" min="0" max="255">
-                <input type="text" value="0">
+        </article>
+        <article class="a2">
+            <div class="head">sdfw</div>
+            <div class="text">
+                <img src="https://i.pinimg.com/564x/a2/51/8f/a2518f7500a353ba1bf9c44144781aa9.jpg" alt="">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur? Aspernatur et omnis
+                vitae consequatur corrupti exercitationem quisquam officiis. Hic tenetur iste soluta saepe quis at
+                aliquam quaerat commodi voluptate bhvjvhghkvhmcgvhmcghgcghcghcfgfcgnfxcgn.
             </div>
-        </div>
+        </article>
+        <article class="a3">
+            <div class="head">sdfw</div>
+            <div class="text">
+                <img src="https://i.pinimg.com/564x/a2/51/8f/a2518f7500a353ba1bf9c44144781aa9.jpg" alt="">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur? Aspernatur et omnis
+                vitae consequatur corrupti exercitationem quisquam officiis. Hic tenetur iste soluta saepe quis at
+                aliquam quaerat commodi voluptate bhvjvhghkvhmcgvhmcghgcghcghcfgfcgnfxcgn.
+            </div>
+        </article>
+    </div>
+
+    <button>I`m ghoul 1000-7 dead inside</button>
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+
+
 </body>
+
 </html>
