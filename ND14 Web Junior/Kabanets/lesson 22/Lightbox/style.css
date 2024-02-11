@@ -78,3 +78,24 @@ body {
 .item.h4 {
     grid-column: span 4;
 }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay_inner {
+    background-color: white;
+    padding: 10px;
+    position: relative;
+}
+
+.exit {
+    position: absolute;
+}
