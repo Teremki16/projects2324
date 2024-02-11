@@ -5,7 +5,7 @@
 body {
     padding: 50px;
     font-family: sans-serif;
-    background: linear-gradient(to right, #f93d66, #6d47d9);
+    background: linear-gradient(to right, lightblue, #6d47d9);
 }
 
 .gallery {
@@ -77,4 +77,35 @@ body {
 
 .item.h4 {
     grid-column: span 4;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.overlay_inner {
+    background-color: aliceblue;
+    padding: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    border: 3px solid white;
+    background: transparent;
+    color: white;
+    padding: 5px 10px;
+}
+
+.overlay.open {
+    display: flex;
 }
