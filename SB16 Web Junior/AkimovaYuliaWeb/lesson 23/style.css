@@ -1,0 +1,56 @@
+.petro{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: lawngreen;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: all 0.5s;
+}
+
+body{
+    background-color: aqua;
+}
+
+.joystick{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+button{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+    font-size: 20px;
+}
+
+.bottom{
+    bottom: 20px;
+    left: 65px;
+}
+.left{
+    bottom: 65px;
+    left: 20px;
+}
+.right{
+    bottom: 65px;
+    left: 110px;
+}
+.top{
+    bottom: 110px;
+    left: 65px;
+}
