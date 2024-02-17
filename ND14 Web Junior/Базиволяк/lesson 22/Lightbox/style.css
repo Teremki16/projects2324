@@ -88,6 +88,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .overlay_inner {
@@ -98,4 +99,15 @@ body {
 
 .exit {
     position: absolute;
+    border: 3px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: 900;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+}
+
+.open{
+    display: flex;
 }
