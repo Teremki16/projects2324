@@ -1,0 +1,34 @@
+.box {
+    background-color: bisque;
+    margin: 100px;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+img {
+    position: absolute;
+}
+
+ #heart {
+    position: static;
+    width: 200px;
+ }
+
+ p, h1 {
+    opacity: 0;
+ }
+
+ #top {
+    width: 200px;
+    top: -60px;    /* top: -140px; */
+ }
+
+ #bottom {
+    width: 200px;
+    top: 200px;    /* top: 285px; */
+ }
