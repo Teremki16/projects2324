@@ -17,3 +17,15 @@ $(".sharik").on("mouseenter", function () {
 $(".top").on("click", function(){
     $(".sharik").css({"top": "-=50px"})
 })
+
+$(".bottom").on("click", function(){
+    $(".sharik").css({"top": "+=50px"})
+})
+
+$(".left").on("click", function(){
+    $(".sharik").css({"left": "-=50px"})
+})
+$(".right").on("click", function(){
+    $(".sharik").css({"left": "+=50px"})
+    
+})
