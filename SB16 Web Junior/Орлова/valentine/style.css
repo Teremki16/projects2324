@@ -1,0 +1,35 @@
+.box {
+    margin: 100px auto;
+    background-color: pink;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+img {
+    position: absolute;
+}
+
+#heart {
+    position: static;
+    width: 200px;
+   
+}
+
+p, h3 {
+    opacity: 0;
+}
+
+#top {
+    width: 200px;
+    top: -60px; /* top: -130px; */
+}
+
+#bottom {
+    width: 200px;
+    top: 180px; /* top: 280px; */
+}
