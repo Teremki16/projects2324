@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
 
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
+
 <body>
     <div class="box"></div>
     <label for="width">Width</label>
@@ -17,7 +31,20 @@
     <button>Change!</button>
     <script src="../jquery.js"></script>
     <script>
-    
+        $(document).ready(function () {
+            $("button").on("click", () => {
+                console.log("fdfd")
+                let w = $("#width").val()
+                let h = $("#height").val()
+                if (w.search("%") != -1) {
+                    $(".box").width(w)
+
+                } else if (w.search("px") != -1) {
+                    $("box").width(w.slice(0, -2))
+                }
+            })
+        })
     </script>
 </body>
+
 </html>
