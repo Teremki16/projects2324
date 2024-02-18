@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
     </style>
 
@@ -13,15 +24,25 @@
 </head>
 <body>
     <div class="box"></div>
-    <label for="width">Width</label>
-    <input type="text" id="widht">
+    <label for="width">Width</label> 
+    <input type="text" id="width">
     <label for="height">height</label>
     <input type="text" id="height">
     <button>Change</button>
 
-    <script src="../jquery.js" defer></script>
+    <script src="../jquery.js" ></script>
     <script>
-       
+       $(document).ready(function(){
+        $("button").on("click", ()=>{
+            let w = $("#width").val()
+            let h = $("#height").val()
+            if(w.search("%") != -1){
+                $(".box").width(w)
+            }else if(w.search("px") != -1){
+                $(".box").width(w.sclice(0, -2))
+            }
+        })
+       })
     </script>
 </body>
 </html>
