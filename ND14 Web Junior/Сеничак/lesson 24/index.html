@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="a">
+        <ul>
+            <li>
+                <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1" alt="">
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="">
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    <script src="../jquery.js"></script>
+    <script src="../Libs/hslider/imagesloaded.pkgd.min.js"></script>
+    <script src="../Libs/hslider/jquery.hslider.js"></script>
+    <link rel="stylesheet" href="../Libs/hslider/hslider.css">
+    <script>
+        $(".a").hslider({
+            navBar: true,
+            auto: true,
+            pause: 1000,
+            delay: 500
+        })
+    </script>
+</body>
+</html>

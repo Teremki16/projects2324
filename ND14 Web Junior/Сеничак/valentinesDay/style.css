@@ -1,0 +1,41 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+}
+
+.container {
+    background-color: pink;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#top {
+    position: absolute;
+    top: -55px;
+    /* top: -130px; */
+
+}
+
+#bottom {
+    position: absolute;
+    /* top: 290px; */
+    top: 180px;
+}
+
+p, h3 {
+    opacity: 0;
+}
+
+
