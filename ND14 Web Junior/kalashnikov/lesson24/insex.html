@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="a">
+        <ul>
+            <li>
+                <img src="https://www.cats.org.uk/media/13136/220325case013.jpg?width=500&height=333.49609375" alt="">
+            </li>
+            <li>
+                <img src="https://cdn.theatlantic.com/thumbor/B7U27JF25tScMZkCe5Pl9EqXjao=/0x131:2555x1568/960x540/media/img/mt/2017/06/shutterstock_319985324/original.jpg" alt="">
+            </li>
+            <li>
+                <img src="https://static.scientificamerican.com/sciam/cache/file/2AE14CDD-1265-470C-9B15F49024186C10_source.jpg?w=1200" alt="">
+            </li>
+        </ul>
+    </div>
+    <script src="../jquery-3.7.1.js"></script>
+    <script src="..//Libs/hslider/imagesloaded.pkgd.min.js"></script>
+    <script src="../Libs/hslider/jquery.hslider.js"></script>
+    <link rel="stylesheet" href="../Libs/hslider/hslider.css">
+    <script>
+        $(".a").hslider({
+            navBar: true, 
+            auto: true,
+            pause:5000,
+            delay:500
+        })
+    </script>
+</body>
+</html>
