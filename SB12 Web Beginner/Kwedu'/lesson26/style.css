@@ -1,0 +1,13 @@
+.c1, .c2{
+    display: grid;
+    gap: 10px;
+    border:1px solid black;
+    margin: 20px;
+}
+
+.c1{
+    grid-template-columns: repeat(auto-fill,50px);
+}
+.c2{
+    grid-template-columns: repeat(auto-fit,50px);
+}
