@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body>
+    <ul>
+        <li class="alert"> Alert dialog</li>
+        <li class="confirm">Confirm dialog</li>
+        <li class="prompt">prompt dialog</li>
+        <li class="notification">Notification dialog</li>
+        <li class="custom">Costom dialog</li>
+
+    </ul>
+
+</body>
+<script src="../jquery.js"></script>
+<script src="../Libs/Alertify/alertify.min.js"></script>
+<link rel="stylesheet" href="../Libs/Alertify/alertify.min.js">
+<link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+<link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css">
+<script>
+    $(".alert").on("click", () => {
+        alertify.alert("ACHTUNG")
+        return;
+    })
+    $(".prompt").on("click", function (event) {
+        alertify.prompt("what is your name?", function (e, text) {
+            if (e) {
+                alertify.success("lalaal"+ text)
+            } else {
+                alertify.error("кидок  зіпсованим прмідором")
+            }
+        })
+    })
+    $(".notification").on("click", ()=>{
+        alertify.log("Звичайне сповіщення")
+        alertify.success("Успішне сповіщення")
+        alertify.error("Невдале сповіщення")
+        alertify.set({
+            delay:10000
+        })
+        alertify.error("Тугодум сповіщення")
+        return
+    })
+$("custom").on("click", ()=>{
+    alertify.custom = alertify.extend("custom")
+    alertify.log("крута фраза","", 0)
+})
+
+</script>
+<script>
+    <style>
+        
+    </style>
+</script>
+</body>
+</html>
