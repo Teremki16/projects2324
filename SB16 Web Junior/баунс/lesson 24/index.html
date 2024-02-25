@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li class="alert">Alert dialog</li>
+    <li class="confirm">Confirm dialog</li>
+    <li class="prompt">Prompt dialog</li>
+    <li class="notification">Notification dialog</li>
+    <li class="custom">Custom dialog</li>
+
+</ul>
+
+    <script src="../jquery.js"></script>
+    <script src="../Libs/Alertify/alertify.min.js"></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css">
+    <!-- <link rel="stylesheet" href="../Libs/Alertify/alertify.default.css"> -->
+    <script>
+        $(".alert").on("click", ()=>{
+            alertify.alert("ACHTUNG!!!!")
+            return;
+        });
+        $(".confirm").on("click", ()=>{
+            alertify.confirm("ACHTUNG!!!!", function(e){
+                if(e){
+                    alertify.success("KASHWAYZER!!!!")
+                }else{
+                    alertify.error("DAMII!!!!!")
+                }
+            });
+            return;
+        });
+        $(".prompt").on("click", ()=>{
+            alertify.prompt("KASH?", function(e, text){
+                if(e){
+                    alertify.success("KASH ALBUM!"+ text)
+                }else{
+                    alertify.error("DAMII DROPP!!!!")
+                }
+            });
+            return;
+        });
+        $(".notification").on("click", ()=>{
+            alertify.log("Feat")
+            alertify.success("Ft")
+            alertify.error("Wit tana")
+            alertify.set({
+                delay: 10000
+            })
+            alertify.log("kash ft tana")
+        });
+        $(".custom").on("click", ()=>{
+            alertify.custom = alertify.expend("custom")
+            alertify.log("tana", "", 0);
+        });
+    </script>
+    <style>
+        .alertify-log-custom{
+            background: aqua;
+        }
+    </style>
+</body>
+</html>
