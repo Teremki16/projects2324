@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li class="alert">Alert dialog</li>
+        <li class="confirm">confirm dialog</li>
+        <li class="prompt">ptompt dialog</li>
+        <li class="notification">Notification dialog</li>
+        <li class="custom">custom dialog</li>
+    </ul>
+
+    <script src="../jquery.js"></script>
+    <script src="../Libs/Alertify/alertify.min.js"></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <!-- <link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css"> -->
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.default.css">
+    <script>
+
+        $(".alert").on("click", ()=>{
+            alertify.alert("ACHTUNG!!!!")
+            return
+        })
+        $(".confirm").on("click", ()=>{
+            alertify.confirm("I`m dead inside", (e)=>{
+                if(e){
+                    alertify.success("thanks!")
+                }else{
+                    alertify.error("you silly")
+                }
+            })
+            return
+        })
+
+
+        $(".prompt").on("click", ()=>{
+            alertify.prompt("What your name!?!?!?!", (e, text)=>{
+                if(e){
+                    alertify.success("thanks!," + text)
+                }else{
+                    alertify.error("you silly," + text)
+                }
+            })
+            return
+        })
+
+        $(".notification").on("click", ()=>{
+            alertify.log("Pdbxfqyt cgjdbotyyz")
+            alertify.success("Pdbxfqyt cgjdbotyyz")
+            alertify.error("Pdbxfqyt cgjdbotyyz")
+            alertify.set({
+                delay: 10000
+            })
+            alertify.log("Pdbxfqyt cgjdbotyyz")
+        })
+        $(".custom").on("click", ()=>{
+            alertify.custom = alertify.extend("custom")
+            alertify.log("cool phrase", "", 0)
+        })
+
+    </script>
+    <style>
+        .alertify-log-custom{
+            background-color: violet;
+        }
+    </style>
+</body>
+</html>
