@@ -1,0 +1,43 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 2fr 5fr 1fr;
+    height: 95vh;
+    gap: 15px;
+    grid-template-areas:
+    "h h h"
+    "c c s2"
+    "f f f";
+}
+
+.header{
+    grid-area: h;
+}
+
+.sidebar1{
+    grid-area: s1;
+    display: none;
+}
+
+.sidebar2{
+    grid-area: s2;
+}
+
+.content{
+    grid-area: c;
+}
+
+.footer{
+    grid-area: f;
+}
+
+
+@media (max-width: 415px){
+.container{
+    grid-template-areas:
+    "h h h"
+    "c c c"
+    "s2 s2 s2"
+    "f f f";
+}
+}
