@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul>
+        <li class="alert">Alert dialog</li>
+        <li class="confirm">Confirm dialog</li>
+        <li class="promt">Promt dialog</li>
+        <li class="notification">Notification dialog</li>
+        <li class="custom">Custom dialog</li>
+    </ul>
+    <script src="../jquery.js"></script>
+    <script src="../Libs/Alertify/alertify.min.js"></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.default.css">
+    <script>
+        $(".alert").on("click", ()=>{
+            alertify.alert("ACHUNG!!!")
+            return;
+        })
+        $(".confirm").on("click", ()=>{
+            alertify.confirm("ACHUNG!!!", function(e){
+                if(e){
+                    alertify.success("Good boy!")
+            }
+            else{
+                    alertify.error("Bad boy!")
+            }})
+            return;
+        })
+        $(".promt").on("click", ()=>{
+            alertify.promt("ACHUNG!!!", (e, text)=>{
+                if(e){
+                    alertify.success("Good boy!,"+ text)
+            }
+            else{
+                    alertify.error("*Kidok pomidora v oblicha* "+text+"sgeeee")
+            }})
+            return;
+        })
+        $(".notification").on("click", ()=>{
+            alertify.log("Zvychayne spovishenya")
+            alertify.success("Uspishne spovishenya")
+            alertify.error("Nevdale spovishenya")
+            alertify.set({
+                delay:10000
+            })
+            alertify.log("Tugodum spovishenya")
+            return;
+        })
+        $(".custom").on("click",()=>{
+            alertify.custom=alertify.extend("custom")
+            alertify.log("Cool phrase","",0)
+        })
+    </script>
+    <style>
+        .aletify-log-custom{
+            background-color: #da5252;
+        }
+    </style>
+</body>
+</html>
