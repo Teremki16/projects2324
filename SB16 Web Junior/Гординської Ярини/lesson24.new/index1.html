@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="alert">ALERT DIALOG</li>
+        <li class="confirm">AAAAAAAAAAAAAAAAA :3</li>
+        <li class="prompt">mayahi mayaha mayahi mayahaha</li>
+        <li class="notification">zroz</li>
+        <li class="custom">dum badum badum badum badm bdum bady dy dym badym</li>
+    </ul>
+
+
+
+
+
+    <script src="../jquery.js"></script>
+    <script src="../Libs/Alertify/alertify.min.js"></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css">
+    <script>
+        $(".alert").on("click", ()=>{
+            alertify.alert(":D");
+            return;
+        })
+
+        $(".confirm").on("click", ()=>{
+            alertify.confirm("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA :333", function(event){
+                if(event){
+                        alertify.success("ti chmo, vikinsa z vikna.")
+                }else{
+                    alertife.error("TI BUD PEREKOSHENIU SOB TEBE PEREIHALA MASHINA")
+                }
+            });
+            return;
+        })
+        $(".prompt").on("click", ()=>{
+            alertify.prompt("money money green green money is all i need need :333", function(event, text){
+                if(event){
+                        alertify.success("ti chmo, vikinsa z vikna."+ text)
+                }else{
+                    alertify.error("im inside your house"+ text + "*")
+                }
+            });
+            return;
+        })
+        $(".notification").on("click", ()=>{
+        alertify.log("zvicno")
+        alertify.success("AAAAA TI ZIVIU")
+        alertify.error("AAAAA TI ZDOH")
+        alertify.set({
+            delay: 10000
+        })
+        alertify.log("AAAAAA")
+        return;
+    })
+    $(".custom").on("click", ()=>{
+        alertify.custom = alertify.extend("custom")
+        alertify.log("CLASSSSSS", "", 0)
+    })
+
+    </script>
+    <style>
+        .alertify-log-custom{
+           background-color: rgb(91, 21, 121);
+        }
+    </style>
+</body>
+</html>
