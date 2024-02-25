@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5767581434248296045}
   - component: {fileID: 5767581434248296041}
   - component: {fileID: 5767581434248296046}
-  m_Layer: 0
+  - component: {fileID: 2174889486310584659}
+  m_Layer: 10
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +62,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5767581434248296050}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,6 +108,22 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: e772c5874efb22e498649ada859ca2df, type: 2}
+--- !u!70 &2174889486310584659
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5767581434248296050}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0449903, y: -0.015254021}
+  m_Size: {x: 0.72328496, y: 1.2222576}
+  m_Direction: 0
 --- !u!1 &5767581434748159218
 GameObject:
   m_ObjectHideFlags: 0
