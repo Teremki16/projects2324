@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1629406613452432931}
   - component: {fileID: 1629406613452432924}
   - component: {fileID: 1629406613452432925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.047111392, y: -0.009875476}
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629406613452432926}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 1629406615137259583}
   - component: {fileID: 1629406615137259581}
   - component: {fileID: 1629406615137259582}
+  - component: {fileID: 4521236374279738649}
   m_Layer: 0
   m_Name: Ghost1
   m_TagString: Untagged
@@ -294,3 +295,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &4521236374279738649
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629406615137259576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22821873, y: 0}
+  m_Size: {x: 3.6035628, y: 6}
+  m_Direction: 0
