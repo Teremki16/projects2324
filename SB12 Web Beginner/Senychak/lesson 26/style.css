@@ -1,13 +1,20 @@
-.c1, .c2 {
+.container {
     display: grid;
-    gap: 10px;
-    border: 1px solid black;
-    margin: 20px;
-} 
-
-.c1 {
-    grid-template-columns: repeat(auto-fill, 50px);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 15px;
+    border: 2px solid black;
+    /* justify-items: center;
+    align-items: center; */
+    justify-content: center;
 }
-.c2 {
-    grid-template-columns: repeat(auto-fit, 50px);
+
+.item {
+    width: 40px;
+    height: 40px;
+}
+
+.item:nth-child(1), .item:nth-child(11){
+    justify-self: start;
+    align-self: start;
 }
