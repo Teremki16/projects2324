@@ -313,17 +313,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saw
       objectReference: {fileID: 0}
+    - target: {fileID: 3008482796853792853, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3008482796853792858, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3008482796853792858, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.44
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 3008482796853792858, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.13
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 3008482796853792858, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -357,6 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3008482797713821163, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 723ccd1f1ec386a4e9a2533c37cf0bc7, type: 3}
 --- !u!1 &266316975
@@ -373,7 +381,7 @@ GameObject:
   - component: {fileID: 266316979}
   - component: {fileID: 266316978}
   - component: {fileID: 266316977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -4764,7 +4772,7 @@ GameObject:
   - component: {fileID: 1395360682}
   - component: {fileID: 1395360681}
   - component: {fileID: 1395360680}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Platforms
   m_TagString: platform
   m_Icon: {fileID: 0}
@@ -6716,7 +6724,7 @@ GameObject:
   - component: {fileID: 1520512304}
   - component: {fileID: 1520512303}
   - component: {fileID: 1520512302}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -17053,6 +17061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 3008482796853792853, guid: 5c64089791e681244acd33d9f0a69a4a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3008482796853792858, guid: 5c64089791e681244acd33d9f0a69a4a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -17096,6 +17108,10 @@ PrefabInstance:
     - target: {fileID: 3008482796853792858, guid: 5c64089791e681244acd33d9f0a69a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008482797713821163, guid: 5c64089791e681244acd33d9f0a69a4a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c64089791e681244acd33d9f0a69a4a, type: 3}
