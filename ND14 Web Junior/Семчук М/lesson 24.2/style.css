@@ -1,13 +1,13 @@
-button {
+button.b {
     background-color: chartreuse;
     border:none;
     border-radius: 50px;
     color: green;
     display: block;
     margin: 0 auto;
-    width: 50vw;
-    height: 40vh;
-    font-size: large;
+    width: 10rem;
+    height: 40px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -16,4 +16,10 @@ body{
     height: 100vh;
     display: grid;
     place-items: center;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.322);
+    border: 1px solid rgb(115, 255, 0);
+    width: 80vw;
 }
