@@ -1,4 +1,78 @@
 body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 24%, rgba(0,0,0,1) 73%);
+    min-height: 100vh;
 }
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+}
+
+img{
+    width: 9rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    transition: all 1s;
+}
+
+img:hover{
+    transform: scale(1.5);
+}
+
+.item{
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(0,0,0,0.3);
+    padding: 1rem;
+    color: white;
+    font-family: monospace;
+}
+
+.category{
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-shadow: 0 0 3px white;
+}
+
+.m{
+    color: red;
+}
+
+.y{
+    color: green;
+}
+
+.p{
+    color: blue;
+}
+
+.v{
+    color: yellow;
+}
+
+.o{
+    color: blueviolet;
+}
+
+.a{
+    color: aqua;
+}
+
+header{
+    grid-column: 1/-1;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+header img{
+    width: auto;
+    height: 5rem;
+    aspect-ratio: auto;
+    padding: 0.5rem;
+}
+
+
