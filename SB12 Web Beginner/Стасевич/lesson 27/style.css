@@ -3,3 +3,58 @@ body {
 background: linear-gradient(0deg, rgba(232,172,41,1) 0%, rgba(99,84,51,1) 100%);
 min-height: 100vh;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+}
+
+img {
+    width: 9rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    transition: all 1s;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
+
+.item {
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.155);
+    padding: 1rem;
+    color: rgb(70, 50, 12);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.category {
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.223);
+}
+
+.g {
+    color: #d01b1b60;
+}
+
+.s {
+    color: rgba(28, 96, 28, 0.475);
+}
+
+header {
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, 0.223);
+    text-align: center;
+}
+
+header img {
+    width: auto;
+    height: 3rem;
+    aspect-ratio: auto;
+    padding: 0.5rem;
+}
