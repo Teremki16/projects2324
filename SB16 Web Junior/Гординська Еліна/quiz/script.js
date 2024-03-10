@@ -43,7 +43,7 @@ function drawResult(result){
         <th width="10%">Nickname</th>
         <th width="10%">time</th>
     </tr>`)
-    results.foreEach((el, i)=>{
+    results.forEach((el, i)=>{
         $("table").append(`<tr><td>${i+1}</td><td>${el}</td></tr>`)
     })
 }
