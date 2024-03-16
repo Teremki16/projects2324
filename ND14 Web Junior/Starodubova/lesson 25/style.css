@@ -1,0 +1,29 @@
+.clock{
+    position: relative;
+    margin: 20px auto ;
+    width: fit-content;
+}
+
+.clock div:nth-child(2){
+position: absolute;
+top: 50px;
+left: 50px;
+}
+
+.clock div:nth-child(3){
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+body{
+    background-color: rgb(18, 16, 16);
+}
+
+.digitalClock{
+    color: rgb(244, 46, 139);
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
