@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6872183498525449382}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,8 +99,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000038146973, y: -0.0000038146973}
-  m_Size: {x: 4.06, y: 6}
+  m_Offset: {x: -0.19023389, y: -0.000003874302}
+  m_Size: {x: 3.6795397, y: 6}
   m_Direction: 0
 --- !u!50 &6872183498525449382
 Rigidbody2D:
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 6778230115602618665}
   m_Layer: 10
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

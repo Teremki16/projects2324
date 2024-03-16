@@ -1,0 +1,28 @@
+.clock{
+    position: relative;
+    margin: 50px auto;
+    width: fit-content;
+}
+
+.clock div:nth-child(2){
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.clock div:nth-child(3){
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+body{
+    background-color: black;
+}
+
+.digitalClock{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size:40px ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
