@@ -6,10 +6,9 @@ void setup() {
   playerCar(2, 12);
   randomSeed(analogRead(0));
 }
-
+int gameSpeed = 100;
 void loop() {
-  mainRacing(100);
-
+  mainRacing(gameSpeed);
 }
 void enemyCar(int x, int y) {
   gb.drawPoint(x, y);
@@ -50,18 +49,20 @@ void wipePlayerCar(int x, int y) {
   gb.wipePoint(x - 1, y + 3);
   gb.wipePoint(x + 1, y + 3);
 }
-
+int player_x = 2;
+int player_y = 12;
 void control() {
   if (gb.getKey() > 0) {
     if (gb.getKey() == 4) {
       wipePlayerCar(5, 12);
-      playerCar(2, 12);
+      player_x = 2;
     }
     if (gb.getKey() == 5) {
       wipePlayerCar(2, 12);
-      playerCar(5, 12);
+      player_x = 5;
     }
   }
+  playerCar(player_x, player_y);
 }
 int enemy_x = 2;
 void mainRacing(int enemySpeed) {
@@ -73,23 +74,32 @@ void mainRacing(int enemySpeed) {
   }
   for (int enemy_y = 0; enemy_y < 16; enemy_y++) {
     createLine(enemy_y);
-    createLine(enemy_y+5);
-    createLine(enemy_y-5);
-    createLine(enemy_y+10);
-    createLine(enemy_y-10);
-    createLine(enemy_y+15);
-    createLine(enemy_y-15);
+    createLine(enemy_y + 5);
+    createLine(enemy_y - 5);
+    createLine(enemy_y + 10);
+    createLine(enemy_y - 10);
+    createLine(enemy_y + 15);
+    createLine(enemy_y - 15);
     enemyCar(enemy_x, enemy_y);
+    if (Collision(player_x, player_y, enemy_x, enemy_y)) {
+      gb.testMatrix(10);
+//      gb.sound(COLLISION);
+      return;
+    }
+    if(enemy_y > 12){
+//      gb.sound(SCORE);
+    gameSpeed -= 1;
+  }
     control();
     delay(enemySpeed);
     wipeEnemyCar(enemy_x, enemy_y);
     clearLine(enemy_y);
-    clearLine(enemy_y+5);
-    clearLine(enemy_y-5);
-    clearLine(enemy_y+10);
-    clearLine(enemy_y-10);
-    clearLine(enemy_y+15);
-    clearLine(enemy_y-15);
+    clearLine(enemy_y + 5);
+    clearLine(enemy_y - 5);
+    clearLine(enemy_y + 10);
+    clearLine(enemy_y - 10);
+    clearLine(enemy_y + 15);
+    clearLine(enemy_y - 15);
   }
 }
 
@@ -110,4 +120,14 @@ void clearLine(int y) {
   gb.wipePoint(7, y);
   gb.wipePoint(7, y + 1);
   gb.wipePoint(7, y + 2);
+}
+
+bool Collision(int player_x, int player_y, int enemy_x, int enemy_y) {
+  if (player_x == enemy_x && player_y == enemy_y) {
+    return true;
+  }
+  if (player_x == enemy_x && enemy_y > 12) {
+    return true;
+  }
+  return false;
 }
