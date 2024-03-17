@@ -1,108 +1,109 @@
 #include <GameBoy.h>
 GameBoy gb;
+
 void setup() {
   gb.begin(8);
+  playerCar(2, 12);
   randomSeed(analogRead(0));
-  PlayerCar(2, 12);
 }
-
+int gameSpeed = 100;
 void loop() {
-  enemyMove(100);
-
+  mainRacing(gameSpeed);
 }
-
-
-
 void enemyCar(int x, int y) {
   gb.drawPoint(x, y);
   gb.drawPoint(x, y - 1);
   gb.drawPoint(x - 1, y - 1);
   gb.drawPoint(x + 1, y - 1);
   gb.drawPoint(x, y - 2);
-  gb.drawPoint(x + 1, y - 3);
   gb.drawPoint(x - 1, y - 3);
+  gb.drawPoint(x + 1, y - 3);
 }
 
-void PlayerCar(int x, int y) {
+void playerCar(int x, int y) {
   gb.drawPoint(x, y);
   gb.drawPoint(x, y + 1);
   gb.drawPoint(x - 1, y + 1);
   gb.drawPoint(x + 1, y + 1);
   gb.drawPoint(x, y + 2);
-  gb.drawPoint(x + 1, y + 3);
   gb.drawPoint(x - 1, y + 3);
+  gb.drawPoint(x + 1, y + 3);
 }
+
 void wipeEnemyCar(int x, int y) {
   gb.wipePoint(x, y);
   gb.wipePoint(x, y - 1);
   gb.wipePoint(x - 1, y - 1);
   gb.wipePoint(x + 1, y - 1);
   gb.wipePoint(x, y - 2);
-  gb.wipePoint(x + 1, y - 3);
   gb.wipePoint(x - 1, y - 3);
+  gb.wipePoint(x + 1, y - 3);
 }
+
 void wipePlayerCar(int x, int y) {
   gb.wipePoint(x, y);
   gb.wipePoint(x, y + 1);
   gb.wipePoint(x - 1, y + 1);
   gb.wipePoint(x + 1, y + 1);
   gb.wipePoint(x, y + 2);
-  gb.wipePoint(x + 1, y + 3);
   gb.wipePoint(x - 1, y + 3);
+  gb.wipePoint(x + 1, y + 3);
 }
+
 int player_x = 2;
 int player_y = 12;
 void control() {
-  if (gb.getKey() == 4) {
-    wipePlayerCar(5, 12);
-    player_x = 2;
+  if (gb.getKey() > 0) {
+    if (gb.getKey() == 4) {
+      wipePlayerCar(5, 12);
+      player_x = 2;
+    }
+    if (gb.getKey() == 5) {
+      wipePlayerCar(2, 12);
+      player_x = 5;
+    }
   }
-  if (gb.getKey() == 5) {
-    wipePlayerCar(2, 12);
-    player_x = 5;
-  }
-
-  PlayerCar(player_x, player_y);
+  playerCar(player_x, player_y);
 }
 int enemy_x = 2;
-void enemyMove( int enemySpeed) {
-  enemy_x  = random(10);
+void mainRacing(int enemySpeed) {
+  enemy_x = random(10);
   if (enemy_x > 5) {
-    enemy_x = 2;
-  } else {
     enemy_x = 5;
+  } else {
+    enemy_x = 2;
   }
-  for (int enemy_y = 0; enemy_y < 16; enemy_y++) {
+  for ( int enemy_y = 0; enemy_y < 16; enemy_y++) {
     createLine(enemy_y);
-    createLine(enemy_y + 5);
-    createLine(enemy_y + 10);
-    createLine(enemy_y + 15);
-    createLine(enemy_y - 5);
-    createLine(enemy_y - 10);
-    createLine(enemy_y - 15);
+    createLine(enemy_y - 6);
+    createLine(enemy_y - 12);
+    createLine(enemy_y - 18);
+    createLine(enemy_y + 6);
+    createLine(enemy_y + 12);
+    createLine(enemy_y + 18);
     enemyCar(enemy_x, enemy_y);
-    if (Collision(player_x, player_y, enemy_x, enemy_y)) {
-      gb.sound(COLLISION);
+    if(Collision(player_x, player_y,enemy_x, enemy_y)){
       gb.testMatrix(10);
-      gb.clearDisplay();
+//      gb.sound(COLLISION);
       return;
     }
-    if (enemy_y > 15) {
-      gb.sound(SCORE);
-    }
+//    if(enemy_y >12){
+//      gb.sound(SCORE);
+gameSpeed -= 1;
+if(gameSpeed <= 0)
     control();
     delay(enemySpeed);
     wipeEnemyCar(enemy_x, enemy_y);
-    createLine(enemy_y);
-    clearLine(enemy_y + 5);
-    clearLine(enemy_y + 10);
-    clearLine(enemy_y + 15);
-    clearLine(enemy_y - 5);
-    clearLine(enemy_y - 10);
-    clearLine(enemy_y - 15);
+    clearLine(enemy_y);
+    clearLine(enemy_y - 6);
+    clearLine(enemy_y - 12);
+    clearLine(enemy_y - 18);
+    clearLine(enemy_y + 6);
+    clearLine(enemy_y + 12);
+    clearLine(enemy_y + 18);
   }
-
 }
+
 void createLine(int y) {
   gb.drawPoint(0, y);
   gb.drawPoint(0, y + 1);
@@ -112,7 +113,7 @@ void createLine(int y) {
   gb.drawPoint(7, y + 1);
   gb.drawPoint(7, y + 2);
 }
-void clearLine(int y) {
+void clearLine (int y) {
   gb.wipePoint(0, y);
   gb.wipePoint(0, y + 1);
   gb.wipePoint(0, y + 2);
@@ -120,15 +121,13 @@ void clearLine(int y) {
   gb.wipePoint(7, y);
   gb.wipePoint(7, y + 1);
   gb.wipePoint(7, y + 2);
+
 }
-
-
-bool Collision(int Player_x, int Player_y, int enemy_x, int enemy_y) {
-  if (player_x == enemy_x && player_y == enemy_y) {
+bool Collision( int player_x, int player_y, int enemy_x, int enemy_y) {
+  if (player_x == enemy_x && player_y == enemy_y){
     return true;
   }
-
-  if (player_x == enemy_x && enemy_y > 12) {
+  if(player_x == enemy_x && enemy_y > 12){
     return true;
   }
   return false;
