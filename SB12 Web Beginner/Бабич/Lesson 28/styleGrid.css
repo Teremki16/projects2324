@@ -61,9 +61,10 @@
     align-items: center;
     background-color: rgba(255, 166, 0, 0.288);
     transform: translateY(100%);
+    transition: all 0.5s;
 }
 
-.item:hover {
+.item:hover .item__overlay {
     transform: translateY(0);
 }
 
