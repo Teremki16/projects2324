@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+header {
+    height: 100vh;
+    background: radial-gradient(rgb(0, 60, 255),rgb(255, 217, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    width: 50%;
+    height: 40%;
+    object-fit: contain;
+}
+
+section {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    /* opacity: 0; */
+    /* transition: all 1s; */
+}
+
+p{
+    max-width: 300px;
+    text-align: center;
+}
+
+.fadeIN {
+    opacity: 1;
+}
