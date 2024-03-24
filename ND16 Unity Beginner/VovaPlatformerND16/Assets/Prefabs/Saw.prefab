@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8534537801118821342}
   - component: {fileID: 5201080444356365310}
   - component: {fileID: 5201080444356365305}
+  - component: {fileID: 5413492414366042233}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Enemy
@@ -117,6 +118,22 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!70 &5413492414366042233
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534537801118821317}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 0.5}
+  m_Direction: 0
 --- !u!1 &8534537801967836967
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,8 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Macro","macro":null,"embed":null}}'
-    _objectReferences: []
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 0867673043c9b844ca44e59d51c638fb, type: 2}
 --- !u!1 &8534537802347158481
 GameObject:
   m_ObjectHideFlags: 0

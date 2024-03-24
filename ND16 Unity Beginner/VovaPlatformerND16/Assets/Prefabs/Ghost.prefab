@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 4493809517148791845}
   - component: {fileID: 4493809517148791841}
   - component: {fileID: 4493809517148791846}
+  - component: {fileID: 5279136169324198139}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Enemy
@@ -214,6 +215,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &5279136169324198139
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493809517148791866}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4.06, y: 6}
+  m_Direction: 0
 --- !u!1 &4493809517457789144
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,5 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Macro","macro":null,"embed":null}}'
-    _objectReferences: []
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 0867673043c9b844ca44e59d51c638fb, type: 2}
