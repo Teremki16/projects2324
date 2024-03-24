@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 100vh;
+    background: radial-gradient(aqua,rgb(153, 53, 153));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+section{
+    display: flex;
+    padding: 2rem 1rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 2rem;
+    position: absolute;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.content{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 1s;
+}
+
+main{
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+.s2{
+    background-color: blue;
+    color: white;
+}
+.s3{
+    background-color: rgb(208, 255, 0);
+}
+.s4{
+    background-color: rgb(99, 1, 124);
+    color: white;
+}

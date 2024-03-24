@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 100vh;
+    background: radial-gradient(aqua,rgb(153, 53, 153));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+section{
+    display: flex;
+    padding: 2rem 1rem;
+}
+
+.content{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transition: all 1s;
+}
+.s2,.s4{
+    background-color: blue;
+    color: white;
+    justify-content: flex-start;
+}
+.s1,.s3{
+    background-color: white;
+    justify-content: flex-end;
+}
+.fade-left{
+    opacity: 1;
+    transform: translateX(-50%);
+}
+.fade-right{
+    opacity: 1;
+    transform: translateX(50%);
+}
