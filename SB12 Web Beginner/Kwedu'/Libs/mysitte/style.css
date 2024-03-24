@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto,25rem)) 1fr;
+}
+header{
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/461940/pexels-photo-461940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0, 0, 0);
+    grid-column: 1/-1;
+}
+
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo{
+    height: 100%;
+    filter: invert();
+}
+
+.menu{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
