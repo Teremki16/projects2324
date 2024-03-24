@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 100vh;
+    background: radial-gradient(rgb(253, 255, 149), rgb(255, 175, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+section{
+    display: flex;
+    padding: 2rem 1rem;
+}
+
+.content{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.s1, .s3 {
+    justify-content: flex-end;
+}
+
+.s2, .s4 {
+    background-color: plum;
+    color: whitesmoke;
+    justify-content: flex-start;
+}
+
+.fade-left{
+    opacity: 1;
+    transform: translateX(-50%);
+}
+
+.fade-right{
+    opacity: 1;
+    transform: translateX(50%);
+}

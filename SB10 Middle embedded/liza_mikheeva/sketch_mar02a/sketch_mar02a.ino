@@ -8,10 +8,7 @@ void setup() {
 
 void loop() {
   enemyMove(100);
-
 }
-
-
 
 void enemyCar(int x, int y) {
   gb.drawPoint(x, y);

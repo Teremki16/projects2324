@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25rem)) 1fr;
+    font-family: "Truculenta", sans-serif;
+}
+
+
+header{
+    height: 100vh;
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/191/521/desktop-wallpaper-memes-cat-polite-cat.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 50px;
+}
+
+.logo{
+    height: 100%;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.banner{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.banner h1{
+    font-size: 3rem;
+}
+
+.banner p{
+    width: 40%;
+    text-align: center;
+}
+
+a.button{
+    display: block;
+    background-color: orange;
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: all .5s;
+}
+
+a.button:hover{
+    transform: scale(1.1);
+}
+
+.slogan{
+   grid-column: 2/-2;
+   height: 15vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   gap: 1rem;
+}
+
+.tiles{
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
