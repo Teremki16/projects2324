@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto,25rem)) 1fr;
+    font-family: "Pacifico", cursive;
+}
+
+
+
+
+
+header{
+    height: 100vh;
+    background-image: url("https://hdoboi.kiev.ua/images/middle/06.Oct.2019-snezhnyj-sklon-gory.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+
+}
+.logo{
+    height: 100%;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.banner{
+    flex-grow: 1;
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: bisque;
+}
+.banner h1{
+    font-size: 4rem;
+
+}
+.banner p{
+    width: 40%;
+    text-align: center;
+
+}
+a.button{
+    display: block;
+    background-color: blanchedalmond;
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: all 0.5s;
+
+}
+a.button:hover{
+    transform: scale(1.1);
+}
+.slogan{
+    grid-column: 2/-2;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.tiles{
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
