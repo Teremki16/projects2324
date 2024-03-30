@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    height: 100vh;
+    background: radial-gradient(lightblue, rgba(169, 169, 241));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+img {
+    width: 50%;
+    height: 40%;
+    object-fit: contain;
+}
+
+section{
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+p{
+    max-width: 300px;
+    text-align: center;
+}
+
+.fadeIn{
+    opacity: 1;
+}
+
+main{
+    background-color: white;
+    position: relative;
+}
+
+.paralax{
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    padding: 400px 0;
+}
+
+.bg1{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTA-rLi-kNnu3DOE2RFqGsUNMkeP58AK7xs4QNFhyaWw&s);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140%;
+    z-index: 1;
+}
+
+.bg2{
+    background-image: url(https://flomaster.top/o/uploads/posts/2023-11/1700747135_flomaster-top-p-udivitelnie-peizazhi-prirodi-akvarelnie-kr-1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140%;
+    z-index: 1;
+}
+
+.bg3{
+    background-image: url(https://kartinki.pics/uploads/posts/2022-02/1645811424_3-kartinkin-net-p-krasivie-peizazhi-kartinki-3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140%;
+    z-index: 1;
+}
