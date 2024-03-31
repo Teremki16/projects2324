@@ -1,8 +1,8 @@
 #include <GameBoy.h>
 GameBoy gb;
 
-int x = 1, y = 0;
-int ditX, dirY;
+int x = 0, y = 1;
+int dirX, dirY;
 
 int snakeX[10];
 int snakeY[10];
@@ -37,7 +37,7 @@ void loop() {
   gb.clearDisplay();
   gb.drawPoint(foodX, foodY);
   drawSnake();
-  delay(300);
+  delay(250);
 }
 
 void makeMove() {
@@ -72,30 +72,35 @@ void move () {
       snakeY[0]--;
     }
   }
+
+
   if (direction == bottom) {
-    if (snakeY[0] == 15   ) {
+    if (snakeY[0] == 15) {
       snakeY[0] = 0;
     } else {
       snakeY[0]++;
     }
   }
-  if (direction == left) {
+  
+if (direction == left) {
     if (snakeX[0] == 0) {
       snakeX[0] = 7;
     } else {
       snakeX[0]--;
     }
   }
-  if (direction == right) {
+  
+if (direction == right) {
     if (snakeX[0] == 7) {
       snakeX[0] = 0;
     } else {
       snakeX[0]++;
     }
   }
+
 }
-void drawSnake() {
-  for (int i = 0; i < lenSnake; i++) {
+void drawSnake(){
+  for(int i = 0; i < lenSnake; i++){
     gb.drawPoint(snakeX[i], snakeY[i]);
   }
 }
