@@ -1,7 +1,7 @@
 #include <GameBoy.h>
 GameBoy gb;
 
-int x = 0, y = 1;
+int x = 1, y = 0;
 int dirX, dirY;
 
 int snakeX[10];
@@ -26,20 +26,15 @@ void setup() {
 
 void loop() {
   makeMove();
-  dirX = dirX + x;
-  dirY = dirY + y;
-  if(dirY > 15) dirY = 0;
-  if(dirX > 7) dirX = 0;
-  if(dirY < 0) dirY = 15;
-  if(dirX < 0) dirX = 7;
-  if(dirX == foodX &&  dirY == foodY){
+  move();
+  if(snakeX[0] == foodX &&  snakeY[0] == foodY){
     makeFood();
 //    tone(4, 1000, 10000);
   }
   gb.clearDisplay();
   gb.drawPoint(foodX, foodY);
-  gb.drawPoint(dirX, dirY); 
-  delay(250); 
+  drawSnake();
+  delay(300); 
 
 }
 
@@ -64,7 +59,42 @@ void makeFood(){
 }
 
 void move(){
-  for(int i = lenSnake - 1; i > 0; i++){
-    
+  for(int i = lenSnake - 1; i > 0; i--){
+    snakeX[i] = snakeX[i-1];
+    snakeY[i]= snakeY[i-1];
+  }
+  if (direction == up){
+  if (snakeY[0] == 0){
+      snakeY[0] = 15;
+    }else{
+      snakeY[0]--;
+    }
+  }
+  if (direction == bottom){
+  if (snakeY[0] == 15){
+      snakeY[0] = 0;
+    }else{
+      snakeY[0]++;
+    }
+  }
+  if (direction == right){
+  if (snakeX[0] ==7){
+      snakeX[0] = 0;
+    }else{
+      snakeX[0]++;
+    }
+  }
+  if (direction == left){
+  if (snakeX[0] == 0){
+      snakeX[0] = 7;
+    }else{
+      snakeX[0]--;
+    }
+  }
+}
+
+void drawSnake(){
+  for (int i=0; i< lenSnake; i++){
+    gb.drawPoint(snakeX[i], snakeY[i]);
   }
 }
