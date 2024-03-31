@@ -3,18 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 .main-grid{
     display: grid;
     grid-template-columns: 1fr repeat(2, minmax(auto,25rem)) 1fr;
+    font-family: "Oswald", sans-serif;
 }
 header{
     height: 100vh;
-    background-image: url("https://images.pexels.com/photos/461940/pexels-photo-461940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/91/828/972/just-do-it-nike-texture-dark-wallpaper-preview.jpg");
     background-size: cover;
     background-position: center;
     box-shadow: inset 0 0 0 1000px rgba(0,0, 0, 0);
     grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
 }
 
 nav{
@@ -30,11 +33,127 @@ nav{
     filter: invert();
 }
 
-.menu{
+.menu ul{
     list-style: none;
+    display: flex;
+    gap: 2rem;
 }
 
 a{
     text-decoration: none;
     color: white;
+}
+
+.banner{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.banner{
+    font-size: 2rem;
+    width: opx;
+    text-align: center;
+}
+
+a.button{
+    display: block;
+    background-color: orange;
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: all .5s;
+}
+
+a.button:hover{
+    transform: scale(1.1);
+}
+
+.slogan{
+    grid-column: 2/-2;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tiles{
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.item img{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s;
+}
+
+.item_overlay{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 111;
+}
+
+.item:hover .item img{
+    transform: scale(1.3);
+}
+
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.navLinks{
+    display: flex;
+    gap: 1rem;
+}
+
+.navLinks .item_overlay:hover{
+    color: rgb(14, 14, 14);
+    text-shadow: 0 0 5px rgb(86, 82, 82);
+    transform: scale(1.3);
+}
+
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem;
+    padding: 2rem 0;
+}
+
+.navLinks a:hover{
+    color: rgb(red, green, blue);
+    text-shadow: 0 0,5px white;
+    transform: scale(1.3);
 }
