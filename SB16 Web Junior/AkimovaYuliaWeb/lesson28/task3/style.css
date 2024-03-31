@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 100vh;
+    background: radial-gradient(aqua,rgb(153, 53, 153));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+section{
+    display: flex;
+    padding: 2rem 1rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 1s;
+}
+
+.paralax{
+    padding: 400px 0;
+    color: white;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg1{
+    background-image:url(https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NwYWNlLXNtZWxsLTIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0=) ;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+.bg2{
+    background-image:url(https://img.freepik.com/free-photo/glowing-spaceship-orbits-planet-in-starry-galaxy-generated-by-ai_188544-9655.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1710806400&semt=ais) ;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+.bg3{
+    background-image:url(https://images.pexels.com/photos/957061/milky-way-starry-sky-night-sky-star-957061.jpeg?cs=srgb&dl=pexels-felix-mittermeier-957061.jpg&fm=jpg) ;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.cont{
+    width: 90%;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
