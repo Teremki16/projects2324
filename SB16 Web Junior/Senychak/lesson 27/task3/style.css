@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 100vh;
+    background: radial-gradient(lightblue, blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    z-index: -1;
+}
+
+header h1 {
+    font-size: 4rem;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    /* z-index: 1; */
+    background-color: white;
+}
+
+.content {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 1s;
+}
+
+.paralax {
+    padding: 400px 0;
+    color: white;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg1 {
+    background-image: url(https://c02.purpledshub.com/uploads/sites/48/2023/04/facts-about-space-hero.jpg?w=1029&webp=1);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+.bg2 {
+    background-image: url(https://t4.ftcdn.net/jpg/03/86/82/73/360_F_386827376_uWOOhKGk6A4UVL5imUBt20Bh8cmODqzx.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+.bg3 {
+    background-image: url(https://cdn.mos.cms.futurecdn.net/M7fDTpDnJcZ4dt3myngzxi-1200-80.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.cont {
+    width: 90%;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
+
