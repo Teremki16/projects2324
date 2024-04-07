@@ -165,5 +165,73 @@ footer {
 
 .shop_title {
     height: 60vh;
-    background-image:url(https://wallpapershome.ru/images/pages/pic_h/25764.jpg);
+    background-image:url(https://media1.tenor.com/m/mgWYaMTojVoAAAAd/bo-sinn.gif);
+}
+
+.shop_tiles {
+grid-column: 2/-2;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 2rem 1rem;
+}
+
+.sitem_img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.sitem{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+a.buy {
+    display: block;
+    background-color: black;
+    padding: 5px 20%;
+    border-radius: 5px;
+    transition: all .5s;
+}
+
+a.buy:hover {
+    background-color: brown;
+    color: black;
+}
+
+.about_title {
+    background-image: url(https://media1.tenor.com/m/dd1zQ4LOBEIAAAAC/bo-sinn-bromo.gif);
+    height: 60vh;
+}
+
+.description{
+    grid-column: 2/-2;
+    padding: 5rem 1rem;
+}
+
+.description hr{
+    border: none;
+    background-color: black;
+    width: 200px;
+    height: 3px;
+    margin: 2rem 0;
+}
+
+.team_tiles{
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 2rem 1rem;
+}
+
+.member img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: center;
+    object-position: center;
+    filter: grayscale();
 }
