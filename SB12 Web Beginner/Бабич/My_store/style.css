@@ -156,3 +156,69 @@ footer {
     height: 60vh;
     background-image: url(https://www.mirf.ru/wp-content/uploads/2020/06/galaktika-scaled.jpg);
 }
+
+.shop_tiles {
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem 1rem;
+}
+
+.sitem_img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sitem{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+a.buy {
+    display: block;
+    background-color: black;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: all .5s;
+}
+
+a.buy:hover {
+    background-color: bisque;
+}
+
+.about_title {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzU5YGzz9xAHdNBFZv_7HkKWVu8u8QPXiJ5_z-yxJDoQ&s);
+    height: 60vh;
+}
+
+.description {
+    grid-column: 2/-2;
+    padding: 5rem 1rem;
+}
+
+.description hr {
+    border: none;
+    background-color: black;
+    width: 200px;
+    height: 3px;
+    margin: 2rem 0;
+}
+
+.team_tiles {
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem 1rem;
+}
+
+.member img {
+    width: 80%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale();
+}
