@@ -1,72 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>photo camera</title>
-        <link
-            rel="shortcut icon"
-            href="https://1000logos.net/wp-content/uploads/2023/07/Nokia-Logo-1871.png"
-            type="image/x-icon"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css"
-            integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=="
-            crossorigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="main-grid">
-            <header class="shop_title">
-                <nav>
-                    <img
-                        src="https://1000logos.net/wp-content/uploads/2023/07/Nokia-Logo-1871.png"
-                        alt="logo"
-                        class="logo"
-                    />
-                    <div class="menu">
-                        <ul>
-                            <li><a href="">Main</a></li>
-                            <li><a href="">Shop</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contacts</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="banner">
-                    <h1>NOKIA</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi molestiae consequuntur eos, omnis qui sed soluta earum saepe quam. Facilis!</p>
-                    <a href="" class="button">SHOP</a>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photo camera</title>
+    <link rel="shortcut icon" href="https://1000logos.net/wp-content/uploads/2023/07/Nokia-Logo-1871.png"
+        type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css"
+        integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main-grid">
+        <header class="shop_title">
+            <nav>
+                <img src="https://1000logos.net/wp-content/uploads/2023/07/Nokia-Logo-1871.png" alt="logo"
+                    class="logo" />
+                <div class="menu">
+                    <ul>
+                        <li><a href="">Main</a></li>
+                        <li><a href="">Shop</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contacts</a></li>
+                    </ul>
                 </div>
-            </header>
-            <section class="slogan">
-                <h1>Phone categories</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laborum?</p>
-          </section>
-          <div class="shop_tiles">
-            <div class="sitem">
-                
-            </div>
-          </div>
+            </nav>
+            <div class="banner">
+                <h1>NOKIA</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi molestiae consequuntur eos, omnis qui
+                    sed soluta earum saepe quam. Facilis!</p>
+                <a href="" class="button">SHOP</a>
 
+            </div>
+        </header>
+        <section class="slogan">
+            <h1>Phone categories</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laborum?</p>
+        </section>
+        <div class="shop_tiles">
+            <div class="sitem">
+                <img src="https://images.prom.ua/4591235482_w600_h600_4591235482.jpg" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="data:image/jpeg;base64,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" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="https://icases.ua/files/resized/categories/iphone-11-cases.330x300.png" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="https://cdn.food.ru/unsigned/fit/640/480/ce/0/czM6Ly9tZWRpYS9waWN0dXJlcy8yMDIzMDQxMi8zczh2R1EuanBlZw.jpg" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Esox_lucius1.jpg" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="https://images.prom.ua/4591235482_w600_h600_4591235482.jpg" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
+            <div class="sitem">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/%D0%9F%D0%BE%D0%BF-%D0%B8%D1%82.jpg" alt="" class="sitem_img">
+                <div class="sitem_info">
+                    <p>
+                        <b>
+                            NOKIA 3310
+                        </b>
+                    </p>
+                    <p>
+                        24$
+                    </p>
+                </div>
+                <a href="" class="buy">And to cart</a>
+
+            </div>
         </div>
-        <footer>
-          <h1 class="namber">8 800 55 35 35</h1>
-          <h2 class="email">shop@shop.ua</h2>
-          <div class="navLinks">
+
+    </div>
+    <footer>
+        <h1 class="namber">8 800 55 35 35</h1>
+        <h2 class="email">shop@shop.ua</h2>
+        <div class="navLinks">
             <a href=""><i class="fa-brands fa-telegram"></i></a>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-apple"></i>
-          </div>
-        </footer>
-    </body>
+        </div>
+    </footer>
+</body>
+
 </html>
