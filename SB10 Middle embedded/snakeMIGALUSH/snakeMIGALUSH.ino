@@ -1,11 +1,10 @@
 #include<GameBoy.h>
 GameBoy GB;
 
-int x = 1, y = 0;
-int dirX, dirY;
 
-int snakeX[10];
-int snakeY[10];
+
+int snakeX[29];
+int snakeY[29];
 
 int up = 0;
 int right = 1;
@@ -14,7 +13,9 @@ int left = 3;
 
 int direction = right;
 
-int lenSnake = 5;
+int lenSnake = 3;
+
+bool state = true;
 
 int foodX = 0, foodY = 0;
 
@@ -29,79 +30,118 @@ void setup() {
 void loop() {
   makeMove();
   Move();
-  if(snakeX[0] == foodX && snakeY[0] == foodY){
+  if (snakeX[0] == foodX && snakeY[0] == foodY) {
+    lenSnake++;
     makeFood();
-    tone(4, 3000,100);
+
+
   }
   GB.clearDisplay();
-  GB.drawPoint(foodX, foodY);
+  drawFood();
   drawSnake();
+  Lose();
   delay(300);
-  
+
 }
 
-void makeMove(){
-  if(GB.getKey() == 3){
+void makeMove() {
+  if (GB.getKey() == 3 && direction != bottom) {
     direction = up;
   }
-  if(GB.getKey() == 6){
+  if (GB.getKey() == 6 && direction != up) {
     direction = bottom;
   }
-  if(GB.getKey() == 4){
+  if (GB.getKey() == 4 && direction != right) {
     direction = left;
   }
-  if(GB.getKey() == 5){
+  if (GB.getKey() == 5 && direction != left) {
     direction = right;
   }
 }
 
-void makeFood(){
+void makeFood() {
   foodX = random(8);
   foodY = random(8);
-  
+  while (isPartOfSnake(foodX, foodY)) {
+    foodX = random(8);
+    foodY = random(8);
+  }
+}
+void drawFood() {
+  state = !state;
+  if (state) {
+    GB.drawPoint(foodX, foodY);
+  } else {
+    GB.wipePoint(foodX, foodY);
+  }
 }
 
-void Move(){
-  for(int i = lenSnake - 1;i > 0;i--){
+void Move() {
+  for (int i = lenSnake - 1; i > 0; i--) {
     snakeX[i] = snakeX[i - 1];
     snakeY[i] = snakeY[i - 1];
   }
-  if(direction == up){
-    if(snakeY[0] == 0){
+  if (direction == up) {
+    if (snakeY[0] == 0) {
       snakeY[0] = 15;
-    }else{
+    } else {
       snakeY[0]--;
     }
   }
-  if(direction == bottom){
-    if(snakeY[0] == 15){
+  if (direction == bottom) {
+    if (snakeY[0] == 15) {
       snakeY[0] = 0;
-    }else{
+    } else {
       snakeY[0]++;
     }
   }
-  if(direction == left){
-    if(snakeX[0] == 0){
+  if (direction == left) {
+    if (snakeX[0] == 0) {
       snakeX[0] = 7;
-    }else{
+    } else {
       snakeX[0]--;
     }
   }
-  if(direction == right){
-    if(snakeX[0] == 7){
+  if (direction == right) {
+    if (snakeX[0] == 7) {
       snakeX[0] = 0;
-    }else{
+    } else {
       snakeX[0]++;
     }
   }
 }
 
-void drawSnake(){
-  for(int i = 0; i < lenSnake; i++){
+void drawSnake() {
+  for (int i = 0; i < lenSnake; i++) {
     GB.drawPoint(snakeX[i], snakeY[i]);
   }
 }
 
-void SnakeBig(){
-  
+
+
+bool isPartOfSnake(int x, int y) {
+  for (int i = 0; i < lenSnake - 1; i++) {
+    if (snakeX[i] == x && snakeY[i] == y) return true;
+  }
+  return false;
+}
+
+void Lose() {
+  for (int i = lenSnake - 1; i > 0; i--) {
+    if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
+      delay(2000);
+      GB.clearDisplay();
+      GB.testMatrix(10);
+      for (int j = 0; j < lenSnake - 1; j++) {
+        snakeX[j] = 0;
+        snakeY[j] = 0;
+      }
+      direction = right;
+      foodX = 3;
+      foodY = 3;
+      snakeX[0] = 4;
+      snakeY[0] = 7;
+      return;
+    }
+  }
 }
