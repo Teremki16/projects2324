@@ -52,3 +52,70 @@ h1{
 article {
     width: 100%;
 }
+
+.img{
+    width: 65%;
+    margin: 30px 0 ;
+}
+
+.img img {
+    box-shadow: 0 0 10px black;
+    width: 100%;
+}
+
+.answer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+}
+
+#t1input{
+    flex-grow: 1;
+    font-size: 35px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+#t1btn{
+    font-size: 35px;
+    background-color: rgb(59, 129, 101);
+    border: none;
+    padding: 5px 20px;
+    color: white;
+}
+
+.taskProgress {
+    position: fixed;
+    top: 45vh;
+    left: 10vw;
+}
+
+.taskProgress p {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.nextTask{
+    position: fixed;
+    top: 45vh;
+    right: 10vw;
+    display: none;
+}
+
+.nextTask a{
+    display: block ;
+    background-color: rgb(231, 255, 244);
+    color: black;
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 333px;
+    text-decoration: none;
+}
