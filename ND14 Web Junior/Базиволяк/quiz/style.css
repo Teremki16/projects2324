@@ -47,3 +47,65 @@ h1{
     margin-left: 25px;
 
 } 
+article{
+    width: 100%;
+}
+
+.img {
+    width:65%;
+    margin: 30px 0;
+}
+
+.img img {
+    box-shadow: 0 0 10px black;
+    width: 100%;
+}
+
+.answer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+}
+
+#t1input {
+    flex-grow: 1;
+    font-size: 35px;
+    background-color: blueviolet;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+#t1btn {
+    font-size: 35px;
+    background-color: #991525;
+    border: none;
+    padding: 5px 20px;
+    color: aliceblue;
+}
+
+.taskProgress {
+    position: fixed;
+    top: 45vh;
+    left:10vw;
+}
+.taskProgress p{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.nextTask a {
+    display: block;
+    background-color: #991525 ;
+    color: white;
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 333px;
+    text-decoration: none;
+}
