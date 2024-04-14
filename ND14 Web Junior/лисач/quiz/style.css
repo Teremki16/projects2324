@@ -95,10 +95,27 @@ input:focus {
     position: fixed;
     top: 45vh;
     left: 10vw;
+    display: none;
 }
 
 .taskProgress p {
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
+}
+
+.nextTask{
+    position: fixed;
+    top: 45vh;
+    right: 10vh
+}
+
+.nextTask a {
+    display: block;
+    background-color: rgb(34, 26, 26);
+    color: white;
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 333px;
+    text-decoration: none;
 }

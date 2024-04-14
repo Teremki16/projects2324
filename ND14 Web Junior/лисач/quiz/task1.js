@@ -44,10 +44,14 @@ $("#t1btn").on("click", function(){
         $("#t1input").val("")
         $("#progress").val(score).trigger("change")
         was.push(rebus)
+        if(score < 5 ) {
         do{
 
         }while(was.includes(rebus))
         startRebus(rnd())
+    }else{
+        $(".nextTask").css("display", "block")
+    }
     }else{
         alertify.error("Wrong! Try again!")
     }
