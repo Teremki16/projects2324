@@ -8,7 +8,7 @@
 
 .main-grid {
     display: grid;
-    grid-template-columns: 1fr repeat(2, minmax(auto, 12rem)) 1fr;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 20rem)) 1fr;
     font-family: "Dancing Script", cursive;
 }
 
@@ -212,8 +212,9 @@ a.buy:hover{
 .team_tiles{
     grid-column: 2/-2;
     display: grid;
-    grid-template-columns: repeat(auto-fit,200px);
+    grid-template-columns: repeat(auto-fit, 100px);
     gap: 2rem 1rem;
+    justify-content: center;
 }
 
 .member img{
@@ -222,4 +223,61 @@ a.buy:hover{
     object-fit: contain;
     object-position: center;
     filter: grayscale();
+}
+
+.member .name{
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+
+.contacts_title{
+    background-image: url(https://wallpapers.com/images/hd/tokyo-night-pictures-7r25z4i0nxt6ra2t.jpg);
+    height: 60vh;
+}
+.contacts-data{
+    grid-column: 2/-2;
+    margin: 4rem 0;
+}
+
+.contacts-data h2{
+    margin: 1rem 0;
+}
+
+.contacts-data ul{
+    list-style: none;
+}
+
+form{
+    grid-column: 2/-2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+
+form button{
+    align-self: center;
+    border: none;
+    background-color: black;
+    color: whitesmoke;
+    padding: 1rem 3rem;
+    border-radius: 999px;
+}
+
+.map_desc{
+    grid-column: 2/-2;
+}
+
+iframe{
+    grid-column: 1/-1;
+    height: 50vh;
+    width: 100%;
 }
