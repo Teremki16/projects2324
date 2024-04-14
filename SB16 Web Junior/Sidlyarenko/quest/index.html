@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Quest task1
+        Quest task2
     </title>
     <script src="../jquery.js" defer></script>
     <script src="../Libs/Alertify/alertify.min.js" defer></script>
@@ -18,7 +18,7 @@
 <body>
     <div class="wrapper">
         <h1><i><u>Online-Quest</u></i></h1>
-        <h2>Quiz task1</h2>
+        <h2>Quiz task2</h2>
         <article>
             <p class="slideRules">Description and rules</p>
             <div class="rules">
@@ -31,12 +31,26 @@
                 </p>
             </div>
         </article>
-        <div class="img">
-            <img src="#" alt="тут могла бути ваша реклама">
-        </div>
+
+            <div class="start">Start</div>
+
+            <div class="sound">
+                <audio src="#" controls>
+                    Your browser does not support the audio elements
+                </audio>
+            </div>
+
         <div class="answer">
             <input type="text" id="task1input" placeholder="Answer...">
             <input type="button" value="GO" id="task1btn">
+        </div>
+        <div class="score">
+            <h2>Task progress</h2>
+            <input type="text" id="score" value="0">
+        </div>
+
+        <div class="next_bar">
+            <a href="" id="next">Next Quest</a>
         </div>
     </div>
 </body>
