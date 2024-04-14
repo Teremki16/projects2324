@@ -215,6 +215,8 @@ a.buy:hover {
     grid-column: 2/-2;
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
+    gap: 2rem 1rem;
+    justify-content: center;
 }
 
 .member img {
@@ -222,5 +224,61 @@ a.buy:hover {
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
-    filter: grayscale();
+}
+
+.member .name {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.contacts_title {
+    background-color: url(https://planetofhotels.com/guide/sites/default/files/styles/node__blog_post__bp_banner__blog_post_banner/public/2020-05/Sakura-in-Japan.jpg);
+    height: 60vh;
+}
+
+.contacts-data {
+    grid-column: 2/-2;
+    margin: 5rem 0;
+}
+
+.contacts-data h2 {
+    margin: 1rem 0;
+}
+
+.contacts-data ul {
+    list-style: none;
+}
+
+form {
+    grid-column: 2/-2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+
+form button {
+    align-self: center;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 999px;
+}
+
+.map_desc {
+    grid-column: 2/-2;
+}
+
+iframe {
+    grid-column: 1/-1;
+    height: 50vh;
+    width: 100%;
 }
