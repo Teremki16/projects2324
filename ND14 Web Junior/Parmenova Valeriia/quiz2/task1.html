@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz task1</title>
+    <script src="../jquery.js" defer></script>
+    <script src="../Libs/Alertify/alertify.min.js" defer></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css">
+    <script src="../Libs/Knob/jquery.knob.min.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="task1.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1><i><u>Online-Quest</u></i></h1>
+        <h2>Task 2. Music quiz</h2>
+        <article>
+            <div class="slideRules">Description & Rules ↓</div>
+            <div class="rules">
+                <p>
+                    <b>Music</b> - is a puzzle device that combines the use of illustrated pictures with individual letters to depict words or phrases.
+                </p>
+                <p>
+                    <b>Rules</b>
+                    <ul>
+                        <li>Guess 10 soundtracks</li>
+                        <li>After answering 10 soundtracks, you will have access to the next task</li>
+                    </ul>
+                </p>
+            </div>
+        </article>
+        
+        <button id="start">start</button>
+        <audio src="#" id="audio" controls>
+      your browser doesn't supp <code>audio</code> 
+      element
+        </audio>
+
+        <div class="answer">
+            <input type="text" id="t1input" placeholder="Відповідь...">
+            <input type="button" value="GO!" id="t1btn">
+        </div>
+        <div class="taskProgress">
+            <p>Task Progress:</p>
+            <input type="text" value="0" id="progress">
+        </div>
+        <div class="time_bar">
+            <p>Time progress:</p>
+            <input type="text" value="0" id="time">
+        </div>
+        <div class="nextTask">
+            <a href="task2.html">Наступне завдання</a>
+        </div>
+    </div>
+</body>
+</html>

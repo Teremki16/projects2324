@@ -18698,9 +18698,11 @@ GameObject:
   - component: {fileID: 2133110144}
   - component: {fileID: 2133110143}
   - component: {fileID: 2133110142}
+  - component: {fileID: 2133110146}
+  - component: {fileID: 2133110145}
   m_Layer: 0
-  m_Name: teleport_0
-  m_TagString: Untagged
+  m_Name: teleport
+  m_TagString: teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18786,13 +18788,75 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133110141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.347187, y: 12.656682, z: 0}
+  m_LocalPosition: {x: 0.052, y: -2.368, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2133110145
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133110141}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08379692, y: -1.3901197}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6666667, y: 3.2}
+    newSize: {x: 1.67, y: 3.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3549091, y: 0.3558476}
+  m_EdgeRadius: 0
+--- !u!60 &2133110146
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133110141}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6666667, y: 3.2}
+    newSize: {x: 1.67, y: 3.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.50944555, y: 0.5644994}
+      - {x: -0.7464797, y: 0.14291286}
+      - {x: -0.48499998, y: -1.1899999}
+      - {x: -0.585, y: -1.1999999}
+      - {x: -0.585, y: -1.5}
+      - {x: -0.525, y: -1.54}
+      - {x: 0.73499995, y: -1.54}
+      - {x: 0.755, y: -1.48}
+      - {x: 0.755, y: -1.27}
+      - {x: 0.8446251, y: 0.32564664}
+      - {x: 0.11977804, y: 1.030996}
 --- !u!1001 &4493809517512144181
 PrefabInstance:
   m_ObjectHideFlags: 0
