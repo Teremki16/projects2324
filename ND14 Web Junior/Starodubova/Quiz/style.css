@@ -1,16 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(255, 248, 218);
+body {
+    font-family: sans-serif;
+    background-color: #fcf9f5;
     letter-spacing: 1px;
 }
 
-.wrapper{
+.wrapper {
     max-width: 50vw;
     margin: 0 auto;
     display: flex;
@@ -19,24 +19,25 @@ body{
     padding: 20px 0;
 }
 
-h1{
+h1 {
     font-size: 65px;
 }
 
-.wrapper> h2{
+.wrapper > h2 {
     font-size: 45px;
     margin: 20px 0;
-}
+} 
 
-.slideRules{
-    background-color: rgb(255, 222, 173);
+.slideRules {
+    background-color: #991525;
     font-size: 30px;
     padding: 10px 20px;
     border-radius: 10px 10px 0 0;
+    color: white;
 }
 
-.Rules{
-    background-color: rgb(245, 211, 255);
+.rules {
+    background-color: rgb(224, 252, 252);
     padding: 20px;
     font-size: 25px;
     display: flex;
@@ -44,11 +45,78 @@ h1{
     gap: 1rem;
 }
 
-.Rules li{
+.rules li {
     margin-left: 25px;
 }
 
-article{
+article {
     width: 100%;
+}
+
+.img {
+    width: 65%;
+    margin: 30px 0;
+}
+
+.img img {
+    box-shadow: 0 0 10px black;
+    width: 100%;
+}
+
+.answer {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+}
+
+#t1input {
+    flex-grow: 1;
+    font-size: 35px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px
+}
+
+input:focus {
+    outline: none;
+}
+
+#t1btn {
+    font-size: 35px;
+    background-color: #991525;
+    border: none;
+    padding: 5px 20px;
+    color: white;
+}
+
+.taskProgress {
+    position: fixed;
+    top: 45vh;
+    left: 10vw;
+}
+
+.taskProgress p {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.nextTask{
+    position: fixed;
+    top: 45vh;
+    right: 10vw;
+    display: none;
+}
+
+.nextTask a {
+    display: block;
+    background-color: #991525;
+    color: white;
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 333px;
+    text-decoration: none;
 }
 
