@@ -14,19 +14,7 @@ int lenSnake = 3;
 
 int foodX = 0, foodY = 0; 
 
-void snakeGame() {
-  makeMove();
-  move();
-  if (snakeX[0] == foodX && snakeY[0] == foodY) {
-    lenSnake++;
-    makeFood();
-  }
-  gb.clearDisplay();
-  drawFood();
-  drawSnake();
-  lose();
-  delay(250);
-}
+
 
 void makeMove() {
   if (gb.getKey() == 3 && direction != bottom) {
@@ -50,6 +38,13 @@ void drawFood(){
   }else{
     gb.wipePoint(foodX, foodY);
   }
+}
+
+bool isPartOfSnake(int x, int y){
+  for(int i = lenSnake - 1; i > 0; i--){
+    if(x == snakeX[i] && y == snakeY[i]) return true;
+  }
+  return false;
 }
 
 void makeFood() {
@@ -102,12 +97,6 @@ void drawSnake() {
   }
 }
 
-bool isPartOfSnake(int x, int y){
-  for(int i = lenSnake - 1; i > 0; i--){
-    if(x == snakeX[i] && y == snakeY[i]) return true;
-  }
-  return false;
-}
 
 void lose(){
   for(int i = lenSnake - 1; i > 0; i--){
@@ -130,6 +119,16 @@ void lose(){
   }
 }
 
-//gb.sound(SCORE);
-//gb.sound(COLLISION);
-//tone(4, 1000, 100);
+void snakeGame() {
+  makeMove();
+  move();
+  if (snakeX[0] == foodX && snakeY[0] == foodY) {
+    lenSnake++;
+    makeFood();
+  }
+  gb.clearDisplay();
+  drawFood();
+  drawSnake();
+  lose();
+  delay(250);
+}

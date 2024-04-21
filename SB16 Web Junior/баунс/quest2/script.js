@@ -1,0 +1,106 @@
+$(".slideRules").on("click", function () {
+    $(".rules").slideToggle();
+});
+$(".rules").slideUp(0);
+
+let answers = [
+    ["гаррі поттер","harry potter", "рон", "герміона"],
+    ["губка боб", "спандж боб", "sponge bob", "губка боб квадратні портки"],
+    ["пірати карибського моря", "пірати", "капітан джек горобець", "pirates of caribean"],
+    ["simpsons", "the simpsons", "сімпсони"],
+    ["зоряні війни", "імперський марш", "star wars"],
+    ["король лев", "lion king"],
+    ["холодне серце", "frozen"],
+    ["shrek", "шрек"],
+    ["shrek", "шрек", "фіона"],
+    ["rocky", "рокі"],
+    ["indiana jones", "індіана джонс"],
+    ["home alone", "один дома"],
+    ["terminator", "термінатор"],
+    ["back to the future", "назад в майбутнє"],
+    ["ghostbusters", "мисливці на привидів"]
+];
+
+let ts = localStorage;
+let time;
+
+if(ts.getItem("time") != null){
+    time = parseInt(ts.getItem("time"));
+}else {
+    time = 300;
+    ts.setItem("time", 300);
+}
+
+let questionNumber = 0;
+
+let score = 0;
+
+let was = [];
+
+function rnd() {
+    return Math.floor(1 + Math.random() * answers.length);
+}
+
+
+$("#task1btn").on("click", task)
+
+$(document).on("keypress", function(e){
+    if(e.which == 13){
+        task();
+    }
+})
+
+function  task(){
+    let answer = $("#task1input").val().toLowerCase()
+    if(answers[questionNumber - 1].indexOf(answer) != -1){
+        alertify.success("Correct!")
+        startQuiz(rnd())
+    }else {
+        alertify.error("Wrong! Try again! :(")
+    }
+}
+
+$("#score").knob({
+    min: 0,
+    max: 5,
+    angleArc: 120,
+    angleOffset: -60,
+    displayInput: false,
+    lineCap: "round",
+    readOnly: true,
+    bgColor: "gray",
+    fgColor: "lightgreen",
+});
+$("#timer").knob({
+    min: 0,
+    max: 300,
+    readOnly: true,
+    bgColor: "gray",
+    fgColor: "lightgreen",
+});
+
+function startTimer(){
+    setInterval(()=>{
+        time = parseInt(ts.getItem("time")) -1;
+        $("#timer").val(time).trigger("change")
+        if( time <=0 ){
+            alertify.error("Time is out!")
+            setTimeout(()=> window.open("index.html", "_self", false), 1000);
+            ts.removeItem("time")
+        }else if (time > 0){
+        ts.setItem("time", time);
+        }
+    }, 1000);
+}
+
+$("#start").on("click", ()=>{
+    $("#start").css("display", "none")
+    $(".sound").css("display", "block")
+    startTimer();
+    startQuiz(rnd())
+});
+
+function startQuiz(number){
+    $("audio").attr("src", `sound/${number}.mp3`)
+    questionNumber = number
+}
