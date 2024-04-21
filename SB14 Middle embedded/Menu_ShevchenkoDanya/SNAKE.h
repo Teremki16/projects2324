@@ -1,5 +1,3 @@
-
-
 bool state = true;
 
 int snakeX[30];//максимальна довжина змії
@@ -17,21 +15,7 @@ int foodX = 0, foodY = 0;
 
 
 
-void snajeGame() {
-  makeMove();
-  move();
-  if (snakeX[0] == foodX &&  snakeY[0] == foodY) {
-    lenSnake++;
-    makeFood();
-    //    tone(4, 1000, 10000); // звук
-  }
-  gb.clearDisplay(); // очищення дисплею
-  drawFood();
-  drawSnake();
-  lose();
-  delay(300);
 
-}
 
 void makeMove() { // рухаємося або перевіряємо щоб не вїхати в себе
   if (gb.getKey() == 3 && direction != bottom) {
@@ -55,6 +39,12 @@ void drawFood() { // перевірка на те щоб Їжа не спавн�
   } else {
     gb.wipePoint(foodX, foodY);
   }
+}
+bool isPartOfSnake(int x, int y) {
+  for (int i = lenSnake - 1; i > 0; i--) {
+    if (x == snakeX[i] && y == snakeY[i]) return true;
+  }
+  return false;
 }
 void makeFood() { // спавнимо Їжу
   foodX = random(8);//рандомний спаун
@@ -105,12 +95,7 @@ void drawSnake() {
     gb.drawPoint(snakeX[i], snakeY[i]);
   }
 }
-bool isPartOfSnake(int x, int y) {
-  for (int i = lenSnake - 1; i > 0; i--) {
-    if (x == snakeX[i] && y == snakeY[i]) return true;
-  }
-  return false;
-}
+
 
 void lose(){ // програш
   for(int i = lenSnake - 1; i > 0; i--){
@@ -131,4 +116,19 @@ void lose(){ // програш
       return;
     }
   }
+}
+void snakeGame() {
+  makeMove();
+  move();
+  if (snakeX[0] == foodX &&  snakeY[0] == foodY) {
+    lenSnake++;
+    makeFood();
+    //    tone(4, 1000, 10000); // звук
+  }
+  gb.clearDisplay(); // очищення дисплею
+  drawFood();
+  drawSnake();
+  lose();
+  delay(300);
+
 }
