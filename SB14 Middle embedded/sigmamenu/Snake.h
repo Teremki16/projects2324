@@ -18,29 +18,13 @@ int foodX = 0, foodY = 0;
 
 
 
-void snakeGame() {
-  makeMove();
-  move();
-  if (snakeX[0] == foodX && snakeY[0] == foodY) {
-    lenSnake++;
-    makeFood();
-    
-    //    tone(4, 1000, 100); //звук
-
-  }
-  gb.clearDisplay();
-  drawFood();
-  drawSnake();
-  lose();
-  delay(250);
-}
 
 void makeMove() { // створив рух
-  if(gb.getKey() == 3 && direction != botton) { //пояснення кнопки вверх
+  if (gb.getKey() == 3 && direction != botton) { //пояснення кнопки вверх
     direction = up;
   }
   if (gb.getKey() == 4 && direction != right) {//пояснення кнопки вліво
-    direction = left; 
+    direction = left;
   }
   if (gb.getKey() == 5 && direction != left) {//пояснення кнопки вправо
     direction = right;
@@ -56,6 +40,12 @@ void drawFood() { // намалював їжу
   } else {
     gb.wipePoint(foodX, foodY);//зткрти крапку
   }
+}
+bool isPartOfSnake (int x, int y) {
+  for (int i = lenSnake - 1; i > 0; i--) {
+    if (x == snakeX[i] && y == snakeY[i]) return true;
+  }
+  return false;
 }
 void makeFood() { //створив їжу
   foodX = random(8); //рандомний спавн їжіХ
@@ -111,20 +101,15 @@ void drawSnake() {
   }
 }
 
-bool isPartOfSnake (int x, int y) {
-  for (int i = lenSnake - 1; i > 0; i--) {
-    if (x == snakeX[i] && y == snakeY[i]) return true;
-  }
-  return false;
-}
 
-void lose(){
-  for (int i = lenSnake - 1; i > 0; i --){
-    if(snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]){
+
+void lose() {
+  for (int i = lenSnake - 1; i > 0; i --) {
+    if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
       delay(2000);
       gb.clearDisplay();//відчиств дисплей
       gb.testMatrix(10);//заповнив матрицю
-      for(int j = 0; j < lenSnake; j++){
+      for (int j = 0; j < lenSnake; j++) {
         snakeX[j] = 0;
         snakeY[j] = 0;
       }
@@ -137,4 +122,20 @@ void lose(){
       return;
     }
   }
+}
+void snakeGame() {
+  makeMove();
+  move();
+  if (snakeX[0] == foodX && snakeY[0] == foodY) {
+    lenSnake++;
+    makeFood();
+
+    //    tone(4, 1000, 100); //звук
+
+  }
+  gb.clearDisplay();
+  drawFood();
+  drawSnake();
+  lose();
+  delay(250);
 }
