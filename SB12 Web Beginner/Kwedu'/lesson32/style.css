@@ -1,0 +1,35 @@
+:root{
+    --primary-100:#2E86AB;
+    --primary-200:#67b6dd;
+    --primary-300:#d0ffff;
+    --accent-100:#F6D55C;
+    --accent-200:#8c7600;
+    --text-100:#333333;
+    --text-200:#5c5c5c;
+    --bg-100:#F2F2F2;
+    --bg-200:#e8e8e8;
+    --bg-300:#bfbfbf;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg-300);
+}
+
+.container{
+    margin: 20px auto;
+    border: 2px solid var(--accent-100);
+    padding: 80px 20px;
+    width: fit-content;
+    border-radius: 20px;
+    text-align: center;
+}
+
+img{
+    width: 300px;
+    animation:  flip 1s infinite linear;
+}
