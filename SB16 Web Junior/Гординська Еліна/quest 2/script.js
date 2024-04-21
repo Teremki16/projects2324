@@ -4,18 +4,32 @@ $(".slideRules").on("click", function(){
 $(".rules").slideUp(0);
 
 let answers = [
-    "верблюд",
-    "зима",
-    "пальма",
-    "прислів'я",
-    "фраза",
-    "рибак",
-    "віл",
-    "вухо",
-    "вінок",
-    "чат",
-    "зебра",
+    ["harry potter", "гаррі поттер"],
+    ["sponge bob", "губка боб", "спандж боб", "губка боб квадратні штани"],
+    ["pirates of the caribbean", "пірати карибського моря", "пірати"],
+    ["simpsons", "сімпсони"],
+    ["зоряні війни", "імперський марш"],
+    ["король лев", "lion king"],
+    ["холодне серце", "frozen"],
+    ["shrek", "шрек", "фіона"],
+    ["shrek", "шрек", "фіона"],
+    ["rocky", "роккі", "сталоне", "рокі"],
+    ["indiana jones", "індіана джонс"],
+    ["home alone", "сам удома"],
+    ["terminator", "термінатор"],
+    ["назад в майбутнє", "back to the future"],
+    ["ghostbusters", "мисливці на привидів"]
 ]
+
+let ts = localStorage
+let time;
+
+if(ts.getItem("time") !=null){
+    time = parseInt(ts.getItem("time"))
+}else{
+    time = 300;
+    ts.setItem("time", time)
+}
 
 let questionNumber = 0
 
@@ -24,44 +38,26 @@ let score = 0;
 let was = []
     
 function rnd(){
-    return Math.floor(1 + Math.random() * 11)
+    return Math.floor(1 + Math.random() * answers.length);
 }
 
-function startRebus(num){
-    $(".img img").attr("src", `rebuses/${num}.png`)
-    questionNumber = num
-}
-
-startRebus(rnd())
-
-$("#task1btn").on("click", rebus)
+$("#task1btn").on("click", task)
 
 $(document).on("keypress", function(e){
     if(e.which == 13){
-        rebus();
+        task();
     }
 })
 
-function rebus(){
-    if($("#task1input").val().toLowerCase() == answers[questionNumber - 1]){
-        $("#task1input").val("")
+function task(){
+    let answer = $("#task1input").val().toLowerCase()
+    if(answers[questionNumber - 1].indexOf(answer) != -1){
         alertify.success("Correct!")
-        score++;
-        $("#score").val(score).trigger("change")
-        was.push(questionNumber)
-        if(score < 5){
-            do{
-                questionNumber = rnd()
-            }while(was.includes(questionNumber))
-            startRebus(questionNumber )
-        }else{
-            $("#next").css("display", "block")
-            $(".img, .answer").css("display", "none")
-        }
-    }else{
-        alertify.error("Wrong! Try again!")
+        startQuiz(rnd())
+    } else {
+        alertify.error("Wrong! Try again!🚗")
     }
-};
+}
 
 $("#score").knob({
     min: 0,
@@ -75,4 +71,36 @@ $("#score").knob({
     fgColor: "lightgreen",
 })
 
+$("#timer").knob({
+    min: 0,
+    max: 300,
+    readOnly: true,
+    bgColor: "lightgray",
+    fgColor: "lightgreen",
+})
 
+function startTimer(){
+    setInterval(()=>{
+        time = parseInt(ts.getItem("time")) - 1;
+        $("#timer").val(time).trigger("change");
+        if(time <= 0){
+            alertify.error("Time is out!")
+            setTimeout(()=> window.open("index.html", "_self", false), 1000)
+            ts.removeItem("time")
+        }else  if (time > 0){
+            ts.setItem("time", time)
+        }
+    }, 1000)
+}
+
+$("#start").on("click", ()=>{
+    $("#start").css("display", "none")
+    $(".sound").css("display", "block")
+    startTimer();
+    startQuiz(rnd())
+})
+
+function startQuiz(number){
+    $("audio").attr("src", `sound/${number}.mp3`)
+    questionNumber = number;
+}
