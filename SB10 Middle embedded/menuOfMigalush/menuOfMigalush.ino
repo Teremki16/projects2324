@@ -1,5 +1,8 @@
 #include <GameBoy.h>
 GameBoy GB;
+#include "car.h"
+
+#include "snake.h" 
 
 int modeCount = 0;
 
@@ -36,12 +39,26 @@ byte SNAKE[8][8] = {
 
 void setup() {
   GB.begin(8);
+  randomSeed(analogRead(0));
+  snakeX[0] = 4;
+  snakeY[0] = 7;
 
 }
-
+int modes = 0;
 void loop() {
-  MENU();
-  delay(50);
+  if(GB.getKey() == 2 && modeSelector() == 0){
+    GB.clearDisplay();
+    modes = 1;
+  }
+  else if(GB.getKey() == 2 && modeSelector() == 1){
+    GB.clearDisplay();
+    modes = 2;
+  }
+  else if(GB.getKey() == 1){
+    GB.clearDisplay();
+    modes = 0;
+  }
+  switchMode(modes);
 }
 void MENU(){
   for(int i = 0;i < 8; i++){
@@ -80,4 +97,15 @@ int modeSelector(){
     if(modeCount < 0) modeCount = 1;
   }
   return modeCount;
+}
+void switchMode(int mode){
+  switch(mode){
+    case 0: MENU();
+    break;
+    case 1: mainRaicng(100);
+    break;
+    case 2: mainSnake();
+    break;
+  }
+  
 }

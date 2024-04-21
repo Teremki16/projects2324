@@ -1,0 +1,36 @@
+:root {
+    --primary-100:#006400;
+    --primary-200:#429333;
+    --primary-300:#a6f790;
+    --accent-100:#FFD700;
+    --accent-200:#917800;
+    --text-100:#000000;
+    --text-200:#2c2c2c;
+    --bg-100:#F4E1A1;
+    --bg-200:#ead797;
+    --bg-300:#c0af72;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-300);
+}
+
+.container {
+    margin: 20px auto;
+    border: 2px solid var(--accent-100);
+    padding: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    animation: rotate 1s infinite linear;
+}

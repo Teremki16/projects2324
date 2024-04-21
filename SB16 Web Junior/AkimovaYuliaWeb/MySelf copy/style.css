@@ -23,7 +23,7 @@ h1{
     font-size: 45px;
     margin: 20px 0;
 }
-.sR{
+.sRu{
     background-color: brown;
     color: white;
     text-align: center;
@@ -100,4 +100,25 @@ input:focus{
     position: absolute;
     top: 48vh;
     right: 5vw;
+}
+
+#start{
+    font-size: 30px;
+    background-color: brown;
+    color: white;
+    padding: 10px 50px;
+    border-radius: 99999px;
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.sound{
+    display: none;
+}
+
+.tP{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    text-align: center;
 }

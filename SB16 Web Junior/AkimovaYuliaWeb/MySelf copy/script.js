@@ -1,60 +1,60 @@
-$(".sR").on("click",function(){
+$(".sRu").on("click",function(){
     $(".rules").slideToggle();
 })
 
 $(".rules").slideUp(0)
 let answ=[
-    "хто",
-    "музей",
-    "патріот",
-    "кохати",
-    "скалалаз",
-    "телефон",
-    "стіл",
-    "браузер",
-    "байдикувати",
-    "примарний",
+    ["harry potter", "гаррі поттер"],
+    ["губка боб", "спанж боб","губка боб квадратні портки","spange bob"],
+    ["пірати карибського моря","пірати","капітан джек горобець","pirates of the caribbean"],
+    ["simpsons", "сімпсони","the simpsons"],
+    ["star wars", "старейших війн","старейші війни","star wars","зоряні війни","імперський марш"],
+    ["lion king","король лев","сімба"]
+    ["frozen","холодне серце"],
+    ["shrek","шрек","фіона"],
+    ["shrek","шрек","фіона"],
+    ["rocky","рокі","сталоне"],
+    ["індіана джонс", "indiana jones"],
+    ["home alone", "сам вдома", "один дома"],
+    ["terminator", "термінатор", "джон конер", "арнольд шварцнегер"],
+    ["back to the future", "назад в майбутнє", "марті макфлай"],
+    ["ghostbusters", "гостбусти", "мисливці на привидів","ghost busters"],
 ]
+
+let ts=localStorage
+let time
+
+if(ts.getItem("time")!=null || ts.getItem("time")!=NaN){
+    time=parseInt(ts.getItem("time"))
+}else{
+    time=300
+    ts.setItem("time",300)
+}
 let qN=0
 
 let score=0
 
 let was=[]
 function rnd(){
-    return Math.floor(1+Math.random()*10);
+    return Math.floor(1+Math.random()*answ.length);
 }
-function sR(num){
-    $(".img img").attr("src",`img/${num}.png`)
-    qN=num
-}
-sR(rnd())
 
-$("#t1btn").on("click", rebus)
+$("#t1btn").on("click", task)
 
 $(document).on("keyup",function(e){
     if(e.which==13){
-        rebus()
+        task()
     }
 })
-function rebus(){
-    if($("#t1input").val().toLowerCase()==answ[qN -1]){
-        $("#t1input").val("")
-        alertify.success("Correct!")
-        score++
-        $("#score").val(score).trigger("change")
-        was.push(qN)
-        if(score<5){
-        do{
-            qN=rnd()
-        }while(was.includes(qN))
-        sR(qN)
-    }else{
-        $("#next").css("display","block")
-        $(".img, .answ").css("display","none")
-    }}else{
-        alertify.error("Wrong! Try again!")
-    }
-}
+
+function task(){
+    let answ=$("#t1input").val().toLowerCase()
+    if(answ[qN-1].indexOf(answ)!=-1){
+        alertify.success("Correct")
+        sQ(rnd())
+}else{
+    alertify.error("Wrong! Try again")
+}}
 
 $("#score").knob({
     min: 0,
@@ -67,3 +67,37 @@ $("#score").knob({
     bgColor: "gainboro",
     fgColor: "hotpink",
 })
+
+$("#timer").knob({
+    min: 0,
+    max: 300,
+    readOnly: true,
+    bgColor: "gainboro",
+    fgColor: "hotpink",
+})
+
+function sT(){
+    setInterval(()=>{
+        time=parseInt(ts.getItem("time"))-1
+        $("#timer").val(time).trigger("change")
+        if(time<=0){
+            alertify.error("Time is over")
+            setTimeout(()=>window.open("index.html", "_self", false),1000)
+            ts.removeItem("time")
+        }else if(time>0){
+            ts.setItem("time",time)
+        }
+    },1000)
+}
+
+$("#start").on("click",()=>{
+    $("#start").css("display","none")
+    $(".sound").css("display","block")
+    sT()
+    sQ(rnd())
+})
+
+function sQ(number){
+    $("audio").attr("src","sound/"+number+".mp3")
+    qN=number
+}
