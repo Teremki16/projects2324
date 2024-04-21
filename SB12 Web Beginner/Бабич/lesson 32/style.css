@@ -1,0 +1,36 @@
+:root {
+    --primary-100:#CD853F;
+    --primary-200:#ad6a24;
+    --primary-300:#652e00;
+    --accent-100:#D2691E;
+    --accent-200:#fffead;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --bg-100:#8B4513;
+    --bg-200:#a05624;
+    --bg-300:#c0713e;
+      
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-300);
+}
+
+.container {
+    margin: 20px auto;
+    border: 2px solid var(--accent-200);
+    padding: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    text-align: center;
+}
+
+img {
+    width: 300px;
+    animation: flip 1s infinite;
+}
