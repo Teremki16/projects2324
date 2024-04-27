@@ -23,10 +23,11 @@ let was = []
 
 let score = 0;
 let time = 300;
+let question = 0;
 if (localStorage.getItem("time") !== null) {
-    time = localStorage.getItem("time")
+    time = parseInt(localStorage.getItem("time"));
 } else {
-    localStorage.setItem("time", time)
+    localStorage.setItem("time", 300)
 }
 
 $(".slideRules").on("click", function () {
@@ -34,7 +35,7 @@ $(".slideRules").on("click", function () {
 })
 
 function rnd() {
-    return Math.floor(1 + Math.random() * 10);
+    return Math.floor(1 + Math.random() * answers.length);
 }
 
 $("#progress").knob({
@@ -65,7 +66,7 @@ function startTime() {
             alertify.error("Time is over");
             setTimeout(() => window.open("../quiz/task1.html"));
             localStorage.removeItem("time");
-        } else {
+        }else if(time > 0){
             localStorage.setItem("time", time);
         }
     }, 1000);
@@ -75,4 +76,41 @@ $("#start").on("click", () => {
     startTime()
     $("#start").css("display", "none")
     $("#audio").css("display", "block")
+    startQuest(rnd())
+})
+
+function startQuest(number){
+    $("audio").attr("src", `sound/${number}.mp3`)
+    question = number
+}
+
+
+function quest(){
+    let answer = $("#t1input").val().toLowerCase()
+    $("#t1input").val("")
+    if(answers[question - 1].indexOf(answer) != -1){
+        alertify.success("Correct!")
+        score++;
+        $("#progress").val(score).trigger("change")
+        was.push(question)
+        if(score >= 10){
+            $("audio").css("display","none")
+            $("nextTask").css("display","block")
+            localStorage.removeItem("time")
+        }else{
+        do{
+            question = rnd()
+        } while(was.includes(question))
+        startQuest(question)
+    }
+    }
+    else{
+        alertify.error("Wrong!")
+    }
+}
+
+$("#t1btn").on("click", quest)
+
+$(document).on("keypress", (e)=>{
+    if(e.which == 13) quest();
 })
