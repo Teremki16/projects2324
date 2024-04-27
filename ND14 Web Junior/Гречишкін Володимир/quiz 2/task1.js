@@ -1,40 +1,42 @@
 $(".rules").slideUp()
 
-let answers=[
-    ["гаррі поттер","harry potter"],
-    ["губка боб"]
+let answers = [
+    ["гаррі поттер", "harry potter"],
+    ["губка боб"],
     ["пірати карибського моря"],
-    ["simpsons" ,"сімсони"],
-    ["зоряні війни","star wars"]
+    ["simpsons", "сімсони"],
+    ["зоряні війни", "star wars"],
     ["король лев"],
     ["холодне серце"],
-    ["шрек","шрек"],
+    ["шрек", "шрек"],
     ["роккі"],
     ["індіано джонс"],
     ["один вдома"],
-    ["terminator" ,"термінатор"],
+    ["terminator", "термінатор"],
     ["back to the future"],
     ["мисливці на привидів"]
-   
+
 
 ];
+
 
 let was = []
 
 let score = 0;
 let time = 300
-if(localStorage.getItem("time")!=null){
+let question = 0
+if (localStorage.getItem("time") != null) {
     time = localStorage.getItem("time")
-}else{
-    localStorage.setItem("time",time)
+} else {
+    localStorage.setItem("time", 300)
 }
 
-$(".slideRules").on("click",function(){
+$(".slideRules").on("click", function () {
     $(".rules").slideToggle()
 })
 
-function rnd(){
-    return Math.floor(1 + Math.random()*12);
+function rnd() {
+    return Math.floor(1 + Math.random() * answers.length);
 }
 
 
@@ -42,40 +44,80 @@ function rnd(){
 $("#progress").knob({
     min: 0,
     max: 10,
-    angleArc:120,
+    angleArc: 120,
     angleOffset: -60,
-    displayInput:false,
-    lineCap:"round",
-    readOnly:true
-    
+    displayInput: false,
+    lineCap: "round",
+    readOnly: true
+
 })
 $("#time").knob({
     min: 0,
     max: 300,
-    displayInput:false,
-    readOnly:true,
-    width:100
+    displayInput: false,
+    readOnly: true,
+    width: 100
 })
 
 
-function startTime(){
-    setInterval(function(){
+function startTime() {
+    setInterval(function () {
         time = parseInt(localStorage.getItem("time"))
         time--;
         $("#time").val(time).trigger("change")
-        if(time <=0){
+        if (time <= 0) {
             alertify.error("Time is gone!");
-            setTimeout(()=>window.open("../quiz/task1.html"))
+            setTimeout(() => window.open("../quiz/task1.html"))
             localStorage.removeItem("time")
-        }else{
-            localStorage.setItem("time",time)
+        } else if (time > 0) {
+            localStorage.setItem("time", time)
         }
-        
-    },1000)
+
+    }, 1000)
 }
 
-$("#start").on("click",()=>{
+$("#start").on("click", () => {
     startTime()
-    $("#start").css("display","none")
-    $("#audio").css("display","block")
+    $("#start").css("display", "none")
+    $("#audio").css("display", "block")
+    startQuest(rnd())
+})
+
+function startQuest(number) {
+    $("audio").attr("src", `sound/${number}.mp3`)
+    question = number
+}
+
+
+function quest() {
+    let answer = $("#t1input").val().toLowerCase();
+    $("#t1input").val("")
+    console.log(answers[question - 1])
+    if (answers[question - 1].indexOf(answer) != -1) {
+        alertify.success("Correct!")
+        score++;
+        $("#progress").val(score).trigger("change")
+        was.push(question)
+        if (score >= 10) {
+            $("audio").css("display", "none")
+            $("nextTask").css("display", "none")
+            localStorage.removeItem("time")
+        } else {
+            do {
+                question = rnd()
+            } while (was.includes(question))
+            startQuest(question)
+        }
+
+    }
+    else {
+        alertify.error("Wrong!")
+    }
+}
+
+$("#t1btn").on("click", quest)
+
+
+$(document).on("keypress", (e) => {
+    if (e.which == 13) quest;
 })
