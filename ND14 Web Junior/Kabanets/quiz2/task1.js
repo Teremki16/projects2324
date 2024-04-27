@@ -3,7 +3,7 @@ $(".rules").slideUp(0)
 let answers = [
     ["гаррі потер", "harry poter"],
     ["губка боб", "sponge bob"],
-    ["піраи карибськог моря", "pirrates og the caribbean"],
+    ["пірати карибського моря", "pirrates og the caribbean"],
     ["сімпсони", "simpsons"],
     ["зоряні війни", "star wars"],
     ["король лев", "lion king"],
@@ -13,16 +13,17 @@ let answers = [
     ["індіана джонс", "indiana jones"],
     ["один вдома", "home alone"],
     ["термінатор", "the terminator"],
-    ["назад  майбутнє", "back to the future"],
+    ["назад у майбутнє", "back to the future"],
     ["мисливці на привидів", "ghostsbusters"]
 ]
 
-let was = []
+let was = [];
 
 let score = 0;
 let time = 300;
+let question = 0;
 if (localStorage.getItem("time") != null) {
-    time = localStorage.getItem("time")
+    time = parseInt(localStorage.getItem("time"));
 } else {
     localStorage.setItem("time", time)
 }
@@ -32,7 +33,7 @@ $(".slideRules").on("click", function () {
 })
 
 function rnd() {
-    return Math.floor(1 + Math.random() * 10);
+    return Math.floor(1 + Math.random() * answers.length);
 }
 
 $("#progress").knob({
@@ -72,4 +73,30 @@ $("#start").on("click", () => {
     startTime()
     $("#start").css("display", "none")
     $("#audio").css("display", "block")
+    startQuest(rnd())
+})
+
+function startQuest(number){
+    $("audio").attr("src", `sound/${number}.mp3`)
+    question = number
+}
+
+function quest(){
+    let answer = $("#t1input").val().toLowerCase();
+    $("#t1input").val("")
+    if(answers[question - 1].indexOf(answer) != -1){
+        alertify.success("Correct!")
+        score++;
+        $("#progress").val(score).trigger("change")
+        startQuest(rnd())
+    }
+    else{
+        alertify.error("Wrong!")
+    }
+}
+
+$("#t1btn").on("click", quest)
+
+$(document).on("keypress", (e)=>{
+    if(e.which == 13) quest();
 })
