@@ -1,0 +1,22 @@
+@keyframes myAnimation {
+    0%{
+        transform: translateX(-50%); 
+    }
+    100% {   
+        transform: translateX(50%);
+    }
+}
+
+h1 {
+    animation-name: myAnimation;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-timing-function: cu;
+    animation-iteration-count: infinite;
+    font-size: 4rem;
+    animation-direction: alternate;
+}
+
+h1:hover {
+    animation-name: myAnimation;
+}
