@@ -66,7 +66,7 @@ function startTime(){
             alertify.error("time is over");
             setTimeout(()=>window.open("../quiz/task1.html"))
             localStorage.removeItem("time")
-        }else if(time> 0){
+        }else if(time > 0){
             localStorage.setItem("time", time)
         }
     }, 1000)
@@ -91,9 +91,18 @@ function quest(){
         alertify.success("Correct!")
         score++;
         $("#progress").val(score).trigger("change")
-        startQuest(rnd())
-    }
-    else {
+        was.push(question)
+        if(score > 1){
+            $("audio").css("display", "none")
+            $("nextTask").css("display", "block")
+            localStorage.removeItem("time")
+        } else {
+            do{
+                question = rnd()
+            }while(was.includes(question))
+            startQuest(question)
+        }
+    } else {
         alertify.error("wrong!")
     }
 }
