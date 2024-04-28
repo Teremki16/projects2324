@@ -1,0 +1,16 @@
+@keyframes PONCHIKI {
+    0% {
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+h1 {
+    animation-name: PONCHIKI;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-iteration-count: infinite;
+    font-size: 4rem;
+    animation-direction: alternate ;
+}
