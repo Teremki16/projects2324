@@ -1,0 +1,24 @@
+@keyframes myAnimation{
+    0%{
+        
+            transform: rotate(0deg);
+        
+     
+     }
+    100%{
+        
+          transform: rotate(360deg);
+        
+
+    }
+
+}
+
+
+h1{
+    animation-name: myAnimation ;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-size: 4rem;
+}
