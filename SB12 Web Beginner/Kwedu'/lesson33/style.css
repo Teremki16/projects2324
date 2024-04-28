@@ -1,0 +1,19 @@
+@keyframes myAnimation {
+    0%{
+        transform: translateX(50%) skew(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) skew(0deg);
+    }
+}
+
+h1 {
+    animation-name: myAnimation;
+    animation-duration: 0.8s;
+    /*animation-delay:1s; */
+    animation-timing-function: cubic-bezier();
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-size: 4rem;
+}
