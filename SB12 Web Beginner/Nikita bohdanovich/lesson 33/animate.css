@@ -1,0 +1,25 @@
+@keyframes MyAnimation {
+    0% {
+        
+            
+            transform: translateX(60%);
+    }
+    50%{
+
+        transform: translateX(0%);
+
+    }
+    100%{
+   
+        transform: translateX(60%);
+        
+    }
+}
+
+h1 {
+   animation-name: MyAnimation; 
+   animation-duration: 1s;
+   animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   animation-iteration-count: infinite;
+   font-size: 2rem;
+}

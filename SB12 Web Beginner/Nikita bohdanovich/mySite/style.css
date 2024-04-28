@@ -151,3 +151,47 @@ footer {
     height: 60vh;
     background-image: url(https://www.omiximo.nl/modules/ph_simpleblog/covers/25-wide.jpg);
 }
+
+.sitem {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.shop_titles{
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    margin-bottom:  1rem; 
+}
+
+.buy{
+    background-color: black;
+    border-radius: 50px;
+    align-self: center;
+    padding: 5px 20px;
+}
+
+.sitem img{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.Contacts-title {
+    background-image: url(https://images.shopcdn.co.uk/4a/84/4a8454f8dd99efc8b603625a47875de9/2048x2048/jpeg/fit?t=1684272917&quality=80);
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user img {
+    width: 50%;
+    align-self: center;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    filter: grayscale();
+}
