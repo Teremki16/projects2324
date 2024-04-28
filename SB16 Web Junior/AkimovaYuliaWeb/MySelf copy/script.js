@@ -23,8 +23,8 @@ let answ=[
 
 let ts=localStorage
 let time
-
-if(ts.getItem("time")!=null || ts.getItem("time")!=NaN){
+// || ts.getItem("time")!=NaN
+if(ts.getItem("time")!=null ){
     time=parseInt(ts.getItem("time"))
 }else{
     time=300
@@ -48,12 +48,27 @@ $(document).on("keyup",function(e){
 })
 
 function task(){
-    let answ=$("#t1input").val().toLowerCase()
-    if(answ[qN-1].indexOf(answ)!=-1){
+    let answer=$("#t1input").val().toLowerCase()
+    if(answ[qN-1].indexOf(answer)!=-1){
         alertify.success("Correct")
-        sQ(rnd())
+        score++
+        $("#score").val(score).trigger("change")
+        was.push(qN)
+        if(score>=10){
+            $(".next_bar").css("display","block")
+            $(".audio").css("display","none")
+            $(".answ").css("display","none")
+            localStorage.removeItem("time")
+            alertify.success("Well done!You win")
+        }
+        else{
+            do{
+                qN=rnd()
+            }while(was.includes(qN))
+            sQ(qN)
+        }
 }else{
-    alertify.error("Wrong! Try again")
+    alertify.error("Wrong! Try again:_(")
 }}
 
 $("#score").knob({
