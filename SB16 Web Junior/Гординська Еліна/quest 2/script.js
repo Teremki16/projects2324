@@ -53,7 +53,21 @@ function task(){
     let answer = $("#task1input").val().toLowerCase()
     if(answers[questionNumber - 1].indexOf(answer) != -1){
         alertify.success("Correct!")
-        startQuiz(rnd())
+        score++;
+        $("#score").val(score).trigger("change")
+        was.push(questionNumber)
+        if(score >= 10){
+            $(".next_bar").css("display", "block")
+            $(".audio").css("display", "none")
+            $(".answer").css("display", "none") 
+            localStorage.removeItem("time")
+        }else {
+            do{
+                questionNumber = rnd()
+            }while(was.includes(questionNumber))
+            console.log(was)
+            startQuiz(questionNumber)
+        }
     } else {
         alertify.error("Wrong! Try again!🚗")
     }
@@ -61,7 +75,7 @@ function task(){
 
 $("#score").knob({
     min: 0,
-    max: 5,
+    max: 10,
     angleArc: 120,
     angleOffset: -60,
     displayInput: false,
