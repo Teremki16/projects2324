@@ -16,7 +16,7 @@ let second_scene = new ScrollMagic.Scene({
     .addIndicators()
     .addTo(controller);
 
-    let third_scene = new ScrollMagic.Scene({
+let third_scene = new ScrollMagic.Scene({
     triggerElement: ".s3",
     triggerHook: 0.8,
 })
@@ -24,10 +24,10 @@ let second_scene = new ScrollMagic.Scene({
     .addIndicators()
     .addTo(controller);
 
-    let fourth_scene = new ScrollMagic.Scene({
-        triggerElement: ".s4",
-        triggerHook: 0.8,
-    })
-        .setClassToggle(".s4 .content", "fade-right")
-        .addIndicators()
-        .addTo(controller);
+let fourth_scene = new ScrollMagic.Scene({
+    triggerElement: ".s4",
+    triggerHook: 0.8,
+})
+    .setClassToggle(".s4 .content", "fade-right")
+    .addIndicators()
+    .addTo(controller);
