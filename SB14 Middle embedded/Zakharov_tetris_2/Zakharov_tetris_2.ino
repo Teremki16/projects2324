@@ -32,9 +32,12 @@ void drawBlock(byte arr[4][4], int x, int y) {
 
 void makeMove() {
   if (gb.getKey() == 4) {
+    if(checkBlockCollision(gb.block[rot],
     x--;
   }
-  if (gb.getKey() == 5) {
+  if (gb.getKey() == 5) {, x - 1, y)){
+    
+  }
     x++;
   }
 }

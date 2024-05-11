@@ -1,4 +1,4 @@
-$(".sRu").on("click",function(){
+$(".slideRules").on("click",function(){
     $(".rules").slideToggle();
 })
 
@@ -12,7 +12,7 @@ let card=[
     },
     {
         name:"Ківі",
-        img:"https://i.pinimg.com/564x/a5/2d/eb/a52debc82be1efd54b038b9e7ade74d9.jpg",
+        img:"https://i.pinimg.com/564x/74/b0/1e/74b01eaa9b5bd6ec68488d001e3afa70.jpg",
         id:2,
     },
     {
@@ -27,7 +27,7 @@ let card=[
     },
     {
         name:"Кактус",
-        img:"https://demotivatorium.ru/sstorage/3/2021/11/10054853519309/demotivatorium_ru_i_hochetsja_i_koletsja_202837.jpg",
+        img:"https://www.anekdot.ru/i/caricatures/normal/20/9/18/1600450998.jpg",
         id:5,
     },
     {
@@ -62,7 +62,7 @@ let card=[
     },
     {
         name:"Пітух",
-        img:"https://i.pinimg.com/474x/63/df/57/63df57f880491ffa535440ecc6cdb338.jpg",
+        img:"https://i.pinimg.com/474x/22/18/24/221824d83f9fd80a0f08ec0d2986870e.jpg",
         id:12,
     },
 ]
@@ -117,5 +117,20 @@ function sT(){
 
 $("#start").on("click",()=>{
     $("#start").css("display","none")
+    $(".gameBoard").css("display","grid")
     sT()
 })
+
+function fillBoard(){
+    let board=[...card, ...card]
+    for(let i=0;i<board.length;i++){
+        let cardHtml=`
+        <div class="card" data-id="${board[i].id}">
+                <div class="front">CHOSE ME</div>
+                <div class="back"><img src="${board[i].img}" alt="${board[i].name}"></div>
+            </div>
+        `
+        $(".gameBoard").append(cardHtml)
+    }
+}
+fillBoard()
