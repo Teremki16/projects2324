@@ -2,6 +2,10 @@
 #include "Blocks.h"
 GameBoy gb;
 
+int x = 2, y = -1;
+
+
+
 
 void setup() {
   gb.begin(7);
@@ -9,125 +13,25 @@ void setup() {
 }
 
 void loop() {
-  if (gb.getKey() == 1) n++;
-  gb.clearDispiay()
-  if(n == 0) drawBlock(I_block
-  
-  
-  
-  
-  gb.clearDisplay();
-  drawBlock(I_block_1, 3, 3);
-  delay(1000);
+  makeMove();
+  drawBlock(S_block_1, x, y);
+  y++;
+  delay(100);
 
-  gb.clearDisplay();
-  drawBlock(I_block_2, 3, 3);
-  delay(1000);
 
-  gb.clearDisplay();
-  drawBlock(I_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(I_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(L_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(L_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(L_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(L_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(J_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(J_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(J_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(J_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(Z_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(Z_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(Z_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(Z_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(S_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(S_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(S_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(S_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(T_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(T_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(T_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(T_block_4, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(O_block_1, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(O_block_2, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(O_block_3, 3, 3);
-  delay(1000);
-
-  gb.clearDisplay();
-  drawBlock(O_block_4, 3, 3);
-  delay(1000);
 }
+
+void createBlock(int num){
+if(num == 0) gb.generateBlock(gb.block, I_block_1, I_block_2, I_block_3, I_block_4);
+if(num == 1) gb.generateBlock(gb.block, Z_block_1, Z_block_2, Z_block_3, Z_block_4);
+if(num == 2) gb.generateBlock(gb.block, S_block_1, S_block_2, S_block_3, S_block_4);
+if(num == 3) gb.generateBlock(gb.block, L_block_1, L_block_2, L_block_3, L_block_4);
+if(num == 4) gb.generateBlock(gb.block, J_block_1, J_block_2, J_block_3, J_block_4);
+if(num == 5) gb.generateBlock(gb.block, T_block_T, T_block_2, T_block_3, T_block_4);
+if(num == 6) gb.generateBlock(gb.block, O_block_1, O_block_2, O_block_3, O_block_4);
+
+
+
 
 void drawBlock(byte arr[4][4], int x, int y) {
   for (int i = 0; i < 4; i++) {
@@ -136,5 +40,14 @@ void drawBlock(byte arr[4][4], int x, int y) {
         gb.drawPoint(x + i, y + j);
       }
     }
+  }
+}
+
+void makeMove() {
+  if (gb.getKey() == 4) {
+    x--;
+  }
+  if (gb.getKey() == 5) {
+    x++;
   }
 }
