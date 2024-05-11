@@ -123,7 +123,22 @@ function startTimer() {
 
 $("#start").on("click", () => {
     $("#start").css("display", "none")
-
+    $(".gameBoard").css("display", "grid")
     startTimer()
 
 })
+
+function fillBoard(){
+    let board = [...cards, ...cards]
+    for(let i = 0; i < board.length; i++){
+        let catdHtml = `
+        <div class="card" data-id="${board[i].id}">
+                    <div class="front">asdfg</div>
+                    <div class="back"><img src="${board[i].img}" alt="${board[i].name}"></div>
+                </div>
+        `
+        $(".gameboard").append(cardHtml)
+    }
+    
+}
+fillBoard()
