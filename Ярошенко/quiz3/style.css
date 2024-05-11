@@ -6,7 +6,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: rgb(255, 241, 227);
+    background-color: rgb(255, 255, 255);
     letter-spacing: 1px;
 }
 
@@ -29,7 +29,7 @@ h1 {
 }
 
 .slideRules {
-    background-color: brown;
+    background-color: rgb(101, 106, 255);
     font-size: 30px;
     padding: 10px 20px;;
     border-radius: 10px 10px 0 0;
@@ -59,16 +59,12 @@ article {
 }
 
 .img img {
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgb(11, 13, 23);
     width: 100%;
 }
 
 
-.answer {
-    display: flex;
-    width: 65%;
-    justify-content: center;
-}
+
 
 #t1input {
     flex-grow: 1;
@@ -85,7 +81,7 @@ input:focus {
 
 #t1btn {
     font-size: 35px;
-    background-color: rgb(207, 34, 34);
+    background-color: rgb(103, 57, 255);
     border: none;
     color: white;
 }
@@ -128,7 +124,7 @@ input:focus {
 
 .nextTask a {
     display: block;
-    background-color: rgb(155, 34, 34) ;
+    background-color: rgb(79, 96, 205) ;
     color: white;
     font-size: 35px;
     padding: 10px 30px;
@@ -148,7 +144,3 @@ input:focus {
     cursor: poiter;
 }
 
-audio {
-    margin: 3rem 0;
-    display: none;
-}

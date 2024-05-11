@@ -57,44 +57,6 @@ article {
     width: 100%;
 }
 
-.img{
-    width: 65%;
-    margin: 50px 0;
-}
-
-.img img {
-    width: 100%;
-    box-shadow: 0 0 10px black;
-}
-
-.answer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 65%;
-}
-
-#task1input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    flex-grow: 1;
-    font-size: 35px;
-    padding: 10px;
-}
-
-input:focus {
-    outline: none;
-}
-
-#task1btn {
-    border: none;
-    background-color: brown;
-    color: white;
-    font-size: 35px;
-    padding: 10px;
-}
-
 .score {
     position: absolute;
     top: 45vh;
@@ -118,7 +80,7 @@ input:focus {
     right: 5vw;
 }
 
-start {
+#start {
     font-size: 30px;
     background-color: brown;
     color: white;
@@ -128,13 +90,55 @@ start {
     cursor: pointer;
 }
 
-.sound {
-    display: none;
-}
-
 .timeProgress {
     position: fixed;
     top: 2rem;
     right: 2rem;
     text-align: center;
+}
+
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 100px);
+    width: 100%;
+    gap: 5px;
+}
+
+.card {
+    background-color: white;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    background-color: aquamarine;
+    position: absolute;
+    inset: 0;
+    color: brown;
+    font-weight: 1000;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+}
+
+.back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
