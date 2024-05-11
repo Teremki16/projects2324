@@ -1,0 +1,44 @@
+#include <GameBoy.h>
+#include "Blocks.h"
+GameBoy gb;
+
+int x = 2, y = -1;
+
+int n = 0;
+
+void setup() {
+  gb.begin(8);
+}
+
+void loop() {
+  makeMove();
+  drawBlock(S_block_1, x, y);
+  y++;
+  delay(1000);
+}
+void drawBlock(byte arr[4][4], int x, int y) {
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      if (arr[j][i] == 1) {
+        gb.drawPoint(x + i, y + j);
+      }
+    }
+  }
+}
+
+void makeMove() {
+  if (gb.getKey() == 4) {
+    x--;
+  }
+  if (gb.getKey() == 5) {
+    x++;
+  }
+void crateBlock(int num){
+  if(num == 0) gb.genarete(gb.block, I_block_1 I_block_2 I_block_3 I_block_4;
+  if(num == 1) gb.genarete(gb.block, Z_block_1 Z_block_2 Z_block_3 Z_block_4;
+  if(num == 2) gb.genarete(gb.block, S_block_1 S_block_2 S_block_3 S_block_4;
+  if(num == 3) gb.genarete(gb.block, L_block_1 L_block_2 L_block_3 L_block_4;
+  if(num == 4) gb.genarete(gb.block, J_block_1 J_block_2 J_block_3 J_block_4;
+  if(num == 5) gb.genarete(gb.block, T_block_1 T_block_2 T_block_3 T_block_4;
+  if(num == 6) gb.genarete(gb.block, O_block_1 O_block_2 O_block_3 O_block_4;
+}
