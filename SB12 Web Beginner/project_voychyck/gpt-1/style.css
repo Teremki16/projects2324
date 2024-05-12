@@ -1,3 +1,4 @@
+/* styles.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,84 +8,40 @@ body {
 header {
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header a {
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
   color: #fff;
   text-decoration: none;
-}
-
-header ul {
-  list-style: none;
-  float: right;
-}
-
-header ul li {
-  display: inline-block;
-  margin-right: 10px;
 }
 
 main {
   padding: 20px;
 }
 
-.categories {
-  margin-bottom: 20px;
-}
-
-.categories h2 {
-  margin-bottom: 10px;
-}
-
-.categories ul {
-  list-style: none;
-  padding: 0;
-}
-
-.categories ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.products {
-  margin-bottom: 20px;
-}
-
-.products h2 {
-  margin-bottom: 10px;
-}
-
-.products ul {
-  list-style: none;
-  padding: 0;
-}
-
-.products ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.products ul li a {
-  text-decoration: none;
-}
-
-.products ul li img {
-  width: 150px;
-  height: 150px;
-}
-
-.products ul li h3 {
-  margin-top: 10px;
-}
-
-.products ul li p {
-  margin-bottom: 10px;
-}
-
-footer {
+button {
+  padding: 10px 20px;
   background-color: #333;
   color: #fff;
-  padding: 10px;
-  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }
