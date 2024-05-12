@@ -5,68 +5,71 @@ $(".rules").slideUp(0);
 
 let cards = [
     {
-        name: "дуріан",
-        img: "https://yesfrukt.com/storage/big/c6fbf55902ac4c744ce3bf5bd7942bbe/product/1/xnedyLDSZYFrctqKBLHQAYnj5tOiKW0q0.png.pagespeed.ic.Ko_8Rvvglh.png",
+        name: "неперевершений прокрастінатор",
+        img: "https://upload.wikimedia.org/wikipedia/ru/thumb/e/e7/G-man.jpg/274px-G-man.jpg",
         id: 1
     },
     {
-        name: "манго",
-        img: "https://content1.rozetka.com.ua/goods/images/big/15464138.png",
+        name: "15 годин коду без моргань",
+        img: "https://content.okwine.ua/files/product/642c133849f6ceb4e421bb16/350x470/rom-captain-morgan-spiced-gold-35-07l-sklyanka_18.jpg",
         id: 2
     },
     {
-        name: "гранат",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV1NrxtEVbUEOsVhUO-eT1nb388Xk_V_f2AvnVdv9Bg&s",
+        name: "богдан під ліжком",
+        img: "https://pm1.aminoapps.com/8402/ea7fe84637879e4b8ff469d23ca2aea81f6ae717r1-575-581v2_uhq.jpg",
         id: 3
     },
     {
-        name: "авокадо",
-        img: "https://flomaster.top/o/uploads/posts/2024-02/1708478355_flomaster-top-p-zelenii-frukt-s-bolshoi-kostochkoi-instagr-3.png",
+        name: "стілець з чаєм",
+        img: "https://images.prom.ua/3230227081_w640_h640_alyum-stul-rezhissyorskij.jpg",
         id: 4
     },
     {
-        name: "яблуко",
-        img: "https://s1.iconbird.com/ico/2013/11/491/w256h2561384698911applered.png",
+        name: "я не знаю",
+        img: "https://lh4.googleusercontent.com/proxy/dA25v19NJ0EG-86Pg2tJn8eJNld4KtuZUtIphz8-v1Upoum7oW2Z11nXz2UT2fFKhQuEyQI3nd0AKzwe6Kn0erM_UAWi",
         id: 5
     },
     {
-        name: "диня",
-        img: "https://imgpng.ru/d/melon_PNG14380.png",
+        name: "миша дитина",
+        img: "https://images.merstatic.com/imgcache/resized/images/offer/2016/09/01/eb6c8a3c36b6f5874d0b36096ef9ff95.jpg",
         id: 6
     },
     {
-        name: "лайм",
-        img: "https://toys-kopitsa.com.ua/image/cache/de849a2fac836fedcbb1d197a844b31b.png",
+        name: "лаптоп",
+        img: "https://cdn.comfy.ua/media/catalog/product/7/c/7cd12b688_381762_b.jpg",
         id: 7
     },
     {
-        name: "банан",
-        img: "https://cdn.pixabay.com/photo/2016/01/17/16/22/bananas-1145121_1280.png",
+        name: "фуррі",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7zso8BYV1FWFrVfqpGp8E9iaOTYB4_mod9HzOsifQcA&s",
         id: 8
     },
     {
-        name: "кавун",
-        img: "https://amiel.club/uploads/posts/2022-03/1647683674_20-amiel-club-p-kartinki-frukti-po-otdelnosti-26.png",
+        name: "санс",
+        img: "https://pm1.aminoapps.com/6788/efa2ffaccc9ed63878526ece778bb3e66cee22dav2_hq.jpg",
         id: 9
     },
 
     {
-        name: "ківі",
-        img: "https://images.silpo.ua/products/300x300/webp/94715b5a-996c-44f3-938b-102da2d9f732.png",
+        name: "мауспад",
+        img: "https://www.tradeinn.com/f/13885/138853781/asus-rog-%D0%9D%D0%BE%D0%B6%D0%BD%D1%8B-%D0%9C%D0%B0%D1%83%D1%81%D0%BF%D0%B0%D0%B4.jpg",
         id: 10
     },
     {
-        name: "ананас",
-        img: "hhttps://content.rozetka.com.ua/goods/images/big/15464049.png",
+        name: "прикольна білка",
+        img: "https://pustunchik.ua/uploads/school/cache/4e2e91ec203d6f97db8c1fc3e7203bb4.jpg",
         id: 11
     },
     {
-        name: "кокос",
-        img: "https://png.pngtree.com/png-clipart/20210912/original/pngtree-tropical-fruit-coconut-png-image_6711665.jpg",
+        name: "дівчина дивиться на кмп'ютер 10 годин без сну",
+        img: "https://st4.depositphotos.com/2060147/38386/i/450/depositphotos_383867664-stock-photo-woman-student-holds-laptop-her.jpg",
         id: 12
     }
-    
+
 ]
+
+let firstCard = null;
+let secondCard = null;
 
 let ts = localStorage;
 let time;
@@ -86,7 +89,7 @@ function rnd(n) {
 
 $("#score").knob({
     min: 0,
-    max: 5,
+    max: 12,
     angleArc: 120,
     angleOffset: -60,
     displayInput: false,
@@ -111,7 +114,7 @@ function startTimer() {
             alertify.error("Time is out!");
             setTimeout(() => window.open("index.html", "_self", false), 1000);
             ts.removeItem("time");
-        } else if (time > 0){
+        } else if (time > 0) {
             ts.setItem("time", time);
         }
     }, 1000);
@@ -121,22 +124,74 @@ $("#start").on("click", () => {
     $("#start").css("display", "none");
     $(".gameBoard").css("display", "grid");
     startTimer();
+    fillBoard()
 });
 
 function fillBoard() {
-let board = [...cards, ...cards];
-for(let i = 0; i < board.length; i++){
-    let cardHtml = `
-    <div class="card">
-        
-                <div class="card" data-id=""${board[i].id}></div>
+    let board = [...cards, ...cards];
+    board = shuffle(board)
+    for (let i = 0; i < board.length; i++) {
+        let cardHtml = `
+    <div class="card" data-id="${board[i].id}">
                 <div class="front">youMomHateu</div>
                 <div class="back"><img src ="${board[i].img}" alt="${board[i].name}"></div>
-            
         </div>`
         $(".gameBoard").append(cardHtml)
 
-     }
-   
+    }
+
 }
-fillBoard()
+
+function shuffle(array) {
+    let counter = array.length
+    let temp;
+    let index;
+    while (counter > 0) {
+        index = Math.floor(Math.random() * counter)
+        counter--;
+        temp = array[counter]
+        array[counter] = array[index]
+        array[index] = temp
+    }
+    return array;
+
+}
+
+function cardClicked() {
+    if (secondCard || $(this).attr("matched")) return
+    if (!firstCard) {
+        firstCard = $(this)
+        firstCard.addClass("flip")
+        return;
+    }
+    if (firstCard && !$(this).hasClass("flip")) {
+        secondCard = $(this)
+        secondCard.addClass("flip")
+        if (firstCard.attr("data-id") == secondCard.attr("data-id")) {
+            firstCard.addClass("matched")
+            secondCard.addClass("matched")
+            firstCard = null
+            secondCard = null
+            score++;
+            $("#score").val(score).trigger("change")
+            if(score == 12) {
+                $("#win").css("display", "flex")
+                ts.removeItem("time")
+            }
+
+        } else {
+            setTimeout(() => {
+                firstCard.removeClass("flip")
+                secondCard.removeClass("flip")
+                firstCard = null
+                secondCard = null
+            }, 500)
+
+        }
+    }
+}
+
+
+
+$(document).on("click", ".card", cardClicked)
+
