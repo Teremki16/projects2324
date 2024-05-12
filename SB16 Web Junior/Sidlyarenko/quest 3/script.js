@@ -7,7 +7,7 @@ $(".rules").slideUp(0)
 let cards = [
     {//1
         name: "golubika",
-        img: "https://i.pinimg.com/564x/1c/16/84/1c16844055a2faa8eeca157344b85a4e.jpg",
+        img: "https://i.pinimg.com/564x/ce/c8/31/cec83187b2711ad3c3df5407b272b34b.jpg",
         id: 1
     },
     {//2
@@ -16,7 +16,7 @@ let cards = [
         id: 2
     },
     {//3
-        name: "arbu",
+        name: "arbus",
         img: "https://i.pinimg.com/564x/c6/41/e3/c641e3c51f88436865af2b3d7965e019.jpg",
         id: 3
     },
@@ -67,6 +67,9 @@ let cards = [
     },
 ]
 
+let firstCard = null
+let secongCard = null
+
 
 
 let ts = localStorage
@@ -98,7 +101,7 @@ $("#timer").knob({
 })
 $("#score").knob({
     min: 0,
-    max: 10,
+    max: 12,
     angularArc: 60,
 
     readOnly: true, 
@@ -125,20 +128,71 @@ $("#start").on("click", () => {
     $("#start").css("display", "none")
     $(".gameBoard").css("display", "grid")
     startTimer()
-
+    fillBoard()
 })
 
 function fillBoard(){
     let board = [...cards, ...cards]
+    board = shuffle(board)
     for(let i = 0; i < board.length; i++){
-        let catdHtml = `
+        let cardHtml = `
         <div class="card" data-id="${board[i].id}">
                     <div class="front">asdfg</div>
                     <div class="back"><img src="${board[i].img}" alt="${board[i].name}"></div>
                 </div>
         `
-        $(".gameboard").append(cardHtml)
+        $(".gameBoard").append(cardHtml)
     }
     
 }
-fillBoard()
+
+
+function shuffle(array){
+    let counter = array.length
+    let temp;
+    let index;
+    while(counter > 0){
+        index = Math.floor(Math.random() * counter)
+        counter--;
+        temp = array[counter]
+        array[counter] = array[index]
+        array[index] = temp
+    }
+    return array;
+}
+
+function cardClicked(){
+    if(secongCard || $(this).hasClass("mached")) return;
+    if(!firstCard){
+        firstCard = $(this)
+        firstCard.addClass("flip")
+        return;
+    };
+    if(firstCard && !$(this).hasClass("flip")){
+        secongCard = $(this)
+        secongCard.addClass("flip")
+        if(firstCard.attr("data-id") == secongCard.attr("data-id")){
+            firstCard.addClass("mathched")
+            secongCard.addClass("mached")
+            firstCard = null
+            secongCard = null
+            score++;
+            $("#score").val(score).trigger("change")
+            if(score == 12){
+                $("#win").css("display", "flex")
+                ts.removeItem("time")
+            }
+        }else{
+           setTimeout(()=>{
+            firstCard.removeClass("flip")
+            secongCard.removeClass("flip")
+            firstCard = null
+            secongCard = null
+        }) 
+        }
+    }
+};
+
+$(document).on("click", ".card", cardClicked)
+
+
