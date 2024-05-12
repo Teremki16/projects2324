@@ -66,6 +66,9 @@ let cards = [
     }
 ]
 
+let firstCard = null;
+let secondCard = null;
+
 let ts = localStorage;
 let time;
 
@@ -84,7 +87,7 @@ function rnd(n) {
 
 $("#score").knob({
     min: 0,
-    max: 5,
+    max: 12,
     angleArc: 120,
     angleOffset: -60,
     displayInput: false,
@@ -119,10 +122,12 @@ $("#start").on("click", () => {
     $("#start").css("display", "none");
     $(".gameBoard").css("display", "grid");
     startTimer();
+    fillBoard()
 });
 
 function fillBoard() {
     let board = [...cards, ...cards];
+    board = shuffle(board)
     for(let i = 0; i < board.length; i++){
         let cardHtml = `
         <div class="card" data-id="${board[i].id}">
@@ -133,4 +138,50 @@ function fillBoard() {
     $(".gameBoard").append(cardHtml)
     }
 }
-fillBoard()
+
+function shuffle(array){
+    let counter = array.length
+    let temp;
+    let index;
+    while(counter > 0){
+        index = Math.floor(Math.random() * counter)
+        counter--;
+        temp = array[counter]
+        array[counter] = array[index]
+        array[index] = temp
+    }
+    return array;
+}
+
+function cardClicked(){
+    if(secondCard || $(this).hasClass("matched")) return;
+    if(!firstCard){
+        firstCard = $(this)
+        firstCard.addClass("flip")
+        return;
+    }
+    if(firstCard && !$(this).hasClass("flip")){
+        secondCard = $(this)
+        secondCard.addClass("flip")
+        if(firstCard.attr("data-id") == secondCard.attr("data-id")){
+            firstCard.addClass("matched")
+            secondCard.addClass("matched")
+            firstCard = null
+            secondCard = null
+            $("#score").val(score).trigger("change")
+            if(score == 12) {
+                $("#win").css("display", "flex")
+                ts.removeItem("time")
+            }
+        }else{
+            setTimeout(()=>{
+                firstCard.removeClass("flip")
+                secondCard.removeClass("flip")
+                firstCard = null
+                secondCard = null
+                score ++;
+            }, 500)
+        }
+    }
+}
+$(document).on("click", ".card", cardClicked)
