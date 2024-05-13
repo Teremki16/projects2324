@@ -6,6 +6,12 @@ int x = 2;
 int y = -1;
 int rot = 0;
 
+int acc = 1;
+int speed = 200;
+
+int score = 0;
+int level = 0;
+
 void setup() {
   randomSeed(analogRead(0));
   gb.begin(8);
@@ -14,10 +20,24 @@ void setup() {
 
 void loop() {
   makeMove();
+  if (gb.checkBlockCollision(gb.block[rot], x, y + 1)) {
+    gb.memBlock(gb.block[rot], x, y);
+    int lines = gb.fullLine();
+    if (lines != 0){
+      score += lines;
+      level += lines;
+    }
+    if(level >= 5){
+      acc+=1;
+      level=0;
+    }
+    createBlock(random(7));
+  } else {
+    y++;
+  }
   gb.drawDisplay();
   drawBlock(gb.block[rot], x , y);
-  y++;
-  delay(100);
+  delay(speed/acc);
 
 }
 
@@ -33,12 +53,28 @@ void drawBlock(byte arr[4][4], int x, int y) {
 
 void makeMove() {
   if (gb.getKey() == 4) {
-    if (!checkBlockCollision(gb.block[rot], x - 1, y)) {
+    if (!gb.checkBlockCollision(gb.block[rot], x - 1, y)) {
       x--;
     }
   }
   if (gb.getKey() == 5) {
-    x++;
+    if (!gb.checkBlockCollision(gb.block[rot], x + 1, y)) {
+      x++;
+    }
+  }
+  if (gb.getKey() == 1) {
+    if (!gb.checkBlockCollision(gb.block[rot], x + 1, y)) {
+      if (rot == 3) {
+        rot = 0;
+      } else {
+        rot++;
+      }
+    }
+  }
+  if (gb.getKey() == 6) {
+    acc = 4;
+  } else {
+    acc = 1;
   }
 }
 

@@ -3,15 +3,24 @@
 GameBoy gb;
 
 int x = 2, y = -1;
+int rot = 0;
 
 void setup() {
   gb.begin(8);
+  randomSeed(analogRead(0) + analogRead(5));
+  createBlock(random(7));
 }
 
 void loop() {
   makeMove();
-  drawBlock(S_block_1, x, y);
-  y++;
+  if(gb.checkBlockCollision(gb.block[rot], x ,y)){
+    gb.memBlock(gb.block[rot], x, y);
+    createBlock(random(7));
+  }else{
+    y++;
+  }
+  gb.drawDisplay();
+  drawBlock(gb.block[rot], x, y);
   delay(100);
 }
 
@@ -27,15 +36,16 @@ void drawBlock(byte arr[4][4], int x, int y) {
 }
 
 void makeMove(){
-  if(gb.getKey() == 4){
+  if(gb.getKey() == 4 && !gb.checkBlockCollision(gb.block[rot], x - 1, y)){
     x--;
   }
-  if(gb.getKey() == 5){
+  if(gb.getKey() == 5 && !gb.checkBlockCollision(gb.block[rot], x + 1, y)){
     x++;
   }
 }
 
 void createBlock(int num){
+  x = 2, y = -1, rot = random(0, 4);
   if(num == 0) gb.generateBlock(gb.block, I_block_1, I_block_2, I_block_3,I_block_4);
   if(num == 1) gb.generateBlock(gb.block, Z_block_1, Z_block_2, Z_block_3,Z_block_4);
   if(num == 2) gb.generateBlock(gb.block, S_block_1, S_block_2, S_block_3,S_block_4);
