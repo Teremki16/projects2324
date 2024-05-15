@@ -1,5 +1,7 @@
+#include <score.h>
 #include <GameBoy.h>
 #include "Blocks.h"
+
 GameBoy gb;
 
 int x = 2;
