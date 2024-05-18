@@ -42,18 +42,18 @@ let cards = [
         id: 1
     },
     {
-        name:"",
-        img:"",
+        name:"мазепа",
+        img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fuinp.gov.ua%2Fistorychnyy-kalendar%2Fberezen%2F20%2F1639-narodyvsya-ivan-mazepa-getman-ukrayiny&psig=AOvVaw3uCOCjMvkom5h96EWSh12E&ust=1715600595584000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCy8rGEiIYDFQAAAAAdAAAAABAS",
         id: 1
     },
     {
-        name:"",
-        img:"",
+        name:"булочка з маком",
+        img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Ffood.obozrevatel.com%2Fvyipechka-i-desertyi%2Fbulochki-s-makom.htm&psig=AOvVaw0LpHklEkaqhTdBp_H9fB9V&ust=1715600749181000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIC_j_yEiIYDFQAAAAAdAAAAABAE",
         id: 1
     },
     {
-        name:"",
-        img:"",
+        name:"булочка з сщсискою",
+        img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fbake-house.by%2Fproduction%2Fhlebushek%2Fbulochka-s-sosiskoy-120g&psig=AOvVaw2qraDyTiqg1dmxv5hveFOE&ust=1715601841070000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDB_oSJiIYDFQAAAAAdAAAAABAY",
         id: 1
     },
     {
@@ -72,8 +72,8 @@ $(".slideRules").on("click", function () {
     $(".rules").slideToggle()
 })
 
-
-
+let firstCard = null
+let secondCard = null
 
 let score = 0
 
@@ -126,9 +126,66 @@ function startTime() {
 $("#start").on("click", () => {
     startTime()
     $("#start").css("display", "none")
+    $(".gameBoard").css("display", "grid")
+    fillBoard()
    
 })
 
 
+function fillBoard(){
+    let board =[...cards, ...cards]
+    board= shuffle(board)
+    for (let i =0 ;i < cards.length; i++){
+        let cardHtml = `
+        <div class="card" data-id = "${board[i].id}">
+            <div class="front">ROBOCODE</div>
+            <div class="back">
+                <img src="${board[i].img}" alt="${board[i].name}">
+            </div>
+        </div>
+        `
+        $(".gameBoard").append(cardHtml)
+    }
+}
 
+function shuffle(array){
+let counter = array.length
+let index
+let temp
+while(counter>0){
+    index = Math.floor(Math.random()* counter)
+    counter--;
+    temp = array[counter]
+    array[counter]= array[index]
+    array[index]= temp
+}
+return array 
+}
 
+function cardClicked(){
+    if(secondCard || $(this).hasClass("matched")|| firstCard==$(this)) return
+   if(!firstCard){
+    firstCard = $(this)
+    firstCard.addClass("flip")
+    return
+   }
+   if(firstCard){
+    secondCard = $(this)
+    secondCard.addClass("flip")
+    if(firstCard.attr("data-id")==secondCard.attr("data-id"))
+        firstCard.addClass("matched")
+        secondCard.addClass("matched")
+        firstCard =null
+        secondCard =null
+        
+   }else{
+    setTimeout(()=>{
+     firstCard.removeClass("flip")
+     secondCard.removeClass("flip")
+     firstCard = null
+     secondCard = null
+    },500)
+   }
+}
+
+$(document).on("click", ".card",cardClicked )
