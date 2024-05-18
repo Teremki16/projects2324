@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://media1.tenor.com/m/5BYK-WS0__gAAAAC/cool-fun.gif);
+    background-size: cover;
+    background-position: center;
+    font-family: "Press Start 2P", system-ui;
+}
+
+header{
+    text-align: center;
+
+}
+
+.wrapper{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+}
+
+@keyframes colors{
+    0%{color: aqua;}
+    10%{color: pink;} 
+    25%{color: blue;} 
+    50%{color: green;} 
+    75%{color: blueviolet;} 
+    90%{color:yellow;} 
+    100%{color: red;} 
+}
+
+a:hover{
+    transform: scale(1.5);
+    text-shadow: 3px 5px white ;
+}

@@ -130,7 +130,7 @@ function startTimer() {
         $("#timer").val(time).trigger("change")
         if (time <= 0) {
             alertify.error("Time is out !")
-            setTimeout(() => window.open("index.html", "_self", false), 1000)
+            setTimeout(() => window.open("../quest2/index.html", "_self", false), 1000)
             ts.removeItem("time")
         } else if (time > 0) {
             ts.setItem("time", time)
@@ -183,7 +183,7 @@ function cardClicked() {
         firstCard.addClass("flip")
         return;
     }
-    if (firstCard && !$(this).hasClass("flip")) {
+    if (firstCard && !$(this).hasClass("flip")){
         secondCard = $(this)
         secondCard.addClass("flip")
         if (firstCard.attr("data-id") == secondCard.attr("data-id")) {
@@ -193,6 +193,11 @@ function cardClicked() {
             secondCard = null
             score++;
             $("#score").val(score).trigger("change")
+            if(score == 12){
+                $("#win").css("display" , "flex")
+                ts.removeItem("time")
+
+            }
         } else {
             setTimeout(() => {
                 firstCard.removeClass("flip")
