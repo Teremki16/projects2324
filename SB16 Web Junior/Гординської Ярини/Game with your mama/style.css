@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: darkred;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://mafia.ua/storage/image-storage/2024/05/13/37688/source/480x0/072eb88a-b384-4900-b8ad-0c816ce2480e-1-1_1715577763.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Jacquard 12", system-ui;
+}
+
+header {
+    text-align: center;
+}
+
+.wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+    font-size: 4rem;
+    animation: colors alternate 5s infinite;
+}
+
+@keyframes colors {
+    0% {color: black;}
+    25% {color: red;}
+    50% {color: darkred;}
+    75% {color: grey;}
+    100% {color: rgb(69, 68, 68);}
+}
+
+a:hover {
+    transform: scale(1.5);
+    text-shadow: 3px 5px white;
+}
