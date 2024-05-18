@@ -3,47 +3,47 @@ $(".rules").slideUp()
 let cards = [
     {
         name:"large pencilman",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/5/54/Removal-306_%281%29.png/revision/latest/scale-to-width/360?cb=20240302132453",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsty0kEFYKs7FKtm0rPmcz1irojltM5QK6p_IwEufTw&s",
         id:1
     },
     {
         name:"large summoner pencilman",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/b/be/Large_Pencilman.png/revision/latest/scale-to-width/360?cb=20240302150356",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcsPuPJxS5kLIGEDFKpXn6hGgxn1wyxNArLE7bsxSoyg4Hppds1E_QjsIKyvD9aVoquqA&usqp=CAU",
         id:2
     },
     {
         name:"regular pencilman",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/7/7b/Normal_Pencilman.png/revision/latest?cb=20240302144700",
+        img:"https://i.ytimg.com/vi/BPdM5dH3PoE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBHDZ4gUa1quOWahdvmn6KHndBIvQ",
         id:3
     },
     {
         name:"C-pen",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/7/7b/Normal_Pencilman.png/revision/latest?cb=20240302144700",
+        img:"https://i.ytimg.com/vi/PfZ_itZgGyI/hqdefault.jpg?v=662e2810",
         id:4
     },
     {
         name:"Chief Scientist toilet",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/5/53/Scientist_toilet_3.0.png/revision/latest/thumbnail/width/360/height/360?cb=20240416122456",
+        img:"https://i.ytimg.com/vi/8P6TTc_VZLQ/maxresdefault.jpg",
         id:5
     },
     {
         name:"G-man toilet 4.0",
-        img:"https://static.wikia.nocookie.net/skibidi-toilet-official/images/9/9c/72%2C1-GmanSkibidilbestTransparent.png/revision/latest/smart/width/386/height/259?cb=20240404091649",
+        img:"https://preview.redd.it/72-is-one-of-the-best-episodes-v0-0n557fd22jpc1.jpeg?width=640&crop=smart&auto=webp&s=925f1461b3e453a3fc6b8a1e7aea1f0f2aa3e2f7",
         id:6
     },
     {
-        name:"aAstro jugernaut",
-        img:"https://static.wikia.nocookie.net/skibidi-toilet-official/images/5/50/ChiefTransparent.png/revision/latest/scale-to-width-down/250?cb=20240401142041",
+        name:"Astro jugernaut",
+        img:"https://i.ytimg.com/vi/_7mTFtFJojw/hqdefault.jpg",
         id:7
     },
     {
         name:"Astro detainer",
-        img:"https://static.wikia.nocookie.net/skibidi-toilet-official/images/e/e5/Upgraded_Astro_Toilet.png/revision/latest/scale-to-width-down/250?cb=20240313141521",
+        img:"https://preview.redd.it/if-dafuqboom-makes-a-troll-leak-about-ep-72-part-2-what-do-v0-7v933uua0zpc1.jpg?width=640&crop=smart&auto=webp&s=e41e119c1a065eaa1b47efba665e1b532612bc9f",
         id:8
     },
     {
         name:"UFO toilet",
-        img:"https://static.wikia.nocookie.net/skibidi-toilet-official/images/a/a1/AssailantTransparent.png/revision/latest?cb=20240303153138",
+        img:"https://i.ytimg.com/vi/vIOqFFXPh10/maxresdefault.jpg",
         id:9
     },
     {
@@ -53,15 +53,19 @@ let cards = [
     },
     {
         name:"Titan speakerman 3.0",
-        img:"https://static.wikia.nocookie.net/skibidi-toilet-fanon-v2/images/0/0d/STMultiverse17RefinedTitanSpeakerman.jpg/revision/latest?cb=20231202004452",
+        img:"https://i.ytimg.com/vi/o6Nf2Sa5vcA/maxresdefault.jpg",
         id:11
     },
     {
         name:"Titan TV man 3.0",
-        img:"https://static.wikia.nocookie.net/dom-studios-skibidi-multiverse/images/2/27/TitanTVManThumbnail025.png/revision/latest/scale-to-width-down/250?cb=20240204045907",
+        img:"https://i.ytimg.com/vi/q7UkHxqxARA/hqdefault.jpg?v=65be14b8",
         id:12
     },
 ]
+
+let firstCard = null
+
+let secondCard = null
 
 let score = 0;
 let time = 300
@@ -119,5 +123,68 @@ function startTime() {
 $("#start").on("click", () => {
     startTime()
     $("#start").css("display", "none")
+    $(".gameBoard").css("display", "grid")
+    fillBoard()
 })
 
+function fillBoard(){
+    let board = [...cards,...cards]
+    board = shuffle(board)
+    for(let i = 0; i < board.length; i++){
+        let cardHtml =`
+        <div class="card" data-id="${board[i].id}">
+            <div class="front">fools</div>
+            <div class="back">
+                <img src="${board[i].img}" alt="${board[i].name}">
+            </div>
+        </div>
+        `
+        $(".gameBoard").append(cardHtml)
+    }
+}
+
+
+
+function shuffle(array){
+    let counter = array.length;
+    let temp;
+    let index;
+    while(counter > 0){
+        index = Math.floor(Math.random() * counter)
+        counter--;
+        temp = array[counter]
+        array [counter]= array[index]
+        array [index] = temp
+
+    }
+    return array
+}
+
+function cardClicker(){
+    if(secondCard || $(this).hasClass("matched") || firstCard == $(this)) return
+    if(!firstCard){
+        firstCard  = $(this)
+        firstCard.addClass("flip")
+        return
+    }
+    if(firstCard){
+    secondCard = $(this)
+    secondCard.addClass("flip")
+    if(firstCard.attr("data-id") == secondCard.attr("data-id")){
+        firstCard.addClass("matched")
+        secondCard.addClass("matched")
+        firstCard = null
+        secondCard = null
+    }
+    }else{
+        setTimeout(()=>{
+            firstCard.removeClass("flip")
+            secondCard.removeClass("flip")
+            firstCard = null
+            secondCard = null
+        }, 500)
+    }
+}
+
+
+$(document).on("click",".card",cardClicker)
