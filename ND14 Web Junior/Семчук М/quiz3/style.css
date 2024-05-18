@@ -29,7 +29,7 @@ h1{
 }
 
 .slideRules {
-    background-color: rgb(162, 146, 83);
+    background-color: rgb(162, 132, 83);
     font-size: 30px;
     padding: 10px 20px;
     border-radius: 10px 10px 0 0;
@@ -37,7 +37,7 @@ h1{
 }
 
 .rules {
-    background-color: rgba(228, 215, 115, 0.687) ;
+    background-color: rgba(228, 187, 115, 0.687) ;
     padding: 20px;
     font-size: 25px;
     display: flex;
@@ -147,4 +147,51 @@ input:focus{
 audio {
     margin: 3rem 0;
     display: none;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(4, 100px);
+    margin: 0 auto;
+    gap: 5px;
+    display: none;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transform-style:preserve-3d ;
+    /* transform: rotateY(180deg) */
+    transition: all .5s;
+}
+
+.front {
+    backface-visibility: hidden;
+    background-color: rgb(190, 143, 86);
+    position: absolute;
+    inset: 0;
+    color: rgb(68, 48, 38);
+    font-weight: 1000;
+}
+
+.back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    position: absolute;
+    inset: 0;
+}
+
+.back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
