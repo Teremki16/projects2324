@@ -3,65 +3,68 @@ $(".rules").slideUp(0)
 let cards = [
     {
         name: "M4A1",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2F%25D0%259A%25D0%25B0%25D1%2582%25D0%25B5%25D0%25B3%25D0%25BE%25D1%2580%25D0%25B8%25D1%258F%3A%25D0%259E%25D1%2580%25D1%2583%25D0%25B6%25D0%25B8%25D0%25B5_CS%3AGO&psig=AOvVaw0JcFQyq4RtY99FYymFeHnj&ust=1714393580123000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjCjPjz5IUDFQAAAAAdAAAAABAE",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alfqjuhWJd7ctyj9bN_Iv9nBqx_0s4Y2_0LIXAd1U4MlHZqFPox-u7g8W0vpXAyCE2sych7Cndnh22n1gSOXJG-eI-",
         id: 1
     },
     {
         name: "AWP",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3D2270267163&psig=AOvVaw0JcFQyq4RtY99FYymFeHnj&ust=1714393580123000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjCjPjz5IUDFQAAAAAdAAAAABAc",
+        img: "https://cdn.skinbaron.de/steamdata/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZt7P_BdjVW4tW4k7-KgOfLP7LWnn8fsJEh0uuR9I6m3gbi_Uppamn2d4CTcVc4NFDZ_Qe4x-rmgMPtuZucnGwj5He2etKLyw?optimizer=image",
         id: 2
     },
     {
         name: "AK47",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdzen.ru%2Fa%2FX6KeSl3FmEXdpCce&psig=AOvVaw0JcFQyq4RtY99FYymFeHnj&ust=1714393580123000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjCjPjz5IUDFQAAAAAdAAAAABAp",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhh3szKcDBA49OJnpWFkPvxDLfYkWNFppwpie2Rp9_w0VDm-UNrMj30IoPHdAY-M1rY-1K7w7291pO8vJTJzHN9-n51xLwwH8g",
         id: 3
     },
     {
         name: "UMP-45",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3D2270267163&psig=AOvVaw0JcFQyq4RtY99FYymFeHnj&ust=1714393580123000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjCjPjz5IUDFQAAAAAdAAAAABAx",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0Ob3ZDBS092kho-chMj4OrzZgiUDuMch27GYpdis3VDk8kQ-YG72cNOScAY7ZQnV-VTtwOu7gpC0tZrJ1zI97XuqSfkK",
         id: 4
     },
     {
         name: "Tec-9",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2F%25D0%259A%25D0%25B0%25D1%2582%25D0%25B5%25D0%25B3%25D0%25BE%25D1%2580%25D0%25B8%25D1%258F%3A%25D0%259F%25D0%25B8%25D1%2581%25D1%2582%25D0%25BE%25D0%25BB%25D0%25B5%25D1%2582%25D1%258B_CS%3AGO&psig=AOvVaw0mPImI3SoAojSJgLHpqNaY&ust=1714393833055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLjHl-_05IUDFQAAAAAdAAAAABAE",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhnwMzcdD4b09m4go-SqP_xMq3I2G4HvJ0hi76SpYijjgGw8hZramjzddOccQNsZF3ZqFW3k-zo18C0vMnXiSw0Ujnn9Hs",
         id: 5
     },
     {
         name: "USP",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2FUSP-S&psig=AOvVaw2_AMp0xyeVZVVn4zwEkgK8&ust=1714393934822000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDOmp315IUDFQAAAAAdAAAAABAE",
+        img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8jnI7LFkGJD7fp9g-7J4cL23lexqhI9ZT3wd4WTJ1VvZ1rZr1G2wu2805W46p6amnJj6SEmt3_YgVXp1sALRvj2/360fx360f",
         id: 6
     },
     {
         name: "Dual Berettas",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2FDual_Berettas_%2528CS%3AGO%2529&psig=AOvVaw3AN4_kl9F-uvP0eR4617BU&ust=1714393994950000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCwgbr15IUDFQAAAAAdAAAAABAE",
+        img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpos7asPwJf1OD3dShD4OO0kZKOg-P1IITFhG5Q7Pp9g-7J4cKj0AfsqBFlNWvxJYKXdQY4Z1zUqQK9xrzrhJG6v8-fzHNmviB34S2MgVXp1iINu42Q/360fx360f",
         id: 7
     },
     {
         name: "P250",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2FP250&psig=AOvVaw10qHYO3psoW4Lj53QjG19j&ust=1714394019684000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjo7MX15IUDFQAAAAAdAAAAABAJ",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS09-vloWZlOX7MITdn2xZ_Isi07_F8N3x3Qfj8kQ6a2H0IdKXdgRqYA2C-VLqxLznhMLv6Z-bm3o2pGB8sr9Yt3dq",
         id: 8
     },
     {
         name: "Desert Eagle",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2FDesert_Eagle&psig=AOvVaw2lzFJSurI5KZw7ysfZ-t-p&ust=1714394082364000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCe8er15IUDFQAAAAAdAAAAABAn",
+        img: "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH7duJhJKCmePnJ6nUl2Zu5Mx2gv2P9o-t21fj-RI_Nz2ncYbDcFNoYArYrgDql-3m08PptcjBn3tgs3Yis2GdwUJr9IfvpA/360fx360f",
         id: 9
     },
     {
         name: "Revolver R8",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwiki.cs.money%2Fru%2Fweapons%2Fr8-revolver%2Fmemento&psig=AOvVaw1glh1gNtAwdEm46DnGS0Fg&ust=1714394162421000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDvv4r25IUDFQAAAAAdAAAAABAE",
+        img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopL-zJAt21uH3cDx96tC3mYWYqPv9NLPF2GhUvMFz3OqU99jz0Vfg-BJpNm73JtPBJlM-Ml7Q_QW8xe2918Pu7czXiSw06_FuxCQ/360fx360f",
         id: 10
     },
     {
         name: "P90",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fguns.club%2Flib%2Foruzhie%2Fpistolet-pulemet-fn-p90-fantasticheskoe-oruzhie-iz-belgii%2F&psig=AOvVaw3MCLCGkMY_l-427Nf30TEB&ust=1714394229188000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjAtar25IUDFQAAAAAdAAAAABAE",
+        img: "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FABz7OORIQJM6dOngYWOmcj4OrzZgiVU6ZZ12bnH84nz31fs-xFrNTj6dYOSdAdvYg7T-QK_k7rshZK1us_O1zI97eL4BLUp/360fx360f",
         id: 11
     },
     {
         name: "AUG",
-        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcounterstrike.fandom.com%2Fru%2Fwiki%2FAUG_%2528CS%3AGO%2529&psig=AOvVaw0TIW-gBSxGKCoMcMlExC_G&ust=1714394265063000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPiWxrz25IUDFQAAAAAdAAAAABAE",
+        img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAR17PLGeDBH092jk7-DkvbiKvWJwDwJ7MQo0rHDp9v20QHtrxVuZDv0Io-VcgY5aFjVrlXvwe7s1sS_ot2XnmIh6UNm",
         id: 12
     },
 ]
+
+let firstCard = null;
+let secondCard = null;
 
 let score = 0
 let time = 300;
@@ -120,6 +123,66 @@ function startTime(){
 $("#start").on("click", ()=>{
     startTime()
     $("#start").css("display","none")
-    $("#audio").css("display","block")
-    startQuest(rnd())
+    $(".gameBoard").css("display","grid")
+    fillBoard()
 })
+
+function fillBoard(){
+    let board = [...cards, ...cards]
+    board = shuffle(board)
+    for(let i = 0; i<board.length;i++){
+        let cardHtml = `
+        <div class="card" data-id="${board[i].id}">
+                <div class="front">ROBOCODE</div>
+                <div class="back">
+                    <img src="${board[i].img}" alt="${board[i].name}">
+                </div>
+            </div>
+        `
+
+        $(".gameBoard").append(cardHtml)
+    }
+}
+function shuffle(array){
+    let counter = array.length
+    let temp;
+    let index;
+    while(counter > 0){
+        index = Math.floor(Math.random()*counter)
+        counter--;
+        temp = array[counter]
+        array[counter] = array[index]
+        array[index] = temp
+    }
+    return array
+}
+
+
+
+function cardClicked(){
+    if(secondCard || $(this).hasClass("marched") || firstCard == $(this)) return
+    if(!firstCard){
+        firstCard = $(this)
+        firstCard.addClass("flip")
+        return
+    }
+    if(firstCard){
+        secondCard = $(this)
+        secondCard.addClass("flip")
+        if(firstCard.attr("data-id") == secondCard.attr("data-id")){
+            firstCard.addClass("matched")
+            secondCard.addClass("matched")
+            firstCard = null
+            secondCard = null
+        }else{
+            setTimeout(()=>{
+                firstCard.removeClass("flip")
+                secondCard.removeClass("flip")
+                firstCard = null
+                secondCard = null
+            }, 500)
+        }
+    }  
+}
+
+$(document).on("click", ".card", cardClicked)
