@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Quest task2
-    </title>
+    <title>Quiz task1</title>
     <script src="../jquery.js" defer></script>
     <script src="../Libs/Alertify/alertify.min.js" defer></script>
     <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
@@ -13,43 +11,41 @@
     <script src="../Libs/Knob/jquery.knob.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
 </head>
 <body>
     <div class="wrapper">
         <h1><i><u>Online-Quest</u></i></h1>
-        <h2>Quiz task2</h2>
+        <h2>Quiz Task1</h2>
         <article>
             <p class="slideRules">Description and rules</p>
             <div class="rules">
-                <p><b>Rebus</b> - is a puzzle device that combines the use of illustated pistures with individual letters to depict words of phases</p>
+                <p>
+                    <b>Rebus</b> - is a puzzle device that combines the use of illustrated pictures with individual letters to depict words or phrases. 
+                </p>
                 <p>
                     <b>Rules</b>
                     <ul>
+                        <li>Guess 5 puzzles</li>
                         <li>After answering 5 puzzles, you will have access to the next task</li>
                     </ul>
                 </p>
             </div>
         </article>
-        <div id="start">Start</div>
-        <div class="sound">
-            <audio src="#" controls></audio>
+        <div class="img">
+            <img src="#" alt="тут мав бути ребус але ми криворукі">
         </div>
         <div class="answer">
             <input type="text" id="task1input" placeholder="Answer...">
             <input type="button" value="GO" id="task1btn">
         </div>
+
         <div class="score">
-            <h2>Task progress</h2>
-            <input type="text" id="score" value="0" class="taskProgress">
+            <h2>Task progress:</h2>
+            <input type="text" id="score" value="0">
         </div>
 
         <div class="next_bar">
-            <a href="" id="next">Next Quest</a>
-        </div>
-        <div class="timeProgress">
-            <h2>Progress:</h2>
-            <input type="text" id="timer" value="300">
+            <a href="../quest 2/index.html" id="next">Next Quest</a>
         </div>
     </div>
 </body>

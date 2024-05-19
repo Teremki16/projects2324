@@ -89,7 +89,7 @@ function startTimer() {
         $("#timer").val(time).trigger("change")
         if (time <= 0) {
             alertify.error("time is out!")
-            setTimeout(() => window.open("index.html", "_self", false), 1000)
+            setTimeout(() => window.open("../quest 1/index.html", "_self", false), 1000)
             ts.removeItem(time)
         } else if (time > 0) {
             ts.setItem("time", time)
