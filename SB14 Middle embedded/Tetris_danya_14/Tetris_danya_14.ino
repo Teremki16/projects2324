@@ -17,9 +17,31 @@ void setup() {
   randomSeed(analogRead(0));
   gb.begin(8);
   createBlock(random(0, 7));
+  Serial.begin(9600);
 }
 
 void loop() {
+  if (loss()) {
+    Serial.println("You loss, your score: " + (String)score);
+    clearMemory();
+    gb.sound(COLLISION);
+    gb.testMatrix(10);
+    gb.clearDisplay();
+    score = 0;
+    level = 0;
+  }
+  if(win()){
+    clearMemory();
+    for(int i = 0; i < 9; i++){
+      for(int j = 0; j <16; j++){
+        gb.setLed(i , j, WIN[j][i]);
+      }
+    }
+    score = 0;
+    level = 0;
+    delay(2000);
+    gb.clearDisplay();
+  }
   makeMove();
   if (gb.checkBlockCollision(gb.block[rot], x, y + 1)) {
     gb.memBlock(gb.block[rot], x, y);
@@ -38,7 +60,7 @@ void loop() {
   }
   gb.drawDisplay();
   drawBlock(gb.block[rot]    , x, y);
-  delay(speed/acc);
+  delay(speed / acc);
 
 }
 
@@ -87,4 +109,25 @@ void createBlock(int num) {
   if (num == 4) gb.generateBlock(gb.block, J_block_1, J_block_2, J_block_3, J_block_4);
   if (num == 5) gb.generateBlock(gb.block, T_block_1, T_block_2, T_block_3, T_block_4);
   if (num == 6) gb.generateBlock(gb.block, O_block_1, O_block_2, O_block_3, O_block_4);
+}
+
+bool loss() {
+  if (gb.checkBlockCollision(gb.block[rot], x, 0)) {
+    return  true;
+  }
+  return false;
+}
+
+bool win() {
+  if (score >= 20) {
+    return  true;
+  }
+  return false;
+}
+void clearMemory() {
+  for (int i = 0; i < 16; i++) {
+    for (int j = 0; j < 8; j++) {
+      gb.wipePoint(j, i);
+    }
+  }
 }
