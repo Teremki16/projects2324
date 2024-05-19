@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <div>
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <a href="http://youtube.com" class="navbar-brand">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="" height="35px">
+                </a>
+            </div>
+            <form class="d-flex" action="http://youtube.com/results" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_query">        
+                <button class="btn btn-dark" type="submit">Search</button>
+              </form>
+              <button type="button" class="btn btn-outline-primary">Sign in</button>
+        </div>
+        <div class="offcanvas offcanvas-start bg-dark text-light" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+          </div>
+    </nav>
+    <main class="container-fluid bg-dark">
+        <div class="row row-col-1 row-col-sm-2 row-col-md-4">
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC9_M3sanRlCGn4RJm8dCp2c9GRg-8duzcBA&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="data:image/jpeg;base64,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" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Крутий автобус!</h6>
+                            <p class="text-muted m-0">Мориарті</p>
+                            <p class="text-muted m-0">2 М переглядів (9 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-col-1 row-col-sm-2 row-col-md-4">
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-col-1 row-col-sm-2 row-col-md-4">
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-light border-0 bg-dark">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBejCZAvFqTowZ-7N-e-m6RhpIlBwsQTKZ9A&s" alt="" class="card-img-top" height="200px" style="max-width: 300px; object-fit: cover;">
+                    <div class="card-body row">
+                        <div class="col-2">
+                            <img src="https://visitukraine.today/media/blog/previews/4Qrw2jtwN9EqG6tOeV71QcLtzVXSNtraxqH0lwFc.webp" alt="" class="rounded-circle" width="40px" height="40px">
+                        </div>
+                        <div class="col-10">
+                            <h6 class="card-title">Мене зловили в бусік і повезли на АТО</h6>
+                            <p class="text-muted m-0">Віталік</p>
+                            <p class="text-muted m-0">52 М переглядів (3 хв тому)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
