@@ -28,7 +28,7 @@ let cards = [
     },
     {
         name: "мэлоди",
-        img: "https://static.wikia.nocookie.net/brawlstars/images/b/b1/%D0%9C%D0%B5%D0%BB%D0%BE%D0%B4%D0%B8_Skin-Default.png/revision/latest/smart/width/250/height/250?cb=20240302105252&path-prefix=ru",
+        img: "https://static.wikia.nocookie.net/brawlstars/images/1/1f/Melodie_Skin-Default.png/revision/latest?cb=20240229003551&path-prefix=pt",
         id: 6
     },
     {
@@ -63,8 +63,8 @@ let cards = [
     },
 ]
 
-let was = []
-
+let firstCard = null;
+let secondCard = null;
 
 let score = 0;
 let time = 300;
@@ -117,8 +117,69 @@ function startTime(){
     }, 1000)
 }
 
-$("#start").on("click", ()=>{
+$("#start").on("click", () =>{
     startTime()
-    $("#start").css("display", "none")
-   
+    $("#start").css("display", "none");
+    $(".gameBoard").css("display", "grid");
+    fillBoard()
 })
+
+function fillBoard(){
+    let board = [...cards, ...cards]
+    board = shuffle(board)
+    for(let i = 0; i < board.length; i++){
+        let cardHtml = `
+        <div class="card" data-id="${board[i].id}">
+            <div class="front">mef</div>
+            <div class="back">
+                <img src="${board[i].img}" alt="${board[i].name}}">
+            </div>
+        </div>
+        `
+        $(".gameBoard").append(cardHtml)
+    }
+}
+
+
+
+function shuffle(array){
+    let counter =array.length
+    let temp;
+    let index;
+    while(counter > 0){
+        index = Math.floor(Math.random() * counter)
+        counter--;
+        temp = array[counter]
+        array[counter] = array[index]
+        array[index] = temp
+    }
+    return array
+}
+
+function cardClicked(){
+    if(secondCard || $(this).hasClass("matched") || firstCard == $(this)) return
+    if(!firstCard){
+        firstCard = $(this)
+        firstCard.addClass("flip")
+        return
+    }
+    if(firstCard){
+        secondCard = $(this)
+        secondCard.addClass("flip")
+        if(firstCard.attr("data-id") == secondCard.attr("data-id")){
+            firstCard.addClass("matched")
+            secondCard.addClass("matched")
+            firstCard = null
+            secondCard = null
+        }else{
+            setTimeout(()=>{
+                firstCard.removeClass("flip")
+                secondCard.removeClass("flip")
+                firstCard = null
+                secondCard = null
+            }, 500)
+        }
+    }
+}
+
+$(document).on("click", ".card", cardClicked)
