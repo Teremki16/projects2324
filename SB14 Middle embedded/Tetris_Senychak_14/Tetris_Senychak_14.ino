@@ -1,3 +1,4 @@
+#include <score.h>
 #include <GameBoy.h>
 #include "Blocks.h"
 
@@ -25,7 +26,9 @@ void loop() {
     Serial.println("You loss, your score: " + (String)score);
     clearMemory();
     gb.sound(COLLISION);
-    gb.testMatrix(10);
+//    gb.testMatrix(10);
+    drawScore(gb, score);
+    delay(1000);
     gb.clearDisplay();
     score = 0;
     level = 0;
@@ -121,7 +124,7 @@ bool loss(){
 }
 
 bool win(){
-  if(score >= 1){
+  if(score >= 20){
     return true;
   }
   return false;
