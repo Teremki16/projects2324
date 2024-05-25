@@ -174,6 +174,7 @@ function cardClicked(){
             secondCard.addClass("matched")
             firstCard = null
             secondCard = null
+            
         }else{
             setTimeout(()=>{
                 firstCard.removeClass("flip")
