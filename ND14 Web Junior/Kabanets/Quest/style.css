@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/page-image-3732-706a1412-7593-4d15-ab59-1e2118e30dc7/1440186716.gif);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    font-family: "Lobster", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    animation: a 1s infinite;
+}
+
+a:hover {
+    transform: scale(1.5);
+    text-shadow: 3px 5px white;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+@keyframes a{
+    0%{
+        color: rgb(49, 19, 159);
+    }
+    25%{
+        color: rgb(55, 0, 128);
+    }
+    50%{
+        color: rgb(84, 6, 117);
+    }
+    75%{
+        color: rgb(92, 14, 99);
+    }
+    100%{
+        color: rgb(103, 25, 110);
+    }
+}

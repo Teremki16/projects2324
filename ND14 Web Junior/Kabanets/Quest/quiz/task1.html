@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz task1</title>
+    <script src="../jquery.js" defer></script>
+    <script src="../Libs/Alertify/alertify.min.js" defer></script>
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Libs/Alertify/alertify.bootstrap.css">
+    <script src="../Libs/Knob/jquery.knob.min.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="task1.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1><i><u>Online-Quest</u></i></h1>
+        <h2>Task 1.Rebus</h2>
+        <article>
+            <div class="slideRules">Description & Rules⬇</div>
+            <div class="rules">
+                <p>
+                    <b>Rebus</b> - is a puzzle dvice that combines the use of illustrated pictures with individual letters to depict words or phrases
+                </p>
+                <p>
+                    <b>Rules</b>
+                    <ul>
+                        <li>Guess 5 puzzles</li>
+                        <li>After answering 5 puzzles, you will have access to the next task</li>
+                    </ul>
+                </p>
+            </div>
+        </article>
+        <div class="img">
+            <img src="" alt="тут мав бути ребус">
+        </div>
+        <div class="answer">
+            <input type="text" id="t1input" placeholder="Answer...">
+            <input type="button" value="GO!" id="t1btn">
+        </div>
+        <div class="taskProgress">
+            <p>Task Progress:</p>
+            <input type="text" value="0" id="progress">
+        </div>
+        <div class="nextTask">
+            <a href="../quiz2/task1.html">Next task</a>
+        </div>
+    </div>
+</body>
+</html>
