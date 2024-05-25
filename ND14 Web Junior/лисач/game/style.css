@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://media.tenor.com/33mEyMFRKHsAAAAM/patrick-bateman-sigma-sigma.gif);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    font-family: "Jacquard 12", system-ui;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    animation: a 1s infinite;
+    transition: all 0.5s;
+}
+
+a:hover {
+    transform: scale(1.5);
+    text-shadow: 3px 5px white;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes a{
+    0%{
+        color: red;
+    }
+    25%{
+        color: green;
+    }
+    50%{
+        color: blue;
+    }
+    75%{
+        color: yellow;
+    }
+}
