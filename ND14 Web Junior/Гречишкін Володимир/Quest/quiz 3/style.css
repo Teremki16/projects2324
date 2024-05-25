@@ -136,3 +136,26 @@ article{
 .flip{
     transform: rotateY(180deg);
 }
+
+.win {
+    position:fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    gap: 2rem;
+    display: none;
+}
+
+.win a{
+    text-decoration: none;
+    color: greenyellow;
+    font-size: 1.5rem;
+    display: block;
+    background-color: lightseagreen;
+    padding: 0.5 rem 2 rem;
+    border: 999999999999px;
+}

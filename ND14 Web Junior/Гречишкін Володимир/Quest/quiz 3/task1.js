@@ -111,7 +111,7 @@ function startTime() {
         $("#time").val(time).trigger("change")
         if (time <= 0) {
             alertify.error("Time is gone!");
-            setTimeout(() => window.open("../quiz/task1.html"))
+            setTimeout(() => window.open("../quiz2/task1.html"))
             localStorage.removeItem("time")
         } else if (time > 0) {
             localStorage.setItem("time", time)
@@ -175,6 +175,15 @@ function cardClicker(){
         secondCard.addClass("matched")
         firstCard = null
         secondCard = null
+        score++
+        $("#progress").val(score).trigger("change")
+        if(score==12){
+            $(".gameBoard").css("display","none")
+            $(".win").css("display","flex")
+            localStorage.removeItem("time")
+            
+
+        }
     }
     }else{
         setTimeout(()=>{
