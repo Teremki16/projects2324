@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(https://legendary-digital-network-assets.s3.amazonaws.com/wp-content/uploads/2019/08/13090206/cat-flat-GIF-08202019.gif);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    font-family: "Dancing Script", cursive;
+}
+
+a {
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(255, 0, 0);
+    animation: a 1s infinite;
+    transition: all 1s;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    transform: scale(1.5);
+    text-shadow: 3px 5px white;
+}
+
+
+@keyframes a{
+    0%{
+        color: red;
+    }
+    25%{
+        color: orange;
+    }
+    50%{
+        color: yellow;
+    }
+    75%{
+        color: yellowgreen;
+    }
+    100%{
+        color: green;
+    }
+}
