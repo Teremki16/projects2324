@@ -171,6 +171,10 @@ function cardClicked(){
             secondCard = null
             score++;
             $("#score").val(score).trigger("change")
+            if(score == 12){
+                $("#win").css("display", "flex")
+                ts.removeItem("time")
+            }
         }else{
             setTimeout(()=>{
                 firstCard.removeClass("flip")
