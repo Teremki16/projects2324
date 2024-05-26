@@ -25,6 +25,19 @@ void loop() {
     gb.sound(COLLISION);
     gb.testMatrix(10);
   }
+
+  if(win()){
+    clearMemory();
+    scores = 0;
+    level = 0;
+    for(int i = 0;  i < 8; i++){
+      for(int j = 0; j < 16; j++){
+        
+      }
+    }
+  delay(2000)
+  gb.clearDisplay();
+  }
   makeMove();
   if (gb.checkBlockCollision(gb.block[rot], x, y + 1)) {
     gb.memBlock(gb.block[rot], x, y);
