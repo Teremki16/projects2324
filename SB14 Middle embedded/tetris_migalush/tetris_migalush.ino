@@ -3,25 +3,57 @@
 GameBoy GB;
 int x = 2,y = -1;
 int rot = 0;
+int fallSpeed = 100;
+int acc = 1;
+int scores = 0;
+int level= 0;
 
 void setup() {
   GB.begin(8);
   randomSeed(analogRead(0) + analogRead(5));
   createBlock(random(7));
+  Serial.begin(9600);
 
 }
 
 void loop() {
+  if(loss()){
+    Serial.println("you are lost the game :(");
+    Serial.println("Score: " + (String)scores);
+    clearMemory();
+    GB.sound(COLLISION);
+    GB.testMatrix(10);
+  }
+  if(win()){
+    clearMemory();
+    scores = 0;
+    level = 0;
+    for(int i = 0; i < 8; i++){
+      for(int j = 0; j < 16; j++){
+        GB.setLed(i,j,WIN[j][i]);
+      }
+    }
+  }
   MakeMove();
-  if(GB.checkBlockCollision(GB.block[rot],x,y)){
+  if(GB.checkBlockCollision(GB.block[rot],x,y + 1)){
    GB.memBlock(GB.block[rot],x,y);
    createBlock(random(7));
+   int lines = GB.fullLine();
+   if(lines != 0){
+    scores += lines;
+    level += lines;
+    GB.sound(SCORE);
+   }
+   if(level >= 5){
+    acc++;
+    level = 0;
+   }
   }else{
     y++;
   }
   GB.clearDisplay();
   drawBlock(GB.block[rot],x,y);
-  delay(100);
+  delay(fallSpeed / acc);
 }
 
 void drawBlock(byte arr[4][4], int x, int y) {
@@ -41,6 +73,15 @@ void MakeMove(){
   if(GB.getKey() == 5 && GB.checkBlockCollision(GB.block[rot], x + 1,y)){
     x++;
   }
+  if(GB.getKey() == 1 && !GB.checkBlockCollision(GB.block[rot + 1], x,y)){
+    rot++;
+    if(rot > 3) rot = 0;
+  }
+  if(GB.getKey() == 6){
+    acc = 4;
+  }else{
+    acc = 1;
+  }
 }
 
 void createBlock(int num){
@@ -52,4 +93,26 @@ void createBlock(int num){
   if(num == 4) GB.generateBlock(GB.block, J_block_1,J_block_2,J_block_3,J_block_4);
   if(num == 5) GB.generateBlock(GB.block, T_block_1,T_block_2,T_block_3,T_block_4);
   if(num == 6) GB.generateBlock(GB.block, O_block_1,O_block_2,O_block_3,O_block_4);
+}
+
+bool loss(){
+  if(GB.checkBlockCollision(GB.block[rot],x,0)){
+    return true;
+  }
+  return false;
+}
+
+bool win(){
+  if(scores >= 20){
+    return true;
+  }
+  return false;
+}
+
+void clearMemory(){
+  for(int i = 0;i < 16; i++){
+    for(int j = 0;j < 8; j++){
+      GB.wipePoint(j,i);
+    }
+  }
 }
