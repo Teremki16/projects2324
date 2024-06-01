@@ -197,3 +197,5 @@ function cardClicker(){
 
 
 $(document).on("click",".card",cardClicker)
+
+
