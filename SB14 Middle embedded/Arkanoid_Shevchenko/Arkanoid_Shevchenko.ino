@@ -13,10 +13,14 @@ int directionY = -1;
 unsigned long int ballT = 0;
 unsigned long int paddleT = 0;
 
+bool startLevel = true;
+int numLevel = 1;
+
 void setup() {
   gb.begin(8);
   randomSeed(analogRead(0));
   drawPaddle( paddle, paddleX, paddleY);
+ createLevel();
 }
 
 void loop() {
@@ -49,25 +53,63 @@ void makePaddle() {
   }
 }
 void ball() {
-  if(millis() - ballT >= 100){
+  if (millis() - ballT >= 100) {
     gb.wipePoint(ballX, ballY);
- 
-  ballX += directionX;
-  ballY += directionY;
-  checkCollision();
-  gb.drawPoint(ballX, ballY);
-  ballT = millis();
-}
+
+    ballX += directionX;
+    ballY += directionY;
+    checkCollision();
+    gb.drawPoint(ballX, ballY);
+    ballT = millis();
+  }
 }
 void checkCollision() {
-  if (ballX < 0 || ballX > 7) directionX = directionX * -1;
-  if (ballY < 0 || ballY > 15) directionY = directionY * -1;
-  if (ballY == paddleY - 1 && ballX >= paddleX && ballX <= paddleX + 3) {
+  if (ballX < 0 || ballX >= 7) directionX = directionX * -1;
+  if (ballY < 0 || ballY >= 15) directionY = directionY * -1;
+  if (ballY == paddleY - 1 && ballX == paddleX) {
     directionY = -1;
-    if (random(0, 10) < 5) {
-      directionX = -1;
-    } else {
-      directionX = 1;
+    directionX = -1;
+  }
+  if (ballY == paddleY - 1 && ballX == paddleX + 1) {
+    directionY = -1;
+    directionX = 0;
+  }
+  if (ballY == paddleY - 1 && ballX == paddleX + 2) {
+    directionY = -1;
+    directionX = 1;
+  }
+  if (gb.checkCollision(ballX, ballY)) {
+    gb.wipePoint(ballX, ballY);
+    directionY = 1;
+  }
+}
+void drawBricks(byte arr[3][8]) {
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 8; j++) {
+      if (arr[i][j] == 1) {
+        gb.memDisplay(j, i);
+      }
     }
   }
+}
+
+void memClear() {
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 8; j++) {
+      gb.display[j][i] = 0;
+    }
+  }
+}
+
+void createLevel(){
+  memClear();
+  if(numLevel == 1)drawBricks(Block_level_1);
+  if(numLevel == 2)drawBricks(Block_level_2);
+  if(numLevel == 2)drawBricks(Block_level_3);
+  if(numLevel == 2)drawBricks(Block_level_4);
+  if(numLevel == 2)drawBricks(Block_level_5);
+  if(numLevel == 2)drawBricks(Block_level_6);
+  if(numLevel == 2)drawBricks(Block_level_7);
+  gb.drawDisplay();
+  startLevel =true;
 }
