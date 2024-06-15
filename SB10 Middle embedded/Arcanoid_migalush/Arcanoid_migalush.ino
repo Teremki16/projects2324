@@ -5,19 +5,23 @@ GameBoy GB;
 int paddleX = 3;
 int paddleY = 14;
 
-int paddleT = 0;
-int ballT = 0;
+unsigned long int paddleT = 0;
+unsigned long int ballT = 0;
 
 int ballX = 4;
 int ballY = 13;
 int directionX = 1;
 int directionY = -1;
 
+bool stateLevel = true;
+int numLevel = 5;
+
 void setup() {
   GB.begin(8);
   paddleT = millis();
   ballT = millis();
   drawPaddle(paddle, paddleX, paddleY);
+  createLevel();
   
 }
 
@@ -64,10 +68,63 @@ void checkCollision() {
   if (ballY <= 0 || ballY >= 15) directionY = directionY * -1;
   if (ballY == paddleY - 1 && ballX >= paddleX && ballX <= paddleX + 3) {
     directionY = -1;
-    if (random(0, 10) < 5) {
+    int d = random(0,10);
+    if (d < 3) {
       directionX = 1;
-    } else {
+    } else if(d < 6){
       directionX = -1;
+    }else{
+      directionX = 0;
     }
+  }
+  if(GB.checkCollision(ballX,ballY)){
+    GB.wipePoint(ballX,ballY);
+    directionY = 1;
+  }
+}
+
+void drawBricks(byte arr[3][8]){
+  for(int i = 0;i < 4;i++){
+   for(int J = 0; J < 8;J++){
+    if(arr[i][J] == 1)
+    GB.memDisplay(J,i); 
+   }
+  }
+}
+
+void memClear(){
+  for(int i = 0;i < 4;i++){
+   for(int J = 0; J < 8;J++){
+    GB.display[J][i] = 0; 
+   }
+  }
+}
+
+void createLevel(){
+  memClear();
+  if(numLevel == 1){
+    GB.clearDisplay();
+    drawBricks(Block_level_1);
+    stateLevel = true;
+  }
+  if(numLevel == 2){
+    GB.clearDisplay();
+    drawBricks(Block_level_2);
+    stateLevel = true;
+  }
+  if(numLevel == 3){
+    GB.clearDisplay();
+    drawBricks(Block_level_3);
+    stateLevel = true;
+  }
+  if(numLevel == 4){
+    GB.clearDisplay();
+    drawBricks(Block_level_4);
+    stateLevel = true;
+  }
+  if(numLevel == 5){
+    GB.clearDisplay();
+    drawBricks(Block_level_5);
+    stateLevel = true;
   }
 }
