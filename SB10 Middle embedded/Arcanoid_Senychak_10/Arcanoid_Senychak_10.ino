@@ -13,16 +13,27 @@ int ballY = 13;
 int directionX = 1;
 int directionY = -1;
 
+bool stateLevel = true;
+int numLevel = 2;
+
+int countBricks = 0;
+int Ascore = 0;
+
 void setup() {
   gb.begin(8);
   paddleT = millis();
   ballT = millis();
   drawPaddle(paddle, paddleX, paddleY);
+
+  createLevel();
+
 }
 
 void loop() {
+  Alose();
   ball();
   makePaddle();
+  Awin();
 }
 
 void drawPaddle(byte arr[3], int x, int y) {
@@ -64,10 +75,88 @@ void checkCollision() {
   if (ballY <= 0 || ballY >= 15) directionY = directionY * -1;
   if (ballY == paddleY - 1 && ballX >= paddleX && ballX <= paddleX + 3) {
     directionY = -1;
-    if (random(0, 10) < 5) {
+    int d = random(0, 10);
+    if (d < 3) {
       directionX = 1;
-    } else {
+    } else if (d < 6) {
       directionX = -1;
+    } else {
+      directionX = 0;
     }
   }
+  if (gb.checkCollision(ballX, ballY)) {
+    gb.wipePoint(ballX, ballY);
+    directionY = 1;
+    Ascore++;
+  }
+}
+
+void drawBricks(byte arr[3][8]) {
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 8; j++) {
+      if (arr[i][j] == 1) {
+        gb.memDisplay(j, i);
+        countBricks++;
+      }
+    }
+  }
+}
+
+void memClear() {
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 8; j++) {
+      gb.display[j][i] = 0;
+    }
+  }
+}
+
+void createLevel() {
+  memClear();
+  if (numLevel == 1) {
+    gb.clearDisplay();
+    drawBricks(Block_level_1);
+    stateLevel = true;
+  }
+  if (numLevel == 2) {
+    gb.clearDisplay();
+    drawBricks(Block_level_2);
+    stateLevel = true;
+  }
+}
+
+void Alose() {
+  if (ballY >= 15) {
+    for (int i = 0; i < 16; i++) {
+      for (int j = 0; j < 8; j++) {
+        gb.wipePoint(j, i);
+      }
+    }
+    gb.testMatrix(10);
+    numLevel = 1;
+    restart();
+  }
+}
+
+void Awin(){
+  if(Ascore >= countBricks){
+    for(int i = 0; i < 8; i++){
+      for(int j = 0; j < 16; j++){
+        gb.setLed(i, j, WIN[j][i]); 
+      }
+    }
+    delay(2000);
+    numLevel++;
+    restart();
+  }
+}
+
+void restart() {
+  ballX = 3;
+  ballY = 8;
+  directionX = 1;
+  directionY = -1;
+  countBricks = 0;
+  Ascore = 0;
+  createLevel();
+  drawPaddle(paddle , paddleX, paddleY);
 }
