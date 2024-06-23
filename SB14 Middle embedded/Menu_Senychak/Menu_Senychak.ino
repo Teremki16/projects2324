@@ -1,7 +1,10 @@
 #include <GameBoy.h>
 GameBoy gb;
+#include <score.h>
 #include "Car.h"
 #include "Snake.h"
+#include "Blocks.h"
+#include "Tetris.h" 
 
 int modeCount = 0;
 
@@ -36,11 +39,23 @@ byte SNAKE[8][8] = {
   { 0, 0, 1, 1 , 1, 1, 0, 0}
 };
 
+byte TETRIS[8][8] = {
+  { 0, 0, 0, 0 , 0, 0, 0, 0},
+  { 0, 0, 0, 0 , 0, 0, 0, 0},
+  { 0, 0, 0, 0 , 0, 1, 1, 0},
+  { 0, 0, 0, 0 , 0, 1, 1, 0},
+  { 0, 1, 1, 1 , 1, 1, 1, 0},
+  { 0, 1, 1, 1 , 1, 1, 1, 0},
+  { 0, 0, 0, 0 , 0, 0, 0, 0},
+  { 0, 0, 0, 0 , 0, 0, 0, 0}
+};
+
 void setup() {
   gb.begin(8);
   randomSeed(analogRead(0));
   snakeX[0] = 4;
   snakeY[0] = 7;
+  createBlock(random(7));
 }
 int modes = 0;
 void loop() {
@@ -51,6 +66,10 @@ void loop() {
   else if(gb.getKey() == 2 && modeSelector() == 1){
     gb.clearDisplay();
     modes = 2;
+  }
+  else if(gb.getKey() == 2 && modeSelector() == 2){
+    gb.clearDisplay();
+    modes = 3;
   }
   else if(gb.getKey() == 1){
     gb.clearDisplay();
@@ -83,13 +102,21 @@ void mainMenu() {
       }
     }
   }
+  if (modeSelector() == 2) {
+    for (int i = 0; i < 8; i++) {
+      for (int j = 0; j < 8; j++) {
+        gb.wipePoint(i, j + 8);
+        gb.setLed(i, j + 8, TETRIS[j][i]);
+      }
+    }
+  }
 }
 
 int modeSelector() {
   if (gb.getKey() == 4) {
     modeCount++;
     delay(250);
-    if (modeCount > 1) {
+    if (modeCount > 2) {
       modeCount = 0;
     }
   }
@@ -97,7 +124,7 @@ int modeSelector() {
     modeCount--;
     delay(250);
     if (modeCount < 0) {
-      modeCount = 1;
+      modeCount = 2;
     }
   }
   return modeCount;
@@ -111,6 +138,8 @@ void switchMode(int mode){
     case 1: mainRacing(50);
     break;
     case 2: snakeGame();
+    break;
+    case 3: TetrisGame();
     break;
   }
 }
