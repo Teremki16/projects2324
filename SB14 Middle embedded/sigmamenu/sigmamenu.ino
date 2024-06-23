@@ -2,6 +2,8 @@
 GameBoy gb;
 #include "Car.h"
 #include "Snake.h"
+#include "Blocks.h"
+#include "Tetris.h"
 
 int modeCount = 0;
 
@@ -42,6 +44,7 @@ gb.begin(8);
 randomSeed(analogRead(0));
 snakeX[0] = 4;
 snakeY[0] = 7;
+createBlock(random(7));
 
 }
 
