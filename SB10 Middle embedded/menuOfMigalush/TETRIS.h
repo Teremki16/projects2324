@@ -1,61 +1,11 @@
-#include <GameBoy.h>
-#include "blocks.h"
-GameBoy GB;
 int x = 2,y = -1;
 int rot = 0;
 int fallSpeed = 100;
 int acc = 1;
 int scores = 0;
-int level= 0;
+int level = 0;
 
-void setup() {
-  GB.begin(8);
-  randomSeed(analogRead(0) + analogRead(5));
-  createBlock(random(7));
-  Serial.begin(9600);
 
-}
-
-void loop() {
-  if(loss()){
-    Serial.println("you are lost the game :(");
-    Serial.println("Score: " + (String)scores);
-    clearMemory();
-    GB.sound(COLLISION);
-    GB.testMatrix(10);
-  }
-  if(win()){
-    clearMemory();
-    scores = 0;
-    level = 0;
-    for(int i = 0; i < 8; i++){
-      for(int j = 0; j < 16; j++){
-        GB.setLed(i,j,WIN[j][i]);
-      }
-    }
-  }
-  MakeMove();
-  if(GB.checkBlockCollision(GB.block[rot],x,y + 1)){
-   GB.memBlock(GB.block[rot],x,y);
-   createBlock(random(7));
-   int lines = GB.fullLine();
-   if(lines != 0){
-    scores += lines;
-    level += lines;
-    GB.sound(SCORE);
-   }
-   if(level >= 5){
-    acc++;
-    level = 0;
-   }
-  }else{
-    y++;
-  }
-  GB.drawDisplay();
-  drawBlock(GB.block[rot],x,y);
-  
-  delay(fallSpeed / acc);
-}
 
 void drawBlock(byte arr[4][4], int x, int y) {
   for (int i = 0; i < 4; i++) {
@@ -67,14 +17,14 @@ void drawBlock(byte arr[4][4], int x, int y) {
   }
 }
 
-void MakeMove(){
-  if(GB.getKey() == 4 && GB.checkBlockCollision(GB.block[rot], x - 1,y)){
+void MakeMoveTetris(){
+  if(GB.getKey() == 4 && !GB.checkBlockCollision(GB.block[rot], x - 1,y)){
     x--;
   }
   if(GB.getKey() == 5 && !GB.checkBlockCollision(GB.block[rot], x + 1,y)){
     x++;
   }
-  if(GB.getKey() == 1 && !GB.checkBlockCollision(GB.block[rot + 1], x,y)){
+  if(GB.getKey() == 2 && !GB.checkBlockCollision(GB.block[rot + 1], x,y)){
     rot++;
     if(rot > 3) rot = 0;
   }
@@ -116,4 +66,48 @@ void clearMemory(){
       GB.wipePoint(j,i);
     }
   }
+}
+
+void TetrisGame() {
+  if(loss()){
+    Serial.println("you are lost the game :(");
+    Serial.println("Score: " + (String)scores);
+    drawScore(GB, scores);
+    delay(2000);
+    clearMemory();
+    scores = 0;
+    GB.sound(COLLISION);
+    GB.testMatrix(10);
+  }
+  if(win()){
+    clearMemory();
+    scores = 0;
+    level = 0;
+    for(int i = 0; i < 8; i++){
+      for(int j = 0; j < 16; j++){
+        GB.setLed(i,j,WIN[j][i]);
+      }
+    }
+  }
+ MakeMoveTetris();
+  if(GB.checkBlockCollision(GB.block[rot],x,y + 1)){
+   GB.memBlock(GB.block[rot],x,y);
+   createBlock(random(7));
+   int lines = GB.fullLine();
+   if(lines != 0){
+    scores += lines;
+    level += lines;
+    GB.sound(SCORE);
+   }
+   if(level >= 5){
+    acc++;
+    level = 0;
+   }
+  }else{
+    y++;
+  }
+  GB.drawDisplay();
+  drawBlock(GB.block[rot],x,y);
+  
+  delay(fallSpeed / acc);
 }

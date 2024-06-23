@@ -41,10 +41,10 @@ bool isPartOfSnake(int x, int y) {
 
 void makeFood() {
   foodX = random(8);
-  foodY = random(8);
-  while (isPartOfSnake(foodX, foodY)) {
+  foodY = random(16);
+  while (isPartOfSnake(foodX, foodY)  || foodX == 0 && foodY == 0) {
     foodX = random(8);
-    foodY = random(8);
+    foodY = random(16);
   }
 }
 void drawFood() {
@@ -103,6 +103,8 @@ void drawSnake() {
 void Lose() {
   for (int i = lenSnake - 1; i > 0; i--) {
     if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
+      delay(2000);
+      drawScore(GB,lenSnake - 3);
       delay(2000);
       GB.clearDisplay();
       GB.testMatrix(10);
