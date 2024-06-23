@@ -116,6 +116,8 @@ void lose () {
   for (int i = lenSnake - 1; i > 0; i--) {
     if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
       delay(2000);
+      drawScore(gb, lenSnake - 3);
+      delay(2000);
       gb.clearDisplay();
       gb.testMatrix(10);
       for(int j = 0; j < lenSnake; j++){
