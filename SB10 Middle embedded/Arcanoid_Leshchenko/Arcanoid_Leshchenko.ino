@@ -16,6 +16,9 @@ int directionY = -1;
 bool stateLevel = true;
 int numLevel = 1;
 
+int countBricks = 0;
+int Ascore = 0;
+
 void setup() {
   gb.begin(8);
   paddleT = millis();
@@ -26,9 +29,10 @@ void setup() {
 }
 
 void loop() {
+  Alose();
   ball();
   makePaddle();
-
+  Awin();
 
 
 }
@@ -81,11 +85,12 @@ void checkCollision() {
     } else {
       directionX = 0;
     }
-    }
-    if (gb.checkCollision(ballX, ballY)){
-      gb.wipePoint(ballX, ballY);
-      directionY = 1;
-    }
+  }
+  if (gb.checkCollision(ballX, ballY)) {
+    gb.wipePoint(ballX, ballY);
+    directionY = 1;
+    Ascore++;
+  }
 }
 
 
@@ -93,16 +98,17 @@ void checkCollision() {
 void drawBricks(byte arr[3][8]) {
   for (int i = 0; i < 4; i++) {
     for (int j = 0; j < 8; j++) {
-      if (arr[i][j] == 1)
+      if (arr[i][j] == 1) {
         gb.memDisplay(j, i);
+        countBricks++;
+      }
     }
   }
 }
-
 void memClear() {
   for (int i = 0; i < 4; i++) {
     for (int j = 0; j < 8; j++) {
-        gb.display[j][i] = 0;
+      gb.display[j][i] = 0;
     }
   }
 }
@@ -119,27 +125,70 @@ void createLevel() {
     drawBricks(Block_level_2);
     stateLevel = true;
   }
-   if (numLevel == 3) {
+  if (numLevel == 3) {
     gb.clearDisplay();
     drawBricks(Block_level_3);
     stateLevel = true;
-}
-    if (numLevel == 4) {
+  }
+  if (numLevel == 4) {
     gb.clearDisplay();
     drawBricks(Block_level_4);
     stateLevel = true;
-    }
-    if (numLevel == 5) {
+  }
+  if (numLevel == 5) {
     gb.clearDisplay();
     drawBricks(Block_level_5);
     stateLevel = true;
-    }
-    
-    if (numLevel == 6) {
+  }
+
+  if (numLevel == 6) {
     gb.clearDisplay();
     drawBricks(Block_level_6);
     stateLevel = true;
-    }
-    
+  }
 
+  if (numLevel == 7) {
+    gb.clearDisplay();
+    drawBricks(Block_level_7);
+    stateLevel = true;
+  }
+
+
+}
+
+void Alose () {
+  if (ballY >= 15) {
+    for (int i = 0; i < 16; i++) {
+      for (int j = 0; j < 8; j++) {
+        gb.wipePoint(j, i);
+      }
+    }
+    gb.testMatrix(10);
+    numLevel = 1;
+    restart();
+  }
+}
+
+void Awin() {
+  if (Ascore >= countBricks) {
+    for (int i = 0; i < 8; i++) {
+      for (int j = 0; j < 16; j++) {
+        gb.setLed(i, j, WIN[j][i]);
+      }
+    }
+    delay(2000);
+    numLevel++;
+    restart();
+    }
+  }
+
+  void restart() {
+  ballX = 3;
+  ballY = 8;
+  directionX = 1;
+  directionY = -1;
+  countBricks = 0;
+  Ascore = 0;
+  createLevel();
+  drawPaddle(paddle, paddleX, paddleY);
 }
