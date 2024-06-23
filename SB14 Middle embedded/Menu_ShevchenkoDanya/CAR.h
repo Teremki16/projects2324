@@ -1,3 +1,5 @@
+int carScore = 0;
+
 void enemyCar(int x, int y) {
   gb.drawPoint(x, y);
   gb.drawPoint(x, y - 1);
@@ -102,12 +104,16 @@ bool Collision(int player_x, int player_y, int enemy_x, int enemy_y){
     createLine(enemy_y - 10);
     enemyCar(enemy_x, enemy_y);
     if(Collision (player_x, player_y, enemy_x, enemy_y)){
+      drawScore(gb, carScore);
+      delay(2000);
       gb.testMatrix(10);
-      //gb.sound(COLLISION);
+      gb.sound(COLLISION);
+      gb.clearDisplay();
       return;
     }
 if (enemy_y >12){
- 
+   gb.sound(SCORE);
+   carScore++;
     }
     control();
     delay(enemySpeed);
