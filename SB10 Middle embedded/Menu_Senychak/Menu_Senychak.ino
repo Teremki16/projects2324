@@ -56,7 +56,7 @@ byte TETRIS[8][8] = {
 
 void setup() {
   gb.begin(8);
-  randomSeed(analogRead(0));
+  randomSeed(analogRead(0) + analogRead(1));
   snakeX[0] = 4;
   snakeY[0] = 7;
   createBlock(random(0, 7));

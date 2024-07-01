@@ -43,7 +43,7 @@ bool isPartOfSnake(int x, int y){
 void makeFood() {
   foodX = random(8);
   foodY = random(16);
-  while(isPartOfSnake(foodX, foodY)){
+  while(isPartOfSnake(foodX, foodY)|| (foodX == 0 && foodY == 0)){
     foodX = random(8);
     foodY = random(16);
   }
